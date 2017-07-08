@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="布局方式," />
 
 
 
@@ -93,15 +93,17 @@
 
 
 
-<meta name="description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Coding丘">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182除了第一种方式需要给宽度，其它方式都能不给宽度    &amp;lt;!DOCTYPE html&amp;">
+<meta name="keywords" content="布局方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="水平居中布局">
+<meta property="og:url" content="http://yoursite.com/2017/07/08/CSS/水平居中布局/index.html">
 <meta property="og:site_name" content="Coding丘">
-<meta property="og:description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182除了第一种方式需要给宽度，其它方式都能不给宽度    &amp;lt;!DOCTYPE html&amp;">
+<meta property="og:updated_time" content="2017-07-08T13:25:10.253Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coding丘">
-<meta name="twitter:description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
+<meta name="twitter:title" content="水平居中布局">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182除了第一种方式需要给宽度，其它方式都能不给宽度    &amp;lt;!DOCTYPE html&amp;">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/08/CSS/水平居中布局/"/>
 
 
 
 
 
-  <title>Coding丘</title>
+  <title>水平居中布局 | Coding丘</title>
   
 
 
@@ -170,9 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,156 +275,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/网络/Web浏览器缓存机制/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/08/网络/Web浏览器缓存机制/" itemprop="url">Web浏览器缓存机制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T00:00:00+08:00">
-                2017-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          一、浏览器的缓存规则
-从新鲜度和检验值两个维度来规定浏览器是否直接使用缓存中的副本还是重新获取资源。
-
-新鲜度(过期机制，优先级高)
-Expires(过期日期)
-Cache-Control(max-age(多少秒数后过期)
-no-chahe(忽略缓存的副本而向服务器发送请求)
-no-store(强制
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/08/网络/Web浏览器缓存机制/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -450,9 +303,7 @@ no-store(强制
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/08/CSS/水平居中布局/" itemprop="url">水平居中布局</a></h1>
+          <h1 class="post-title" itemprop="name headline">水平居中布局</h1>
         
 
         <div class="post-meta">
@@ -521,192 +372,77 @@ no-store(强制
       
 
       
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line">除了第一种方式需要给宽度，其它方式都能不给宽度</div><div class="line">    &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	.first-way&#123;</div><div class="line">		width:100px;</div><div class="line">		height: 100px;</div><div class="line">		background-color: red;</div><div class="line">		margin: 0 auto;</div><div class="line">	&#125;</div><div class="line">	.second-way&#123;</div><div class="line">		width:100%;</div><div class="line">		text-align: center;</div><div class="line">		overflow: hidden;//实际是没有的</div><div class="line">	&#125;</div><div class="line">	.second-child&#123;</div><div class="line">		display: inline-block;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: red;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	.third-way&#123;</div><div class="line">		position: absolute;</div><div class="line">		left:50%;</div><div class="line">		top:0%; /*默认应该是0%*/</div><div class="line">	 	transform:translateX(-50%); /*向左移动元素宽度的一半长度*/</div><div class="line">		width:300px;</div><div class="line">		height:100px;</div><div class="line">		border: 1px solid green;</div><div class="line">	&#125;</div><div class="line">	.fourth-way&#123;</div><div class="line">		display: flex;</div><div class="line">		justify-content:center;</div><div class="line">	&#125;</div><div class="line">	.fourth-way &gt; div&#123;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: red;</div><div class="line">	&#125;</div><div class="line">	.five-way&#123;</div><div class="line">                width: -moz-fit-content;</div><div class="line">                width: -webkit-fit-content;</div><div class="line">                width: fit-content; </div><div class="line">                margin: auto;</div><div class="line">	&#125;</div><div class="line">	.five-way &gt; div&#123;</div><div class="line">		float:left;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: red;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;first-way&quot;&gt;</div><div class="line">		第一种方式</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;/br&gt;</div><div class="line">	&lt;div class=&quot;second-way&quot;&gt;</div><div class="line">		&lt;div class=&quot;second-child&quot;&gt;第二种方式&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;third-way&quot;&gt;</div><div class="line">		第三种方式</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/br&gt;</div><div class="line">	&lt;div class=&quot;fourth-way&quot;&gt;</div><div class="line">		&lt;div&gt;第四种&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div&gt;</div><div class="line">	&lt;/br&gt;</div><div class="line">	&lt;div class=&quot;five-way&quot;&gt;</div><div class="line">		&lt;div&gt;</div><div class="line">			第五种</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;	</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
         
-          
-          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/08/CSS/水平居中布局/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/CSS/三栏布局/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/08/CSS/三栏布局/" itemprop="url">三栏布局</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T00:00:00+08:00">
-                2017-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/布局方式/" rel="tag"># 布局方式</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/08/CSS/三栏布局/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/08/CSS/三栏布局/" rel="next" title="三栏布局">
+                <i class="fa fa-chevron-left"></i> 三栏布局
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/08/网络/Web浏览器缓存机制/" rel="prev" title="Web浏览器缓存机制">
+                Web浏览器缓存机制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -714,6 +450,10 @@ no-store(强制
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -920,10 +660,10 @@ no-store(强制
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
