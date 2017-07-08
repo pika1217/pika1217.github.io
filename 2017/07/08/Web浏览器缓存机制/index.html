@@ -93,15 +93,16 @@
 
 
 
-<meta name="description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
-<meta property="og:type" content="website">
+<meta name="description" content="浏览器的缓存规则 从新鲜度和检验值两个维度来规定浏览器是否直接使用缓存中的副本还是重新获取资源。  新鲜度(优先级高)(过期机制:Expires(过期日期)、Cache-Control(max-age(多少秒数后过期)，no-chahe(忽略缓存的副本而向服务器发送请求)，no-store(强制缓存不要保留副本并直接向服务器发送请求))，不会发送请求到服务器去验证资源的新旧程度，满足任一即可：1.">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Coding丘">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/07/08/Web浏览器缓存机制/index.html">
 <meta property="og:site_name" content="Coding丘">
-<meta property="og:description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
+<meta property="og:description" content="浏览器的缓存规则 从新鲜度和检验值两个维度来规定浏览器是否直接使用缓存中的副本还是重新获取资源。  新鲜度(优先级高)(过期机制:Expires(过期日期)、Cache-Control(max-age(多少秒数后过期)，no-chahe(忽略缓存的副本而向服务器发送请求)，no-store(强制缓存不要保留副本并直接向服务器发送请求))，不会发送请求到服务器去验证资源的新旧程度，满足任一即可：1.">
+<meta property="og:updated_time" content="2017-07-08T11:38:27.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coding丘">
-<meta name="twitter:description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
+<meta name="twitter:description" content="浏览器的缓存规则 从新鲜度和检验值两个维度来规定浏览器是否直接使用缓存中的副本还是重新获取资源。  新鲜度(优先级高)(过期机制:Expires(过期日期)、Cache-Control(max-age(多少秒数后过期)，no-chahe(忽略缓存的副本而向服务器发送请求)，no-store(强制缓存不要保留副本并直接向服务器发送请求))，不会发送请求到服务器去验证资源的新旧程度，满足任一即可：1.">
 
 
 
@@ -129,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/08/Web浏览器缓存机制/"/>
 
 
 
 
 
-  <title>Coding丘</title>
+  <title> | Coding丘</title>
   
 
 
@@ -170,9 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,9 +274,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -303,9 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/08/Web浏览器缓存机制/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -352,9 +349,7 @@
       
 
       
-        
-          
-            <h3 id="浏览器的缓存规则"><a href="#浏览器的缓存规则" class="headerlink" title="浏览器的缓存规则"></a>浏览器的缓存规则</h3><blockquote>
+        <h3 id="浏览器的缓存规则"><a href="#浏览器的缓存规则" class="headerlink" title="浏览器的缓存规则"></a>浏览器的缓存规则</h3><blockquote>
 <p>从新鲜度和检验值两个维度来规定浏览器是否直接使用缓存中的副本还是重新获取资源。</p>
 </blockquote>
 <h4 id="新鲜度-优先级高-过期机制-Expires-过期日期-、Cache-Control-max-age-多少秒数后过期-，no-chahe-忽略缓存的副本而向服务器发送请求-，no-store-强制缓存不要保留副本并直接向服务器发送请求-，不会发送请求到服务器去验证资源的新旧程度，满足任一即可："><a href="#新鲜度-优先级高-过期机制-Expires-过期日期-、Cache-Control-max-age-多少秒数后过期-，no-chahe-忽略缓存的副本而向服务器发送请求-，no-store-强制缓存不要保留副本并直接向服务器发送请求-，不会发送请求到服务器去验证资源的新旧程度，满足任一即可：" class="headerlink" title="新鲜度(优先级高)(过期机制:Expires(过期日期)、Cache-Control(max-age(多少秒数后过期)，no-chahe(忽略缓存的副本而向服务器发送请求)，no-store(强制缓存不要保留副本并直接向服务器发送请求))，不会发送请求到服务器去验证资源的新旧程度，满足任一即可："></a>新鲜度(优先级高)(过期机制:Expires(过期日期)、Cache-Control(max-age(多少秒数后过期)，no-chahe(忽略缓存的副本而向服务器发送请求)，no-store(强制缓存不要保留副本并直接向服务器发送请求))，不会发送请求到服务器去验证资源的新旧程度，满足任一即可：</h4><pre><code>1.含有完整的过期时间控制头信息（HTTP协议报文），并且仍在有效期内
@@ -406,20 +401,27 @@ dified/ETag一起使用，因为即使服务器设置缓存时间,
 4.POST请求无法被缓存
 5.HTTP响应头中不包含Last-Modified/Etag，也不包含Cache-Control/Expires的请求无法被缓存
 </code></pre>
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -427,163 +429,38 @@ dified/ETag一起使用，因为即使服务器设置缓存时间,
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/09/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/09/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-09T00:00:00+08:00">
-                2016-11-09
-              </time>
+              <a href="/2016/11/09/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -591,6 +468,10 @@ dified/ETag一起使用，因为即使服务器设置缓存时间,
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -610,8 +491,17 @@ dified/ETag一起使用，因为即使服务器设置缓存时间,
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/self.png"
@@ -684,6 +574,22 @@ dified/ETag一起使用，因为即使服务器设置缓存时间,
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的缓存规则"><span class="nav-number">1.</span> <span class="nav-text">浏览器的缓存规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新鲜度-优先级高-过期机制-Expires-过期日期-、Cache-Control-max-age-多少秒数后过期-，no-chahe-忽略缓存的副本而向服务器发送请求-，no-store-强制缓存不要保留副本并直接向服务器发送请求-，不会发送请求到服务器去验证资源的新旧程度，满足任一即可："><span class="nav-number">1.1.</span> <span class="nav-text">新鲜度(优先级高)(过期机制:Expires(过期日期)、Cache-Control(max-age(多少秒数后过期)，no-chahe(忽略缓存的副本而向服务器发送请求)，no-store(强制缓存不要保留副本并直接向服务器发送请求))，不会发送请求到服务器去验证资源的新旧程度，满足任一即可：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#校验值-验证机制-Last-Modified（文件最后修改时间）、ETag-文件标识，只要文件改变标识就会变化-优先级高-，第二次请求时会将If-Modified-Since或者If-None-Match发送给服务器验证资源的新旧程度"><span class="nav-number">1.2.</span> <span class="nav-text">校验值(验证机制:Last-Modified（文件最后修改时间）、ETag(文件标识，只要文件改变标识就会变化)(优先级高))，第二次请求时会将If-Modified-Since或者If-None-Match发送给服务器验证资源的新旧程度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器缓存的控制"><span class="nav-number">2.</span> <span class="nav-text">浏览器缓存的控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用HTML-Meta标签"><span class="nav-number">2.1.</span> <span class="nav-text">使用HTML Meta标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用缓存相关的HTTP消息报头"><span class="nav-number">2.2.</span> <span class="nav-text">使用缓存相关的HTTP消息报头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哪些请求不能被缓存"><span class="nav-number">2.3.</span> <span class="nav-text">哪些请求不能被缓存</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -797,10 +703,10 @@ dified/ETag一起使用，因为即使服务器设置缓存时间,
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
