@@ -1,0 +1,844 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="浏览器兼容," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="CSS常见兼容性问题总结 原文 http://www.cnblogs.com/imwtr/p/4340010.html 浏览器的兼容性问题，通常是因为不同的浏览器对同一段代码有不同的解析，造成页面显示不统一的情况。这里谈到的浏览器，主要指IE6/IE7/IE… FireFox Chrome Opera Safari 等。 但更多的兼容还是考虑IE6/IE7/FF之间的斗争先来谈谈CSS Hack我">
+<meta name="keywords" content="浏览器兼容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="清除">
+<meta property="og:url" content="http://yoursite.com/2017/07/10/CSS/浏览器兼容-CSS/index.html">
+<meta property="og:site_name" content="Coding丘">
+<meta property="og:description" content="CSS常见兼容性问题总结 原文 http://www.cnblogs.com/imwtr/p/4340010.html 浏览器的兼容性问题，通常是因为不同的浏览器对同一段代码有不同的解析，造成页面显示不统一的情况。这里谈到的浏览器，主要指IE6/IE7/IE… FireFox Chrome Opera Safari 等。 但更多的兼容还是考虑IE6/IE7/FF之间的斗争先来谈谈CSS Hack我">
+<meta property="og:updated_time" content="2017-07-09T06:59:48.657Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="清除">
+<meta name="twitter:description" content="CSS常见兼容性问题总结 原文 http://www.cnblogs.com/imwtr/p/4340010.html 浏览器的兼容性问题，通常是因为不同的浏览器对同一段代码有不同的解析，造成页面显示不统一的情况。这里谈到的浏览器，主要指IE6/IE7/IE… FireFox Chrome Opera Safari 等。 但更多的兼容还是考虑IE6/IE7/FF之间的斗争先来谈谈CSS Hack我">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/10/CSS/浏览器兼容-CSS/"/>
+
+
+
+
+
+  <title>清除 | Coding丘</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f4c3768b625fb00fb83191de7ce9c5a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding丘</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/CSS/浏览器兼容-CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">清除</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:00:00+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CSS常见兼容性问题总结</p>
+<p>原文 <a href="http://www.cnblogs.com/imwtr/p/4340010.html" target="_blank" rel="external">http://www.cnblogs.com/imwtr/p/4340010.html</a></p>
+<p>浏览器的兼容性问题，通常是因为不同的浏览器对同一段代码有不同的解析，造成页面显示不统一的情况。这里谈到的浏览器，主要指IE6/IE7/IE… FireFox Chrome Opera Safari 等。 但更多的兼容还是考虑IE6/IE7/FF之间的斗争先来谈谈CSS Hack我们为了让页面形成统一的效果，要针对不同的浏览器或不同版本写出对应可解析的CSS样式，所以我们就把这个针对不同浏览器/版本而写CSS的过程叫做 CSS hack.</p>
+<h2 id="CSS-hack"><a href="#CSS-hack" class="headerlink" title="CSS hack"></a>CSS hack</h2><p>主要有三种：IE条件注释法、CSS属性前缀法、选择器前缀法。</p>
+<h3 id="IE条件注释法"><a href="#IE条件注释法" class="headerlink" title="IE条件注释法"></a>IE条件注释法</h3><p>即在正常代码之外添加判别IE浏览器或对应版本的条件注释，符合条件的浏览器或<br>者版本号才回执行里边的代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!--  lt是小于 gt是大于 lte是小于等于 gte是不小于 !是不等于 --&gt;</div><div class="line">&lt;!-- [if IE]&gt;</div><div class="line">	你想要执行的代码 </div><div class="line">&lt;![endif]--&gt;</div><div class="line">&lt;!-- [if lt IE 8]&gt;</div><div class="line">	你想要执行的代码 </div><div class="line">&lt;![endif]--&gt;</div><div class="line">&lt;!-- [if ! IE 8]&gt;</div><div class="line">	你想要执行的代码 </div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<h3 id="CSS属性前缀法"><a href="#CSS属性前缀法" class="headerlink" title="CSS属性前缀法"></a>CSS属性前缀法</h3><p>即是给css的属性添加前缀。比如 * 可以被IE6/IE7识别，但 <em> 只能被IE6识别，IE6-IE10都可以识别 “\9”，IE6不能识别!important  FireFox不能识别* </em> \9可以先使用“\9”标记，将IE分离出来，再用”*”分离出IE6/IE7，最后可以用“_”分离出IE6</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.type&#123;</div><div class="line">	color: #111; /* all */</div><div class="line"></div><div class="line">	color: #222\9; /* IE */</div><div class="line">	*color: #333; /* IE6/IE7 */</div><div class="line">	_color: #444; /* IE6 */</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>所以可以按着优先级就能给特定的版本捎上特定颜色一般来说，只有IE6不支持 !important 所以可以这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#example&#123;</div><div class="line">    width: 100px !important; /* IE7  FF */</div><div class="line">    width: 110px; /* IE6 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因为!important 具有最高优先级，所以此种方式可以区别出来~为什么说一般呢…你看看下面这个例子，IE6貌似还认得出!important</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">h1&#123;color: #f00 !important; &#125;</div><div class="line">h1&#123;color: #000;&#125;</div><div class="line">h2&#123;color: #f00 !important; color: #000;</div><div class="line">&lt;h1&gt;test1&lt;/h1&gt;</div><div class="line">&lt;h2&gt;test2&lt;/h2&gt;</div></pre></td></tr></table></figure>
+<h3 id="选择器前缀法，顾名思义，就是给选择器加上前缀"><a href="#选择器前缀法，顾名思义，就是给选择器加上前缀" class="headerlink" title="选择器前缀法，顾名思义，就是给选择器加上前缀"></a>选择器前缀法，顾名思义，就是给选择器加上前缀</h3><p>IE6可识别 <em>div{color:red;}<br>IE7可识别 </em>+div{color:red;}</p>
+<h3 id="其它兼容问题"><a href="#其它兼容问题" class="headerlink" title="其它兼容问题"></a>其它兼容问题</h3><ol>
+<li>最主要也是最常见的，就是浏览器对标签的默认支持不同，所以我们要统一，就要进行CSS reset . 最简单的初始化方法是 *{margin:0; padding:0;},但不推荐，而且它也并不完善。</li>
+</ol>
+<p>贴一个淘宝的样式初始化~</p>
+<pre><code>body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+    body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+    h1, h2, h3, h4, h5, h6{ font-size:100%; }
+    address, cite, dfn, em, var { font-style:normal; }
+    code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+    small{ font-size:12px; }
+    ul, ol { list-style:none; }
+    a { text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    sup { vertical-align:text-top; }
+    sub{ vertical-align:text-bottom; }
+    legend { color:#000; }
+    fieldset, img { border:0; }
+    button, input, select, textarea { font-size:100%; }
+    table { border-collapse:collapse; border-spacing:0; }
+</code></pre><ol>
+<li>IE6双边距bug:块属性标签添加了浮动float之后，若在浮动方向上也有margin值，则margin值会加倍。其实这种问题主要就是会把某些元素挤到了第二行</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	html,body,div&#123; margin: 0;padding: 0;&#125;</div><div class="line">	.wrap&#123;width: 200px; height: 200px; border: 1px solid #333;&#125;</div><div class="line">	.box&#123;float: left; /* display:inline */ ;margin-left: 10px; width: 80px; height: 80px; background-color: green;&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">	&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>IE6下左边的双边距 ~</li>
+</ol>
+<p>IE7的没问题          ~</p>
+<p>解决的方式有两个：</p>
+<ul>
+<li><p>给float元素添加display：inline 即可正常显示</p>
+</li>
+<li><p>就是hack处理了，对IE6进行 _margin-left:5px;</p>
+</li>
+</ul>
+<ol>
+<li><p>跟上述差不多，也属于IE6双边距bug:<br>行内属性标签，为了设置宽高，我们经常就会设置成display：block; 这样一来就产生上述的问题。<br>解决办法也是isplay：inline;但是这样一来我们就不能设置宽高了，所以呢需要再加个display:table.所以你设置display:block后，再添上display:inline和display:table</p>
+</li>
+<li><p>上下margin重合问题，相邻的两个div margin-left margin-right 不会重合，但相邻的margin-top margin-bottom会重合。</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.box1&#123;width: 200px;height: 200px; border: 1px solid #333; &#125;</div><div class="line">    .mt&#123;margin-top: 10px;&#125;</div><div class="line">    .mb&#123;margin-bottom: 10px;&#125;</div><div class="line"></div><div class="line">&lt;div class=&quot;box1 mb&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div class=&quot;box1 mt&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>解决办法就是不要同时采用top和bottom ,统一一些~</p>
+<ol>
+<li>有些浏览器解析img标签也有不同，img是行内的，一般都会紧接着排放，但是在有些情况下还是会突然出现个间距，解决办法是给它来个浮动float </li>
+<li>标签属性min-height是不兼容的，所以使用的时候也要稍微改改。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.box&#123;min-height:100px;height:auto !important; height:100px; overflow:visible;&#125;</div></pre></td></tr></table></figure>
+<p>另一方面，IE是不支持min-height这类属性的，所以有些时候也可以考虑使用CSS表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#container&#123; </div><div class="line"></div><div class="line">    min-width:600px;</div><div class="line">    width: expression(document.body.clientWidth &lt; 600? &quot;600px&quot;:&quot;auto&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>很多时候可能会纳闷超链接访问过后样式就混乱了，hover样式不出现了。其实主要是其CSS属性的排序问题。一般来说，最好按照这个顺序：L-V-H-A </li>
+</ol>
+<p>简单的记法是  love  hate </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a:link&#123;&#125;  a:visited&#123;&#125;  a:hover&#123;&#125;  a:active&#123;&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>chrome下默认会将小于12px的文本强制按照12px来解析。解决办法是给其添加属性：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-webkit-text-size-adjust: none;</div></pre></td></tr></table></figure>
+<ol>
+<li><p>png24位的图片在IE6下面会出现背景，所以最好还是使用png8格式的</p>
+</li>
+<li><p>因为存在两种盒子模式：IE盒子模式和W3C标准模式，所以对象的实际宽度也要注意。</p>
+</li>
+</ol>
+<p>IE/Opera：对象的实际宽度 = (margin-left) + width + (margin-right)Firefox/Mozilla：对象的<br>实际宽度= (margin-left) + (border-left-width) + (padding- left) + width + (padding-right) +<br>(border-right-width) + (margin-right)</p>
+<ol>
+<li><p>鼠标的手势也有问题：FireFox的cursor属性不支持hand，但是支持pointer，IE两个都支持；所以为了兼容都用pointer</p>
+</li>
+<li><p>消除ul、ol等列表的缩进时，样式应写成:</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list-style:none;margin:0px;padding:0px;</div></pre></td></tr></table></figure>
+<p> 其中margin属性对IE有效，padding属性对FireFox有效</p>
+<ol>
+<li><p>CSS控制透明度问题：一般就直接 opacity: 0.6 ; IE就 filter: alpha(opacity=60)但在IE6下又有问题，所以又得弄成 filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=60);</p>
+</li>
+<li><p>有些时候图片下方会出现一条间隙，通常会出现在FF和IE6下面比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&lt;img src=&quot;1.jpg&quot;/&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>一般给img添加vertical-align属性即可，比如top middle</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">img&#123;verticle-align:center;&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>IE6下div高度无法小于10px,比如定义一条高2px的线条，FF和IE7都正常但IE6就是10px解决的办法有两种：添加overflow属性或设置fontsize大小为高度大小  如：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;height:2px;overflow:hidden;background:#000000;width:778px;&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;div style=&quot;height:2px;font-size:2px;background:#000000;width:778px;&quot;&gt;&amp;nbps;&lt;/div&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/浏览器兼容/" rel="tag"># 浏览器兼容</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/10/CSS/浏览器内核以及css适配/" rel="next" title="浏览器内核及CSS适配">
+                <i class="fa fa-chevron-left"></i> 浏览器内核及CSS适配
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/10/CSS/CSS+CSS3 伪类/" rel="prev" title="伪类">
+                伪类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/self.png"
+               alt="韩露" />
+          <p class="site-author-name" itemprop="name">韩露</p>
+           
+              <p class="site-description motion-element" itemprop="description">生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pika1217/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-hack"><span class="nav-number">1.</span> <span class="nav-text">CSS hack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IE条件注释法"><span class="nav-number">1.1.</span> <span class="nav-text">IE条件注释法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS属性前缀法"><span class="nav-number">1.2.</span> <span class="nav-text">CSS属性前缀法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器前缀法，顾名思义，就是给选择器加上前缀"><span class="nav-number">1.3.</span> <span class="nav-text">选择器前缀法，顾名思义，就是给选择器加上前缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它兼容问题"><span class="nav-number">1.4.</span> <span class="nav-text">其它兼容问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩露</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

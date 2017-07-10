@@ -1,0 +1,833 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="CSS3的新特性整理animation    IE10+animation的六大属性 animation-name规定需要绑定选择器的keyframe名称 animation-duration规定完成动画所花费的时间 s ms ，object.style.animationDuration=”3s” animation-timing-function动画的速度曲线，默认值ease，object.s">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3新特性">
+<meta property="og:url" content="http://yoursite.com/2017/07/09/CSS/CSS3新特性/index.html">
+<meta property="og:site_name" content="Coding丘">
+<meta property="og:description" content="CSS3的新特性整理animation    IE10+animation的六大属性 animation-name规定需要绑定选择器的keyframe名称 animation-duration规定完成动画所花费的时间 s ms ，object.style.animationDuration=”3s” animation-timing-function动画的速度曲线，默认值ease，object.s">
+<meta property="og:updated_time" content="2017-07-09T08:29:54.386Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3新特性">
+<meta name="twitter:description" content="CSS3的新特性整理animation    IE10+animation的六大属性 animation-name规定需要绑定选择器的keyframe名称 animation-duration规定完成动画所花费的时间 s ms ，object.style.animationDuration=”3s” animation-timing-function动画的速度曲线，默认值ease，object.s">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/09/CSS/CSS3新特性/"/>
+
+
+
+
+
+  <title>CSS3新特性 | Coding丘</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f4c3768b625fb00fb83191de7ce9c5a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding丘</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/CSS/CSS3新特性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS3新特性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T00:00:00+08:00">
+                2017-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="CSS3的新特性整理"><a href="#CSS3的新特性整理" class="headerlink" title="CSS3的新特性整理"></a>CSS3的新特性整理</h2><h3 id="animation-IE10"><a href="#animation-IE10" class="headerlink" title="animation    IE10+"></a>animation    IE10+</h3><p>animation的六大属性</p>
+<h4 id="animation-name"><a href="#animation-name" class="headerlink" title="animation-name"></a>animation-name</h4><pre><code>规定需要绑定选择器的keyframe名称
+</code></pre><h4 id="animation-duration"><a href="#animation-duration" class="headerlink" title="animation-duration"></a>animation-duration</h4><p>规定完成动画所花费的时间 s ms ，object.style.animationDuration=”3s”</p>
+<h4 id="animation-timing-function"><a href="#animation-timing-function" class="headerlink" title="animation-timing-function"></a>animation-timing-function</h4><p>动画的速度曲线，默认值ease，object.style.animationTimingFunction=”linear”，语法 animation-timing-function:value</p>
+<pre><code>animation-timing-function使用名为三次Cubic Bezier贝塞尔曲线函数的数学函数，来生成速度曲线 可以使用自己的值也可
+以预定义的值
+值:linear从始到末以相同的速度
+ease 默认 从低速 加快在结束前变慢
+ease-in动画低速开始
+ease-out动画低速结束
+ease-in-out动画从低速开始和结束
+cubic-bezier(n,n,n,n)在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值
+</code></pre><h4 id="animation-deplay"><a href="#animation-deplay" class="headerlink" title="animation-deplay"></a>animation-deplay</h4><pre><code>动画开始之前的延迟
+animation-delay: time;
+JavaScript 语法：object.style.animationDelay=&quot;2s&quot;
+animation-delay 值以秒或毫秒计。
+允许负值，-2s 使动画马上开始，但跳过 2 秒进入动画
+</code></pre><h4 id="animation-iteration-count"><a href="#animation-iteration-count" class="headerlink" title="animation-iteration-count"></a>animation-iteration-count</h4><pre><code>动画播放的次数 IE10
+animation-iteration-count: n|infinite
+JavaScript 语法： object.style.animationIterationCount=3
+</code></pre><h4 id="animation-direction"><a href="#animation-direction" class="headerlink" title="animation-direction"></a>animation-direction</h4><pre><code>是否应该轮流反向播放动画
+animation-direction 值是 &quot;alternate&quot;，则动画会在奇数次数（1、3、5 等等）正常播放，而在偶数次数（2、4、6 等等
+）向后播放
+animation-direction: normal|alternate;
+JavaScript 语法： object.style.animationDirection=&quot;alternate&quot;
+
+
+默认值 none 0 ease 0 1 normal
+javascript的语法 object.style.animation=&quot;mymove 5s infinite&quot;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">div</div><div class="line">&#123;</div><div class="line">width:100px;</div><div class="line">height:100px;</div><div class="line">background:red;</div><div class="line">position:relative;</div><div class="line">animation:mymove 5s infinite;</div><div class="line">-webkit-animation:mymove 5s infinite; /*Safari and Chrome*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">@keyframes mymove</div><div class="line">&#123;</div><div class="line">from &#123;left:0px;&#125;</div><div class="line">to &#123;left:200px;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-webkit-keyframes mymove /*Safari and Chrome*/</div><div class="line">&#123;</div><div class="line">from &#123;left:0px;&#125;</div><div class="line">to &#123;left:200px;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Transition-过渡的四大属性-IE10"><a href="#Transition-过渡的四大属性-IE10" class="headerlink" title="Transition   过渡的四大属性 IE10+"></a>Transition   过渡的四大属性 IE10+</h3><h4 id="transition-property"><a href="#transition-property" class="headerlink" title="transition-property"></a>transition-property</h4><p>transiont-property属性规定过渡css属性的名称<br>transition-property: none|all|propertyCSS 属性名称列表，列表以逗号分隔;<br>JavaScript 语法： object.style.transitionProperty=”width,height”</p>
+<h4 id="transition-duration"><a href="#transition-duration" class="headerlink" title="transition-duration"></a>transition-duration</h4><p>完成过渡效果需要多少秒或毫秒<br>transition-duration: time;<br>JavaScript 语法： object.style.transitionDuration=”5s”</p>
+<h4 id="transition-timing-function"><a href="#transition-timing-function" class="headerlink" title="transition-timing-function:"></a>transition-timing-function:</h4><p>linear|ease|ease-in|ease-out|ease-in-out|cubic-<br>bezier(n,n,n,n);<br>JavaScript 语法： object.style.transitionTimingFunction=”linear”</p>
+<h4 id="transition-delay"><a href="#transition-delay" class="headerlink" title="transition-delay"></a>transition-delay</h4><p>JavaScript 语法： object.style.transitionDelay=”2s”<br>transition-delay: time;</p>
+<p>默认值 all 0 ease 0<br>transition:property duration timing-function delay<br>javascript语法：object.style.transition=”width 2s”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">div</div><div class="line">&#123;</div><div class="line">width:100px;</div><div class="line">height:100px;</div><div class="line">background:blue;</div><div class="line">transition:width 2s;</div><div class="line">-moz-transition:width 2s; /* Firefox 4 */</div><div class="line">-webkit-transition:width 2s; /* Safari and Chrome */</div><div class="line">-o-transition:width 2s; /* Opera */</div><div class="line">&#125;</div><div class="line"></div><div class="line">div:hover</div><div class="line">&#123;</div><div class="line">width:300px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="transform-IE10"><a href="#transform-IE10" class="headerlink" title="transform IE10"></a>transform IE10</h4><p>transform 允许我们对元素进行旋转、缩放、移动、或倾斜<br>默认none<br>javascript的语法 object.style.transform=”rotate(7deg)”<br>transform: none|transform-functions;</p>
+<p>none 不进行转换<br>matrix(n,n,n,n,n,n)使用六个值的矩阵<br>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)使用 16 个值的 4x4 矩阵<br>translate(x,y)2D 转换<br>translate3d(x,y,z)3D 转换<br>translateX(x)只是用 X 轴的值<br>translateY(y)只是用Y轴的值<br>translateZ(z)只是用Z轴的值<br>scale(x,y)2D缩放<br>scale3d(x,y,z)3D缩放<br>scaleX(x),scaleY(y),scaleZ(z)<br>rotate(angle) 2D 旋转，在参数中规定角度<br>rotate3d(x,y,z,angle)3D 旋转<br>rotateX(angle),rotateY(angle),rotateZ(angle)<br>skew(x-angle,y-angle) 定义沿着 X 和 Y 轴的 2D 倾斜转换<br>skewX(angle) skewY(angle) perspective(n)</p>
+<p>新增的css3的选择器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1 E:nth-last-child(n) </div><div class="line">     2 E:nth-of-type(n) </div><div class="line">     3 E:nth-last-of-type(n) </div><div class="line">     4 E:last-child </div><div class="line">     5 E:first-of-type </div><div class="line">     6 E:only-child </div><div class="line">     7 E:only-of-type </div><div class="line">     8 E:empty </div><div class="line">     9 E:checked </div><div class="line">    10 E:enabled </div><div class="line">    11 E:disabled </div><div class="line">    12 E::selection </div><div class="line">    13 E:not(s)</div><div class="line">    14 E::not(.s)</div><div class="line">    15 body: nth-child(even), nth-child(odd)/*：此处他们分别代表了表格（tbody）下面的偶数行和奇数行（tr）*/等等......</div></pre></td></tr></table></figure>
+<h4 id="Font-face-特性"><a href="#Font-face-特性" class="headerlink" title="@Font-face 特性"></a>@Font-face 特性</h4><p>Font-face 可以用来加载字体样式，而且它还能够加载服务器端的字体文件，让客户端显示客户端所没有安装的字体</p>
+<p>Font-face 客户端字体案例</p>
+<p><font face="arial">arial courier verdana</font></p>
+
+
+<p>Font-face 服务端字体案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">1 @font-face &#123; </div><div class="line"> 2 font-family: BorderWeb; </div><div class="line"> 3 src:url(BORDERW0.eot); </div><div class="line"> 4 &#125; </div><div class="line"> 5 @font-face &#123; </div><div class="line"> 6 font-family: Runic; </div><div class="line"> 7 src:url(RUNICMT0.eot); </div><div class="line"> 8 &#125;</div><div class="line"> 9 </div><div class="line">10 .border &#123; FONT-SIZE: 35px; COLOR: black; FONT-FAMILY: &quot;BorderWeb&quot; &#125; </div><div class="line">11 .event &#123; FONT-SIZE: 110px; COLOR: black; FONT-FAMILY: &quot;Runic&quot; &#125;</div></pre></td></tr></table></figure>
+<h4 id="Word-wrap"><a href="#Word-wrap" class="headerlink" title="Word-wrap"></a>Word-wrap</h4><p>设置或检索当当前行超过指定容器的边界时是否断开转行，文字此时已被打散Text-overflow它与 word-wrap 是协同工作word-wrap 设置或检索当当前行超过指定容器的边界时是否断开转行，而 text-overflow则设置或检索当当前行超过指定容器的边界时如何显示</p>
+<p>1 .clip{text-overflow:clip; overflow:hidden; white-space:nowrap;<br>2 width:200px;background:#ccc;}<br>3 .ellipsis{text-overflow:ellipsis; overflow:hidden; white-space:nowrap;<br>4 width:200px; background:#ccc;}</p>
+<p>1 <div class="clip"> 不显示省略标记，而是简单的裁切条</div><br>2<br>3 <div class="ellipsis"> 当对象内文本溢出时显示省略标记</div></p>
+<p>文本渲染</p>
+<p>1 div {<br>2 -webkit-text-fill-color: black;<br>3 -webkit-text-stroke-color: red;<br>4 -webkit-text-stroke-width: 2.75px;<br>5 }</p>
+<p>Text-fill-color: 文字内部填充颜色<br>Text-stroke-color: 文字边界填充颜色<br>Text-stroke-width: 文字边界宽度</p>
+<h4 id="gradient-渐变效果"><a href="#gradient-渐变效果" class="headerlink" title="gradient 渐变效果"></a>gradient 渐变效果</h4><p>线性渐变 linear左上（0% 0%）到右上(0% 100%)</p>
+<p>background-image:-webkit-gradient(linear,0% 0%,100% 0%,form(red),to(balck))</p>
+<p>background-image:-webkit-gradient(linear,0% 0%,100% 0%,from(#2A8BBE),<br>color-stop(0.33,#AAD010),color-stop(0.33,#FF7F00),to(#FE280E));</p>
+<p>径向渐变radial从一个圆到一个圆的渐变<br>background:-weblit-gradient(radial,50 50,50,50 50,0,form(black),color-stop(0.5,red),to(blue));</p>
+<p>css3的阴影shadow和反射reflect</p>
+<p>background-clip:border-box;背景从border开始显示；<br>background-clip：padding-box<br>background-clip：content-box<br>background-clip:no-clip:no-clicp默认属性等同于border-box</p>
+<p>background-origin 用于确定背景的位置 通常与background-positon联合使用</p>
+<p>background-size来调整背景图片的大小，注意别和 clip 弄混，这个主要用于设定图片本身</p>
+<p>background-size: contain; 缩小图片以适合元素（维持像素长宽比）<br>background-size: cover; 扩展元素以填补元素（维持像素长宽比）<br>background-size: 100px 100px; 缩小图片至指定的大小 .<br>background-size: 50% 100%; 缩小图片至指定的大小，百分比是相对包 含元素的尺寸</p>
+<p>background-break: continuous; 默认值。忽略盒之间的距离（也就是像元 素没有分成多个盒子，依然是<br>一个整体一 样）<br>background-break: bounding-box; 把盒之间的距离计算在内；<br>background-break: each-box; 为每个盒子单独重绘背景</p>
+<p>counter()=[counter(name) | counters(name,list-style-type)]{1,}</p>
+<p>counter-reset IE8</p>
+<p>counter-reset 属性设置某个选择器出现次数的计数器的值。默认为 0。<br>利用这个属性，计数器可以设置或重置为任何值，可以是正值或负值。如果没有提供 number，则默认为 0。<br>注释：如果使用 “display: none”，则无法重置计数器。如果使用 “visibility: hidden”，则可以重置计数器</p>
+<p>JavaScript 语法： object.style.counterReset=”subsection”</p>
+<p>counter-reset的值none id number inherit</p>
+<p>attr()=attr(attr-name)插入元素的属性值 IE8</p>
+<p>calc() =calc(四则运算) 动态计算长度值 IE9<br>需要注意的是，运算符前后都需要保留一个空格，例如：width: calc(100% - 10px)；<br>calc()函数支持 “+”, “-“, “*”, “/“ 运算；<br>calc()函数使用标准的数学运算优先级规则；</p>
+<p>initial属于css-wide关键字，这表示所有的属性都可以接受该值 IE11</p>
+<p>unset 擦除属性声明</p>
+<p>颜色值<br>color color的颜色名称，HEX，RGB，RGBA，HSL，HSLA，transparent,currentColor</p>
+<p>currentColor</p>
+<p>resolution分辨率值不允许有负值<br>频率单位包括有： dpi, dpcm, dppx</p>
+<p>角度值 angle角度值的正常范围应在[0-360deg]内，例如：-10deg与350deg是等价的<br>角度单位包括有： deg, grad一个圆共400梯度, rad 一个圆共2π弧度, turn<br>90deg = 100grad = 0.25turn ≈ 1.570796326794897rad</p>
+<h4 id="长度值与单位"><a href="#长度值与单位" class="headerlink" title="长度值与单位"></a>长度值与单位</h4><pre><code>ch 数字“0”的宽度 ie9
+
+rem 相对长度单位。相对于根元素(即html元素)font-size计算值的倍数
+vw 相对于视口的宽度。视口被均分为100单位的vw ie9
+vh 相对于视口的高度。视口被均分为100单位的vh
+vmax 相对于视口的宽度或高度中较大的那个。其中最大的那个被均分为100单位的vmax
+vmin 相对于视口的宽度或高度中较小的那个。其中最小的那个被均分为100单位的vmin
+q 1/4毫米（quarter-millimeters）。绝对长度单位。
+1in = 2.54cm = 25.4 mm = 101.6q = 72pt = 6pc = 96px
+</code></pre><p>@import@media@font-face@keyframes@supports</p>
+<p>CSS3 的盒子模型<br>盒子模型为开发者提供了一种非常灵活的布局方式，但是支持这一特性的浏览器并不多，目前只有 webkit 内核的新版本 safari 和 chrome 以及 gecko 内核的新版本 firefox</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/09/CSS/其它布局方式/" rel="next" title="其它布局方式">
+                <i class="fa fa-chevron-left"></i> 其它布局方式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/09/CSS/居中/" rel="prev" title="部分布局浅析">
+                部分布局浅析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/self.png"
+               alt="韩露" />
+          <p class="site-author-name" itemprop="name">韩露</p>
+           
+              <p class="site-description motion-element" itemprop="description">生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pika1217/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3的新特性整理"><span class="nav-number">1.</span> <span class="nav-text">CSS3的新特性整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#animation-IE10"><span class="nav-number">1.1.</span> <span class="nav-text">animation    IE10+</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#animation-name"><span class="nav-number">1.1.1.</span> <span class="nav-text">animation-name</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#animation-duration"><span class="nav-number">1.1.2.</span> <span class="nav-text">animation-duration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#animation-timing-function"><span class="nav-number">1.1.3.</span> <span class="nav-text">animation-timing-function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#animation-deplay"><span class="nav-number">1.1.4.</span> <span class="nav-text">animation-deplay</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#animation-iteration-count"><span class="nav-number">1.1.5.</span> <span class="nav-text">animation-iteration-count</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#animation-direction"><span class="nav-number">1.1.6.</span> <span class="nav-text">animation-direction</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transition-过渡的四大属性-IE10"><span class="nav-number">1.2.</span> <span class="nav-text">Transition   过渡的四大属性 IE10+</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-property"><span class="nav-number">1.2.1.</span> <span class="nav-text">transition-property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-duration"><span class="nav-number">1.2.2.</span> <span class="nav-text">transition-duration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-timing-function"><span class="nav-number">1.2.3.</span> <span class="nav-text">transition-timing-function:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-delay"><span class="nav-number">1.2.4.</span> <span class="nav-text">transition-delay</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transform-IE10"><span class="nav-number">1.2.5.</span> <span class="nav-text">transform IE10</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Font-face-特性"><span class="nav-number">1.2.6.</span> <span class="nav-text">@Font-face 特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Word-wrap"><span class="nav-number">1.2.7.</span> <span class="nav-text">Word-wrap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gradient-渐变效果"><span class="nav-number">1.2.8.</span> <span class="nav-text">gradient 渐变效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#长度值与单位"><span class="nav-number">1.2.9.</span> <span class="nav-text">长度值与单位</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩露</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
