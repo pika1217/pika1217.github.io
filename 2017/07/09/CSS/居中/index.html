@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;	&amp;lt;style type=&amp;quot;text/">
+<meta name="description" content="水平居中 方法一：margin:0 auto; （最常用的居中布局方式,元素宽度已知（块级元素有宽度，内联元素有内容）,未浮动，一定是用在元素本身不是父元素。父元素如果是块级元素则不用设置width默认占据一行。父元素如果是内联元素则需要display:inline-block,再设置宽度。如果是多个内联元素或者多个块级元素，则需要都放在一个块级元素里再使用此方法。因为设置完了display: i">
 <meta name="keywords" content="布局方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="部分布局浅析">
 <meta property="og:url" content="http://yoursite.com/2017/07/09/CSS/居中/index.html">
 <meta property="og:site_name" content="Coding丘">
-<meta property="og:description" content="123456789101112131415161718192021&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;	&amp;lt;style type=&amp;quot;text/">
-<meta property="og:updated_time" content="2017-07-09T06:20:28.284Z">
+<meta property="og:description" content="水平居中 方法一：margin:0 auto; （最常用的居中布局方式,元素宽度已知（块级元素有宽度，内联元素有内容）,未浮动，一定是用在元素本身不是父元素。父元素如果是块级元素则不用设置width默认占据一行。父元素如果是内联元素则需要display:inline-block,再设置宽度。如果是多个内联元素或者多个块级元素，则需要都放在一个块级元素里再使用此方法。因为设置完了display: i">
+<meta property="og:updated_time" content="2017-07-10T15:08:05.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部分布局浅析">
-<meta name="twitter:description" content="123456789101112131415161718192021&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;	&amp;lt;style type=&amp;quot;text/">
+<meta name="twitter:description" content="水平居中 方法一：margin:0 auto; （最常用的居中布局方式,元素宽度已知（块级元素有宽度，内联元素有内容）,未浮动，一定是用在元素本身不是父元素。父元素如果是块级元素则不用设置width默认占据一行。父元素如果是内联元素则需要display:inline-block,再设置宽度。如果是多个内联元素或者多个块级元素，则需要都放在一个块级元素里再使用此方法。因为设置完了display: i">
 
 
 
@@ -372,8 +372,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	#parent&#123;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: #eee;</div><div class="line">	&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id=&quot;parent&quot;&gt;</div><div class="line">		&lt;div id=&quot;child&quot;&gt;</div><div class="line">			</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><ol>
+        <h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><ol>
 <li>方法一：margin:0 auto; （最常用的居中布局方式,元素宽度已知（块级元素有宽度，内联元素有内容）,未浮动，一定是用在元素本身不是父元素。父元素如果是块级元素则不用设置width默认占据一行。父元素如果是内联元素则需要display:inline-block,再设置宽度。如果是多个内联元素或者多个块级元素，则需要都放在一个块级元素里再使用此方法。因为设置完了display: inline-block 之后margin：0 auto无效了，或者直接使用第二种方法。</li>
 <li>text-align和inline-block的结合（设置父元素的text-align为center）。这种方式最好应用于图片、按钮、文字之类的居中模式，否则就需要借助inline-block来进行居中布局。多个块级元素水平排列居中布局时更适合选用这种方法。</li>
 <li><p>position绝对定位来实现。适用于块级元素不给出宽高的情况下==(需要借助transtrom的tanslateX方法)，当又需要对多个child进行居中时需要在child外层再加一个div并对其进行定位。</p>
@@ -425,7 +424,7 @@
 <p>方式三：flex</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.parent&#123; display: flex; &#125; </div><div class="line">	.left&#123; width: 200px; height: 200px; &#125;</div><div class="line">	.right&#123; width: 100px; height: 100px; &#125;</div><div class="line">	.middle&#123; flex: 1; margin:0 20px; &#125;</div></pre></td></tr></table></figure>
 <p>方式四：margin负值法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#main&#123;</div><div class="line">	width: 100%;</div><div class="line">	float: left;</div><div class="line">&#125;</div><div class="line">#main #body&#123;</div><div class="line">	  margin: 0 120px;  </div><div class="line">	background-color: #ffe6b8;</div><div class="line">&#125;</div><div class="line">#left,#right&#123;</div><div class="line">	width:100px;</div><div class="line">	height: 100%;</div><div class="line">	float: left;</div><div class="line">	background-color: #a0b3d6;</div><div class="line">&#125;</div><div class="line"> #left&#123;</div><div class="line">	 margin-left: -100%; </div><div class="line">&#125;</div><div class="line">#right&#123;</div><div class="line">	 margin-left: -100px; </div><div class="line">&#125;</div><div class="line">&lt;div class=&quot;fourth&quot;&gt;</div><div class="line">&lt;div id=&quot;main&quot;&gt;</div><div class="line">	&lt;div id=&quot;body&quot; class=&quot;middle&quot;&gt;222&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"> &lt;div id=&quot;left&quot; class=&quot;left&quot;&gt;111&lt;/div&gt;		</div><div class="line">&lt;div id=&quot;right&quot; class=&quot;right&quot;&gt;333&lt;/div&gt; </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	#parent&#123;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: #eee;</div><div class="line">	&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id=&quot;parent&quot;&gt;</div><div class="line">		&lt;div id=&quot;child&quot;&gt;</div><div class="line">			</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -467,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/09/CSS/CSS3新特性/" rel="next" title="CSS3新特性">
-                <i class="fa fa-chevron-left"></i> CSS3新特性
+              <a href="/2017/07/08/网络/HTML5 Web缓存机制/" rel="next" title="HTML5 缓存机制">
+                <i class="fa fa-chevron-left"></i> HTML5 缓存机制
               </a>
             
           </div>
@@ -477,8 +476,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/10/CSS/CSS 伪元素/" rel="prev" title="伪元素">
-                伪元素 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/09/CSS/水平垂直居中布局/" rel="prev" title="水平垂直居中布局">
+                水平垂直居中布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
