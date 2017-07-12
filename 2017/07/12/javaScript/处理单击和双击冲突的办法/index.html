@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javaScript," />
 
 
 
@@ -93,15 +93,17 @@
 
 
 
-<meta name="description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Coding丘">
-<meta property="og:url" content="http://yoursite.com/archives/2017/07/page/2/index.html">
+<meta name="description" content="当双击时会执行两次click，第一个距离dbclick时间较长，第二个click与dbclick几乎同时发生，所以只要对click设置一个延时，这个延时时长要大于第一个click与dbclick的时间间隔，当双击时前两个click都还在任务队列里，执行到dbclick时将计时器清除，则不会执行click中延时执行的动作，达到避免双击时执行单击动作的效果 12345678910111213$(&amp;qu">
+<meta name="keywords" content="javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单双击冲突解决">
+<meta property="og:url" content="http://yoursite.com/2017/07/12/javaScript/处理单击和双击冲突的办法/index.html">
 <meta property="og:site_name" content="Coding丘">
-<meta property="og:description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
+<meta property="og:description" content="当双击时会执行两次click，第一个距离dbclick时间较长，第二个click与dbclick几乎同时发生，所以只要对click设置一个延时，这个延时时长要大于第一个click与dbclick的时间间隔，当双击时前两个click都还在任务队列里，执行到dbclick时将计时器清除，则不会执行click中延时执行的动作，达到避免双击时执行单击动作的效果 12345678910111213$(&amp;qu">
+<meta property="og:updated_time" content="2017-07-12T15:42:45.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coding丘">
-<meta name="twitter:description" content="生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。">
+<meta name="twitter:title" content="单双击冲突解决">
+<meta name="twitter:description" content="当双击时会执行两次click，第一个距离dbclick时间较长，第二个click与dbclick几乎同时发生，所以只要对click设置一个延时，这个延时时长要大于第一个click与dbclick的时间间隔，当双击时前两个click都还在任务队列里，执行到dbclick时将计时器清除，则不会执行click中延时执行的动作，达到避免双击时执行单击动作的效果 12345678910111213$(&amp;qu">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/07/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/12/javaScript/处理单击和双击冲突的办法/"/>
 
 
 
 
 
-  <title>归档 | Coding丘</title>
+  <title>单双击冲突解决 | Coding丘</title>
   
 
 
@@ -170,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -274,403 +276,175 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 26 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/javaScript/处理单击和双击冲突的办法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">单双击冲突解决</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T00:00:00+08:00">
+                2017-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p>当双击时会执行两次click，第一个距离dbclick时间较长，第二个click与dbclick几乎同时发生，所以只要对click设置一个延时，这个延时时长要大于第一个click与dbclick的时间间隔，当双击时前两个click都还在任务队列里，执行到dbclick时将计时器清除，则不会执行click中延时执行的动作，达到避免双击时执行单击动作的效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$(&quot;#script_list&quot;).on(&apos;dblclick&apos;,function(event)&#123;</div><div class="line">	 timer&amp;&amp;clearTimeout(timer);</div><div class="line">	 var event = event||window.event;</div><div class="line">	 var target = event.target||event.srcElement;</div><div class="line">	 $(&apos;#&apos;+target.id).parents(&apos;li&apos;).remove();</div><div class="line">	 $(&quot;#script_para&quot;).attr(&#123;style:&quot;display:none&quot;&#125;);</div><div class="line"> &#125;).delegate(&apos;li&apos;,&apos;click&apos;,function(event)&#123;</div><div class="line">	 timer&amp;&amp;clearTimeout(timer);</div><div class="line">	 timer = setTimeout(function()&#123;</div><div class="line">		 $(&quot;#script_para&quot;).attr(&#123;style:&quot;display:block&quot;&#125;);</div><div class="line">	 &#125;,300);</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
+          
         </div>
       
+
+      
+      
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/12/javaScript/对象以及创建对象的模式/" rel="next" title="对象以及创建对象的模式">
+                <i class="fa fa-chevron-left"></i> 对象以及创建对象的模式
+              </a>
+            
+          </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          <span class="post-nav-divider"></span>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/09/CSS/CSS3新特性/" itemprop="url">
-              
-                <span itemprop="name">CSS3新特性</span>
-              
-            </a>
-        
-      </h2>
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/12/javaScript/闭包实现循环绑定/" rel="prev" title="闭包实现循环绑定">
+                闭包实现循环绑定 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-09T00:00:00+08:00"
-              content="2017-07-09" >
-          07-09
-        </time>
-      </div>
-
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/09/CSS/流失布局  响应布局/" itemprop="url">
-              
-                <span itemprop="name">流式、响应布局</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-09T00:00:00+08:00"
-              content="2017-07-09" >
-          07-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/09/CSS/水平垂直居中布局/" itemprop="url">
-              
-                <span itemprop="name">水平垂直居中布局</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-09T00:00:00+08:00"
-              content="2017-07-09" >
-          07-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/09/CSS/三栏布局（双飞翼布局）/" itemprop="url">
-              
-                <span itemprop="name">三栏布局(双飞翼布局)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-09T00:00:00+08:00"
-              content="2017-07-09" >
-          07-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/09/CSS/水平居中布局/" itemprop="url">
-              
-                <span itemprop="name">水平居中布局</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-09T00:00:00+08:00"
-              content="2017-07-09" >
-          07-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/08/网络/Web浏览器缓存机制/" itemprop="url">
-              
-                <span itemprop="name">Web浏览器缓存机制</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-08T00:00:00+08:00"
-              content="2017-07-08" >
-          07-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/08/网络/Web缓存作用及类型/" itemprop="url">
-              
-                <span itemprop="name">Web缓存作用及类型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-08T00:00:00+08:00"
-              content="2017-07-08" >
-          07-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/08/网络/HTML5 Web缓存机制/" itemprop="url">
-              
-                <span itemprop="name">HTML5 缓存机制</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-08T00:00:00+08:00"
-              content="2017-07-08" >
-          07-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/07/CSS/CSS 定位/" itemprop="url">
-              
-                <span itemprop="name">CSS定位</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-07T00:00:00+08:00"
-              content="2017-07-07" >
-          07-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/06/CSS/offsetLeft,Left,clientLeft详解/" itemprop="url">
-              
-                <span itemprop="name">各种距离</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-06T00:00:00+08:00"
-              content="2017-07-06" >
-          07-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2017/07/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2017/07/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2017/07/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/07/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -678,6 +452,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -884,11 +662,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
