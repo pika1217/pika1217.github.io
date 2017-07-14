@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="浏览器模式," />
+  <meta name="keywords" content="边界塌陷," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="怪异模式和标准模式W3c标准出台之前，各浏览器对页面的渲染方式不统一，即有怪异模式。当W3c标准推出之后，不同浏览器对页面的渲染有统一的标准，即标准模式。 何时触发怪异模式和标准模式在标准模式中，浏览器根据规范呈现页面；在混杂模式中，页面以一种比较宽松的向后兼容的方式显示。如果XHTML文档包含形式完整的DOCTYPE，那么它一般以标准模式呈现。对于HTML 4.01文档，包含严格DTD的DOCT">
-<meta name="keywords" content="浏览器模式">
+<meta name="description" content="边界塌陷主要是在并列div和父div包含子div两种情况并列div上面div的margin-bottom和下面div的margin-top会出现塌陷，也就是会取两者之间的最大值显示。上述代码中test1和test2的间距是10px,而不是15px,而且注意此处的边界塌陷并不是说div边界重合，当重合时是因为上下div没有设置margin的值，此处说的的边界塌陷是上下div的margin总和不是单纯">
+<meta name="keywords" content="边界塌陷">
 <meta property="og:type" content="article">
-<meta property="og:title" content="标准模式和怪异模式的区别">
-<meta property="og:url" content="http://yoursite.com/2017/07/15/html/标准模式和怪异模式的区别/index.html">
+<meta property="og:title" content="边界塌陷">
+<meta property="og:url" content="http://yoursite.com/2017/07/15/CSS/边界塌陷/index.html">
 <meta property="og:site_name" content="Coding丘">
-<meta property="og:description" content="怪异模式和标准模式W3c标准出台之前，各浏览器对页面的渲染方式不统一，即有怪异模式。当W3c标准推出之后，不同浏览器对页面的渲染有统一的标准，即标准模式。 何时触发怪异模式和标准模式在标准模式中，浏览器根据规范呈现页面；在混杂模式中，页面以一种比较宽松的向后兼容的方式显示。如果XHTML文档包含形式完整的DOCTYPE，那么它一般以标准模式呈现。对于HTML 4.01文档，包含严格DTD的DOCT">
-<meta property="og:updated_time" content="2017-07-14T12:46:55.539Z">
+<meta property="og:description" content="边界塌陷主要是在并列div和父div包含子div两种情况并列div上面div的margin-bottom和下面div的margin-top会出现塌陷，也就是会取两者之间的最大值显示。上述代码中test1和test2的间距是10px,而不是15px,而且注意此处的边界塌陷并不是说div边界重合，当重合时是因为上下div没有设置margin的值，此处说的的边界塌陷是上下div的margin总和不是单纯">
+<meta property="og:updated_time" content="2017-07-14T12:51:17.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标准模式和怪异模式的区别">
-<meta name="twitter:description" content="怪异模式和标准模式W3c标准出台之前，各浏览器对页面的渲染方式不统一，即有怪异模式。当W3c标准推出之后，不同浏览器对页面的渲染有统一的标准，即标准模式。 何时触发怪异模式和标准模式在标准模式中，浏览器根据规范呈现页面；在混杂模式中，页面以一种比较宽松的向后兼容的方式显示。如果XHTML文档包含形式完整的DOCTYPE，那么它一般以标准模式呈现。对于HTML 4.01文档，包含严格DTD的DOCT">
+<meta name="twitter:title" content="边界塌陷">
+<meta name="twitter:description" content="边界塌陷主要是在并列div和父div包含子div两种情况并列div上面div的margin-bottom和下面div的margin-top会出现塌陷，也就是会取两者之间的最大值显示。上述代码中test1和test2的间距是10px,而不是15px,而且注意此处的边界塌陷并不是说div边界重合，当重合时是因为上下div没有设置margin的值，此处说的的边界塌陷是上下div的margin总和不是单纯">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/15/html/标准模式和怪异模式的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/15/CSS/边界塌陷/"/>
 
 
 
 
 
-  <title>标准模式和怪异模式的区别 | Coding丘</title>
+  <title>边界塌陷 | Coding丘</title>
   
 
 
@@ -286,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/html/标准模式和怪异模式的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/CSS/边界塌陷/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">标准模式和怪异模式的区别</h1>
+          <h1 class="post-title" itemprop="name headline">边界塌陷</h1>
         
 
         <div class="post-meta">
@@ -372,21 +372,20 @@
       
 
       
-        <h2 id="怪异模式和标准模式"><a href="#怪异模式和标准模式" class="headerlink" title="怪异模式和标准模式"></a>怪异模式和标准模式</h2><p>W3c标准出台之前，各浏览器对页面的渲染方式不统一，即有怪异模式。当W3c标准推出之后，不同浏览器对页面的渲染有统一的标准，即标准模式。</p>
-<h2 id="何时触发怪异模式和标准模式"><a href="#何时触发怪异模式和标准模式" class="headerlink" title="何时触发怪异模式和标准模式"></a>何时触发怪异模式和标准模式</h2><p>在标准模式中，浏览器根据规范呈现页面；在混杂模式中，页面以一种比较宽松的向后兼容的方式显示。<br>如果XHTML文档包含形式完整的DOCTYPE，那么它一般以标准模式呈现。对于HTML 4.01文档，包含严格DTD的DOCTYPE常常导致页面以标准模式呈现。包含过渡DTD和URI的DOCTYPE也导致页面以标准模式呈现，但是有过渡DTD而没有URI会导致页面以混杂模式呈现。DOCTYPE不存在或形式不正确会导致HTML和XHTML文档以混杂模式呈现。<br>IE中，如果doctype声明在xml之后，会导致怪异模式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</div></pre></td></tr></table></figure>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>1）<br>在严格模式中 ：width是内容宽度 ，元素真正的宽度 =  border+padding+ width；</p>
-<p>在怪癖模式中 ：width则是元素的实际宽度 ，内容宽度 = width - ( padding-left + padding-right + border-left-width + border-right-width)</p>
-<p>2）设置行内元素的高宽</p>
-<p>在Standards模式下，给span等行内元素设置wdith和height都不会生效，而在quirks模式下，则会生效。</p>
-<p>3）设置百分比的高度</p>
-<p>在standards模式下，一个元素的高度是由其包含的内容来决定的，如果父元素没有设置高度，子元素设置一个百分比的高度是无效的。而在quirks模式下，则会生效。</p>
-<p>4）用margin:0 auto设置水平居中在IE下会失效</p>
-<p>使用margin:0 auto在standards模式下可以使元素水平居中，但在quirks模式下却会失效,quirk模式下的解决办法，用text-align属性:<br>body{text-align:center};#content{text-align:left}</p>
-<p>5）quirk模式下设置图片的padding会失效</p>
-<p>6）quirk模式下Table中的字体属性不能继承上层的设置</p>
-<p>7）quirk模式下white-space:pre会失效</p>
-<p><a href="http://blog.csdn.net/xujie_0311/article/details/42044277" target="_blank" rel="external">http://blog.csdn.net/xujie_0311/article/details/42044277</a></p>
+        <h2 id="边界塌陷主要是在并列div和父div包含子div两种情况"><a href="#边界塌陷主要是在并列div和父div包含子div两种情况" class="headerlink" title="边界塌陷主要是在并列div和父div包含子div两种情况"></a>边界塌陷主要是在并列div和父div包含子div两种情况</h2><h3 id="并列div"><a href="#并列div" class="headerlink" title="并列div"></a>并列div</h3><p>上面div的margin-bottom和下面div的margin-top会出现塌陷，也就是会取两者之间的最大值显示。上述代码中test1和test2的间距是10px,而不是15px,而且注意此处的边界塌陷并不是说div边界重合，当重合时是因为上下div没有设置margin的值，此处说的的边界塌陷是上下div的margin总和不是单纯相加，而是取上下margin的最大值;</p>
+<h3 id="父div包含子div"><a href="#父div包含子div" class="headerlink" title="父div包含子div"></a>父div包含子div</h3><p>对于有块级子元素的父元素计算高度的方式,如果元素没有垂直边框和填充,那其高度就是其子元素顶部和底部边框边缘之间的距离，也就是会使得父子元素的top相互重合,不过只针对第一个子元素test1，test2设置margin-top就不会出现塌陷。</p>
+<h4 id="出现原因："><a href="#出现原因：" class="headerlink" title="出现原因："></a>出现原因：</h4><ol>
+<li><p>两个或多个边距没有被非空内容，padding（父），border（父），overflow（父）分隔开；</p>
+</li>
+<li><p>处于文档流中(float和absoluate的元素不会）</p>
+</li>
+</ol>
+<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><ol>
+<li>设置父元素或子元素float属性或者position:absolute</li>
+<li>在父元素中添加内容</li>
+<li>给父元素设置padding，border或者over-flow属性   </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">    &lt;html lang=&quot;en&quot;&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">    	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">    .main&#123;</div><div class="line">        width: 200px;</div><div class="line">        height: 200px;</div><div class="line">        background: red;</div><div class="line">        margin-top: 30px;</div><div class="line">    &#125;</div><div class="line">    .test1&#123;</div><div class="line">        width: 100px;</div><div class="line">        height: 100px;</div><div class="line">        background: #000;</div><div class="line">        margin-top: 10px;</div><div class="line">        margin-bottom: 5px;</div><div class="line">    &#125;	</div><div class="line">    .test2&#123;</div><div class="line">    	width: 100px;</div><div class="line">    	height: 100px;</div><div class="line">    	background-color: green;</div><div class="line">    	margin-top: 10px;</div><div class="line">    &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">    	&lt;div class=&quot;main&quot;&gt;</div><div class="line">        	&lt;div class=&quot;test1&quot;&gt;&lt;/div&gt;</div><div class="line">        	&lt;div class=&quot;test2&quot;&gt;&lt;/div&gt;</div><div class="line">    	&lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -416,7 +415,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/浏览器模式/" rel="tag"># 浏览器模式</a>
+            <a href="/tags/边界塌陷/" rel="tag"># 边界塌陷</a>
           
         </div>
       
@@ -513,7 +512,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -535,7 +534,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -581,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#怪异模式和标准模式"><span class="nav-number">1.</span> <span class="nav-text">怪异模式和标准模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#何时触发怪异模式和标准模式"><span class="nav-number">2.</span> <span class="nav-text">何时触发怪异模式和标准模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">3.</span> <span class="nav-text">区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#边界塌陷主要是在并列div和父div包含子div两种情况"><span class="nav-number">1.</span> <span class="nav-text">边界塌陷主要是在并列div和父div包含子div两种情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#并列div"><span class="nav-number">1.1.</span> <span class="nav-text">并列div</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父div包含子div"><span class="nav-number">1.2.</span> <span class="nav-text">父div包含子div</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#出现原因："><span class="nav-number">1.2.1.</span> <span class="nav-text">出现原因：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法："><span class="nav-number">1.2.2.</span> <span class="nav-text">解决办法：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
