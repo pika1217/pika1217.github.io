@@ -1,0 +1,807 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端优化," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="使用CDN【内容分发网络】加速定义CDN【Content Delivery Network】，即内容分发网络。属于http缓存技术中的一种。 原理其基本思路是尽可能的避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输更快、更稳定。通过在网络各处放置节点服务器所构成的现有互联网基础之上的一层虚拟网络，CDN系统能够实时的根据网络流量和各节点的连接，负载状况以及用户的距离和响应时间等综">
+<meta name="keywords" content="前端优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端性能优化方案">
+<meta property="og:url" content="http://yoursite.com/2017/07/16/前端综合/前端性能优化方案/index.html">
+<meta property="og:site_name" content="Coding丘">
+<meta property="og:description" content="使用CDN【内容分发网络】加速定义CDN【Content Delivery Network】，即内容分发网络。属于http缓存技术中的一种。 原理其基本思路是尽可能的避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输更快、更稳定。通过在网络各处放置节点服务器所构成的现有互联网基础之上的一层虚拟网络，CDN系统能够实时的根据网络流量和各节点的连接，负载状况以及用户的距离和响应时间等综">
+<meta property="og:updated_time" content="2017-07-16T15:49:37.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端性能优化方案">
+<meta name="twitter:description" content="使用CDN【内容分发网络】加速定义CDN【Content Delivery Network】，即内容分发网络。属于http缓存技术中的一种。 原理其基本思路是尽可能的避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输更快、更稳定。通过在网络各处放置节点服务器所构成的现有互联网基础之上的一层虚拟网络，CDN系统能够实时的根据网络流量和各节点的连接，负载状况以及用户的距离和响应时间等综">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/16/前端综合/前端性能优化方案/"/>
+
+
+
+
+
+  <title>前端性能优化方案 | Coding丘</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f4c3768b625fb00fb83191de7ce9c5a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding丘</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/前端综合/前端性能优化方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端性能优化方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T00:00:00+08:00">
+                2017-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="使用CDN【内容分发网络】加速"><a href="#使用CDN【内容分发网络】加速" class="headerlink" title="使用CDN【内容分发网络】加速"></a>使用CDN【内容分发网络】加速</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>CDN【Content Delivery Network】，即内容分发网络。属于http缓存技术中的一种。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>其基本思路是尽可能的避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输更快、更稳定。通过在网络各处放置节点服务器所构成的现有互联网基础之上的一层虚拟网络，CDN系统能够实时的根据网络流量和各节点的连接，负载状况以及用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的就是使用户能够就近的获取请求数据，解决网络访问拥挤状况，提高用户访问系统的响应时间。管理分布在多个地理位置上的服务器，其系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重定向到一个能提供最好用户体验的服务节点上。它位于网络的边缘，据用户仅“一跳”之隔。代理缓存提供数据中心服务器的一个镜像，当用户对某网址访问的请求并非第一次，那么代理缓存在很大概率上缓存了域名，就不需要大费周章通过DNS【域名服务系统】来获取对应域名。</p>
+<h2 id="减少http请求【减少请求数，降低请求量】"><a href="#减少http请求【减少请求数，降低请求量】" class="headerlink" title="减少http请求【减少请求数，降低请求量】"></a>减少http请求【减少请求数，降低请求量】</h2><h3 id="脚本合并"><a href="#脚本合并" class="headerlink" title="脚本合并"></a>脚本合并</h3><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>通常一个大型网站需要依赖多个JS文件。可以把多个文件合并成一个，这样只需要引用一个文件</p>
+<p>1.Grunt     2. JSCompress</p>
+<h3 id="CSS雪碧图"><a href="#CSS雪碧图" class="headerlink" title="CSS雪碧图"></a>CSS雪碧图</h3><p>优点:</p>
+<ol>
+<li>减少http请求，提高页面加载速度。只需加载一张图片，且由于只需要一个对应的色表，这张图片的大小很可能比拼合前的总尺寸小。</li>
+<li>减少鼠标滑过的bug：IE6不会主动预加载：hover中的背景图片，因此使用多张图片时会出现闪白的现象。<br>缺点:</li>
+<li>最大的问题是内存的使用：除非非常小心的组织，否则会留下大量无用的空白。</li>
+<li>影响页面缩放功能：缩放时要避免雪碧中相邻图片露出来。</li>
+</ol>
+<h3 id="文件压缩"><a href="#文件压缩" class="headerlink" title="文件压缩"></a>文件压缩</h3><p>包括CSS、JavaScript、图片的压缩。</p>
+<p>JavaScript：</p>
+<ol>
+<li>最小化：删除注释和空格等不必要的字符。安全、直白，文件减少21%。</li>
+<li>混淆：删除注释和空格，将函数名和变量名替换成短的字符串，难于反向工程。复杂，容易产生问题，文件减少25%。</li>
+</ol>
+<p>方法:</p>
+<ol>
+<li>JSMin</li>
+<li>YUI Compressor在线</li>
+<li>在线JS/CSS/HTML压缩</li>
+<li>JavaScript压缩/解压缩</li>
+<li>grunt</li>
+<li>批量图片压缩</li>
+<li>压缩HTTP响应内容:Gzip</li>
+</ol>
+<h3 id="延迟加载图片【Lazy-Load-Images】"><a href="#延迟加载图片【Lazy-Load-Images】" class="headerlink" title="延迟加载图片【Lazy Load Images】"></a>延迟加载图片【Lazy Load Images】</h3><p>首先只加载第一屏的图片，当用户滚动访问后面的内容时在加载相应图片。<br>方法：将图片的src属性值存放在一个非src的自定义属性中，判断图片进入可视区域后将路径赋值给src属性。</p>
+<h3 id="CSS3图标"><a href="#CSS3图标" class="headerlink" title="CSS3图标"></a>CSS3图标</h3><p>iconfont公开图标库<br>Font Awesome</p>
+<h3 id="避免重定向"><a href="#避免重定向" class="headerlink" title="避免重定向"></a>避免重定向</h3><p>301：永久重定向，抓取新内容的同时也将旧的网址替换为重定向之后的网址；</p>
+<p>302：暂时重定向，抓取新的内容而保留旧的网址</p>
+<p>SEO：302好于301</p>
+<p>重定向会增加http请求数，但必要的重定向有利于提高用户体验</p>
+<p>方法：</p>
+<p>定义链接URL时使用最完整的、最直接的地址。如：</p>
+<ol>
+<li><p>使用www.baidu.com而非baidu.com</p>
+</li>
+<li><p>在使用Response.Redirect的时候，设置第二个参数为false.</p>
+</li>
+</ol>
+<h2 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h2><h3 id="减少对DOM的操作"><a href="#减少对DOM的操作" class="headerlink" title="减少对DOM的操作"></a>减少对DOM的操作</h3><p>对DOM的操作代价是昂贵的，这在网页中通常是一个性能瓶颈。<br>减少对DOM元素的查询与修改：</p>
+<ol>
+<li>查询：需多次访问的可以保存在变量中。</li>
+<li><p>修改：使用innerHTML代替DOM操作。</p>
+<h3 id="减少重排与重绘"><a href="#减少重排与重绘" class="headerlink" title="减少重排与重绘"></a>减少重排与重绘</h3><p>原理：页面生成时会进行至少一次渲染，用户访问过程中还可能不停地重新渲染。情况如下：</p>
+</li>
+<li><p>修改DOM，修改样式表，用户事件（比如鼠标悬停、页面滚动、输入框键入文字、改变窗口大小等等）重新渲染，就需要重新生成布局和重新绘制。前者叫做“重排【reflow】”，表现为页面布局出现变动。后者叫做“重绘【repaint】”。“重绘”不一定需要“重排”，如改变元素颜色，因为此时页面布局并未发生改变；而“重排”一定会导致“重绘”，布局的变化会同时触发“重排”和“重绘”。“重排”和“重绘”均会使性能下降，因此要尽量避免。</p>
+</li>
+<li><p>一般规则：样式表越简单，重排和重绘就越快；重排和重绘的DOM元素层级越高，成本越高；table元素的重排和重绘成本高于div元素。</p>
+</li>
+<li><p>优化方法</p>
+<ol>
+<li>通过class改变样式，避免逐条改变；</li>
+<li>对display：none的元素操作不会引发重排和重绘，因此需要多次操作的元素可改变其display属性再进行操作，完成操作后再将其显示，这样只需要两次重排和重绘；另外，visibility：hidden的元素操作只重绘；</li>
+<li>脱离文档流的元素重排开销较小【如：position为absolute或fixed，float元素】，因为对文档流中元素无影响；</li>
+</ol>
+</li>
+</ol>
+<h3 id="避免CSS表达式"><a href="#避免CSS表达式" class="headerlink" title="避免CSS表达式"></a>避免CSS表达式</h3><p>CSS表达式会进行大量重复计算，甚至当鼠标在页面移动时也在不停执行，这大大影响性能。尽量使用一次性表达式，避免动态计算。</p>
+<h2 id="缓存Ajax"><a href="#缓存Ajax" class="headerlink" title="缓存Ajax"></a>缓存Ajax</h2><p>例如jQuery中的Ajax中cache:true<br>Ajax缓存和http缓存效果相同。Ajax页面缓存是ajax处理数据时对一些重复相同数据进行一个缓存操作，这种设计使客户端对一些静态页面内容的请求，比如图片，css文件，js脚本等，变得更加快捷，提高了页面的响应速度，也节省了网络通信资源。</p>
+<h2 id="yahoo军规35条"><a href="#yahoo军规35条" class="headerlink" title="yahoo军规35条"></a>yahoo军规35条</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端优化/" rel="tag"># 前端优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/16/操作系统/堆栈的区别/" rel="next" title="堆栈的区别">
+                <i class="fa fa-chevron-left"></i> 堆栈的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/17/前端综合/优雅降级 渐进增加/" rel="prev" title="优雅降级 渐进增加">
+                优雅降级 渐进增加 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/self.png"
+               alt="韩露" />
+          <p class="site-author-name" itemprop="name">韩露</p>
+           
+              <p class="site-description motion-element" itemprop="description">生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pika1217/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用CDN【内容分发网络】加速"><span class="nav-number">1.</span> <span class="nav-text">使用CDN【内容分发网络】加速</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.2.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减少http请求【减少请求数，降低请求量】"><span class="nav-number">2.</span> <span class="nav-text">减少http请求【减少请求数，降低请求量】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本合并"><span class="nav-number">2.1.</span> <span class="nav-text">脚本合并</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS雪碧图"><span class="nav-number">2.2.</span> <span class="nav-text">CSS雪碧图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件压缩"><span class="nav-number">2.3.</span> <span class="nav-text">文件压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延迟加载图片【Lazy-Load-Images】"><span class="nav-number">2.4.</span> <span class="nav-text">延迟加载图片【Lazy Load Images】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3图标"><span class="nav-number">2.5.</span> <span class="nav-text">CSS3图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免重定向"><span class="nav-number">2.6.</span> <span class="nav-text">避免重定向</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码优化"><span class="nav-number">3.</span> <span class="nav-text">代码优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#减少对DOM的操作"><span class="nav-number">3.1.</span> <span class="nav-text">减少对DOM的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少重排与重绘"><span class="nav-number">3.2.</span> <span class="nav-text">减少重排与重绘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免CSS表达式"><span class="nav-number">3.3.</span> <span class="nav-text">避免CSS表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存Ajax"><span class="nav-number">4.</span> <span class="nav-text">缓存Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yahoo军规35条"><span class="nav-number">5.</span> <span class="nav-text">yahoo军规35条</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩露</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
