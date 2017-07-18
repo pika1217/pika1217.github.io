@@ -1,0 +1,827 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端优化," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="懒加载什么是懒加载在页面中先把img或其他元素的背景图片用1*1px的图片占位，只有当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。 为什么使用懒加载页面内容较多，一次性加载需要较长时间，优化用户体验 原理 页面中的img元素，如果没有src属性，浏览器就不会发出请求去下载图片，只有通过JavaScript设置了图片路径，浏览器才会发送请求。 懒加载的原理">
+<meta name="keywords" content="前端优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="预加载和懒加载">
+<meta property="og:url" content="http://yoursite.com/2017/07/18/前端综合/预加载和懒加载/index.html">
+<meta property="og:site_name" content="Coding丘">
+<meta property="og:description" content="懒加载什么是懒加载在页面中先把img或其他元素的背景图片用1*1px的图片占位，只有当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。 为什么使用懒加载页面内容较多，一次性加载需要较长时间，优化用户体验 原理 页面中的img元素，如果没有src属性，浏览器就不会发出请求去下载图片，只有通过JavaScript设置了图片路径，浏览器才会发送请求。 懒加载的原理">
+<meta property="og:updated_time" content="2017-07-18T15:07:56.600Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="预加载和懒加载">
+<meta name="twitter:description" content="懒加载什么是懒加载在页面中先把img或其他元素的背景图片用1*1px的图片占位，只有当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。 为什么使用懒加载页面内容较多，一次性加载需要较长时间，优化用户体验 原理 页面中的img元素，如果没有src属性，浏览器就不会发出请求去下载图片，只有通过JavaScript设置了图片路径，浏览器才会发送请求。 懒加载的原理">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/18/前端综合/预加载和懒加载/"/>
+
+
+
+
+
+  <title>预加载和懒加载 | Coding丘</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f4c3768b625fb00fb83191de7ce9c5a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding丘</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/前端综合/预加载和懒加载/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">预加载和懒加载</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T00:00:00+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h2><h3 id="什么是懒加载"><a href="#什么是懒加载" class="headerlink" title="什么是懒加载"></a>什么是懒加载</h3><p>在页面中先把img或其他元素的背景图片用1*1px的图片占位，只有当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。</p>
+<h3 id="为什么使用懒加载"><a href="#为什么使用懒加载" class="headerlink" title="为什么使用懒加载"></a>为什么使用懒加载</h3><p>页面内容较多，一次性加载需要较长时间，优化用户体验</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ol>
+<li>页面中的img元素，如果没有src属性，浏览器就不会发出请求去下载图片，只有通过JavaScript设置了图片路径，浏览器才会发送请求。</li>
+<li>懒加载的原理就是先在页面中把所有的图片统一使用一张占位图进行占位，把真正的路径存在元素的“data-url”属性里，要用的时候就取出来，再设置；</li>
+</ol>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>当需要展示内容时将data-url中的属性值替换url属性，就能下载图片；触发加载的条件：</p>
+<ol>
+<li>第一种是纯粹的延迟加载，使用setTimeOut或setInterval进行加载延迟，如果用户在加载前就离开了页面，那么就不会加载。 </li>
+<li>第二种是条件加载，符合某些条件，或触发了某些事件才开始异步下载。</li>
+<li>第三种是可视区加载，即仅加载用户可以看到的区域，这个主要由监控滚动条来实现，一般会在距用户看到某图片前一定距离就开始加载，这样能保证用户拉下时正好能看到图片。</li>
+</ol>
+<p>获取浏览器窗口的高度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">seeHeight = document.documentElement.clientHeight||document.body.clientHeight;</div></pre></td></tr></table></figure>
+<p>获取滑动条距离顶部的高度(即页面向上滑动的距离)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scrollTop = document.documentElement.scrollTop || document.body.scrollTop;</div></pre></td></tr></table></figure>
+<p>获取需要懒加载的图片到文档头部的距离 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">offsetTop = element.offsetTop</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">js:   </div><div class="line">if(offsetTop &lt; seeHeight+scrollTop)&#123;</div><div class="line">       //加载</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">Jquery：</div><div class="line">    if($(element).offset().top &lt; $(window).height()+$(document).scrollTop())&#123;</div><div class="line">        //加载</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><pre><code>页面加载速度快、可以减轻服务器的压力、节约了流量,用户体验好
+</code></pre><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><pre><code>1.来回滚动下拉条，不要立即向服务器发送请求，监听滚动事件，延迟执行，如果在执行之前又触发则清除之前的定时器，重新设置定时器
+2.加载过的图像就不需要重复加载，可以给加载过得图像一个属性，标志其已经加载过，下次就不用加载。
+</code></pre><h2 id="懒加载-1"><a href="#懒加载-1" class="headerlink" title="懒加载"></a>懒加载</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>提前加载图片，当用户需要查看时可直接从本地缓存中渲染</p>
+<h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3><p>保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ol>
+<li>使用CSS和javascript实现预加载</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#preload-01 &#123; background: url(http://domain.tld/image-01.png) no-repeat -9999px -9999px; &#125;  </div><div class="line">#preload-02 &#123; background: url(http://domain.tld/image-02.png) no-repeat -9999px -9999px; &#125;  </div><div class="line">#preload-03 &#123; background: url(http://domain.tld/image-03.png) no-repeat -9999px -9999px; &#125;</div></pre></td></tr></table></figure>
+<p>这样图片会和其它内容一起加载，改进：在加载了其它内容之后再预加载图片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function preloader() &#123;  </div><div class="line">    if (document.getElementById) &#123;  </div><div class="line">        document.getElementById(&quot;preload-01&quot;).style.background = &quot;url(http://domain.tld/image-01.png) no-repeat -9999px -9999px&quot;;  </div><div class="line">        document.getElementById(&quot;preload-02&quot;).style.background = &quot;url(http://domain.tld/image-02.png) no-repeat -9999px -9999px&quot;;  </div><div class="line">        document.getElementById(&quot;preload-03&quot;).style.background = &quot;url(http://domain.tld/image-03.png) no-repeat -9999px -9999px&quot;;  </div><div class="line">    &#125;  </div><div class="line">    &#125;  </div><div class="line">    function addLoadEvent(func) &#123;  </div><div class="line">        var oldonload = window.onload;  </div><div class="line">        if (typeof window.onload != &apos;function&apos;) &#123;  </div><div class="line">            window.onload = func;  </div><div class="line">        &#125; else &#123;  </div><div class="line">            window.onload = function() &#123;  </div><div class="line">                if (oldonload) &#123;  </div><div class="line">                    oldonload();  </div><div class="line">                &#125;  </div><div class="line">                func();  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    addLoadEvent(preloader);</div></pre></td></tr></table></figure>
+<ol>
+<li>仅使用javaScript实现预加载</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function preloader() &#123;  </div><div class="line">    if (document.images) &#123;  </div><div class="line">        var img1 = new Image();  </div><div class="line">        var img2 = new Image();  </div><div class="line">        var img3 = new Image();  </div><div class="line">        img1.src = &quot;http://domain.tld/path/to/image-001.gif&quot;;  </div><div class="line">        img2.src = &quot;http://domain.tld/path/to/image-002.gif&quot;;  </div><div class="line">        img3.src = &quot;http://domain.tld/path/to/image-003.gif&quot;;  </div><div class="line">    &#125;  </div><div class="line">    &#125;  </div><div class="line">    function addLoadEvent(func) &#123;  </div><div class="line">        var oldonload = window.onload;  </div><div class="line">        if (typeof window.onload != &apos;function&apos;) &#123;  </div><div class="line">            window.onload = func;  </div><div class="line">        &#125; else &#123;  </div><div class="line">            window.onload = function() &#123;  </div><div class="line">                if (oldonload) &#123;  </div><div class="line">                    oldonload();  </div><div class="line">                &#125;  </div><div class="line">                func();  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    addLoadEvent(preloader);</div></pre></td></tr></table></figure>
+<ol>
+<li>使用Ajax实现预加载</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">window.onload = function() &#123;  </div><div class="line">        setTimeout(function() &#123;  </div><div class="line">            // XHR to request a JS and a CSS  </div><div class="line">            var xhr = new XMLHttpRequest();  </div><div class="line">            xhr.open(&apos;GET&apos;, &apos;http://domain.tld/preload.js&apos;);  </div><div class="line">            xhr.send(&apos;&apos;);  </div><div class="line">            xhr = new XMLHttpRequest();  </div><div class="line">            xhr.open(&apos;GET&apos;, &apos;http://domain.tld/preload.css&apos;);  </div><div class="line">            xhr.send(&apos;&apos;);  </div><div class="line">            // preload image  </div><div class="line">            new Image().src = &quot;http://domain.tld/preload.png&quot;;  </div><div class="line">        &#125;, 1000);  </div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+<h3 id="懒加载和预加载的对比"><a href="#懒加载和预加载的对比" class="headerlink" title="懒加载和预加载的对比"></a>懒加载和预加载的对比</h3><p>1)概念：</p>
+<p>懒加载也叫延迟加载：js图片延迟加载,延迟加载图片或符合某些条件时才加载某些图片。</p>
+<p>预加载：提前加载图片，当用户需要查看时可直接从本地缓存中渲染。</p>
+<p>2)区别：<br>两种技术的本质：两者的行为是相反的，一个是提前加载，一个是迟缓甚至不加载。懒加载对服务器前端有一定的缓解压力作用，预加载则会增加服务器前端压力。</p>
+<p>3)懒加载的意义及实现方式有：</p>
+<p>意义：懒加载的主要目的是作为服务器前端的优化，减少请求数或延迟请求数。</p>
+<p>实现方式：</p>
+<ol>
+<li>第一种是纯粹的延迟加载，使用setTimeOut或setInterval进行加载延迟.</li>
+<li>第二种是条件加载，符合某些条件，或触发了某些事件才开始异步下载。</li>
+<li>第三种是可视区加载，即仅加载用户可以看到的区域，这个主要由监控滚动条来实现，一般会在距用户看到某图片前一定距离遍开始加载，这样能保证用户拉下时正好能看到图片。</li>
+</ol>
+<p>4)预加载的意义及实现方式有：<br>意义:预加载可以说是牺牲服务器前端性能，换取更好的用户体验，这样可以使用户的操作得到最快的反映。</p>
+<p>实现方式：<br>实现预载的方法非常多，比如：用CSS和JavaScript实现预加载；仅使用JavaScript实现预加载；使用Ajax实现预加载。<br>常用的是new Image();设置其src来实现预载，再使用onload方法回调预载完成事件。只要浏览器把图片下载到本地，同样的src就会使用缓存，这是最基本也是最实用的预载方法。当Image下载完图片头后，会得到宽和高，因此可以在预载前得到图片的大小(方法是用记时器轮循宽高变化)。</p>
+<h2 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h2><p>屏幕可视窗口大小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">原生方法： </div><div class="line"></div><div class="line">    window.innerHeight 标准浏览器及IE9+ || 一般不会用</div><div class="line"></div><div class="line">    document.documentElement.clientHeight 标准浏览器及低版本IE标准模式 || </div><div class="line"></div><div class="line">    document.body.clientHeight  低版本混杂模式 </div><div class="line"></div><div class="line">jQuery方法：  </div><div class="line"></div><div class="line">    $(window).height();</div></pre></td></tr></table></figure>
+<p>浏览器窗口顶部与文档顶部之间的距离，也就是滚动条滚动的距离：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">原生方法： </div><div class="line"></div><div class="line">      window.pagYoffset 标准浏览器及IE9+ ||  一般不会用</div><div class="line"></div><div class="line">      document.documentElement.scrollTop 兼容ie低版本的标准模式 || </div><div class="line"></div><div class="line">      document.body.scrollTop 兼容混杂模式； </div><div class="line"></div><div class="line">jQuery方法： </div><div class="line"></div><div class="line">      $(document).scrollTop();</div></pre></td></tr></table></figure>
+<p>获取元素的尺寸:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(o).width() = o.style.width;</div><div class="line">$(o).innerWidth() = o.style.width+o.style.padding;</div><div class="line">$(o).outerWidth() = o.offsetWidth = o.style.width+o.style.padding+o.style.border；</div><div class="line">$(o).outerWidth(true) = o.style.width+o.style.padding+o.style.border+o.style.margin；</div></pre></td></tr></table></figure>
+<pre><code>注意
+要使用原生的style.xxx方法获取属性，这个元素必须已经有内嵌的样式，如&lt;div style=&quot;....&quot;&gt;&lt;/div&gt;；
+
+如果原先是通过外部或内部样式表定义css样式，必须使用o.currentStyle[xxx] || 
+document.defaultView.getComputedStyle(0)[xxx]来获取样式值。
+
+
+获取元素的位置信息
+jQuery：
+$(o).offset().top  = o.style.offsetTop
+元素距离文档顶的距离
+$(o).offset().left 元素距离文档左边缘的距离。
+原生：this.offsetTop;
+(此属性可以获取元素的上外缘距离最近采用定位父元素内壁的距离，如果父元素中没有采用定位的，则是获取上外边缘距离文档内壁的距离。
+ while (obj) {  
+    h += obj.offsetTop;  
+    obj = obj.offsetParent;  
+}
+)
+顺便提一下返回元素相对于第一个以定位的父元素的偏移距离，注意与上面偏移距的区别；
+jquery：position()返回一个对象
+$(o).position().left = o.style.left;&lt;/code&gt;&lt;br&gt;&lt;code&gt;$(o).position().top = o.style.top；
+</code></pre><p>参考: <a href="http://www.jianshu.com/p/4876a4fe7731" target="_blank" rel="external">http://www.jianshu.com/p/4876a4fe7731</a>   </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端优化/" rel="tag"># 前端优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/18/网络/HTTP状态码/" rel="next" title="HTTP状态码">
+                <i class="fa fa-chevron-left"></i> HTTP状态码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/19/前端综合/防止抖动javascript函数的throttle(节流)和debounce(去抖)/" rel="prev" title="throttle(节流)和debounce(去抖)">
+                throttle(节流)和debounce(去抖) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/self.png"
+               alt="韩露" />
+          <p class="site-author-name" itemprop="name">韩露</p>
+           
+              <p class="site-description motion-element" itemprop="description">生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pika1217/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载"><span class="nav-number">1.</span> <span class="nav-text">懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是懒加载"><span class="nav-number">1.1.</span> <span class="nav-text">什么是懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用懒加载"><span class="nav-number">1.2.</span> <span class="nav-text">为什么使用懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.3.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">1.4.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.5.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.6.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载-1"><span class="nav-number">2.</span> <span class="nav-text">懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#意义"><span class="nav-number">2.2.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载和预加载的对比"><span class="nav-number">2.4.</span> <span class="nav-text">懒加载和预加载的对比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充知识"><span class="nav-number">3.</span> <span class="nav-text">补充知识</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩露</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

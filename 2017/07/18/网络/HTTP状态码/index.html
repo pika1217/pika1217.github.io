@@ -1,0 +1,791 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网络," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="类别 原因短语     1XX Informational(信息性状态码)     接受的请求正在处理   2XX Success(成功状态码)     请求正常处理完毕   3XX Redirection(重定向状态码)     需要进行附加操作以完成请求   4XX Client Error(客户端错误状态码)     服务器无法处理请求   5XX Server Error(服务器错误">
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP状态码">
+<meta property="og:url" content="http://yoursite.com/2017/07/18/网络/HTTP状态码/index.html">
+<meta property="og:site_name" content="Coding丘">
+<meta property="og:description" content="类别 原因短语     1XX Informational(信息性状态码)     接受的请求正在处理   2XX Success(成功状态码)     请求正常处理完毕   3XX Redirection(重定向状态码)     需要进行附加操作以完成请求   4XX Client Error(客户端错误状态码)     服务器无法处理请求   5XX Server Error(服务器错误">
+<meta property="og:updated_time" content="2017-07-17T14:50:59.143Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP状态码">
+<meta name="twitter:description" content="类别 原因短语     1XX Informational(信息性状态码)     接受的请求正在处理   2XX Success(成功状态码)     请求正常处理完毕   3XX Redirection(重定向状态码)     需要进行附加操作以完成请求   4XX Client Error(客户端错误状态码)     服务器无法处理请求   5XX Server Error(服务器错误">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/18/网络/HTTP状态码/"/>
+
+
+
+
+
+  <title>HTTP状态码 | Coding丘</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f4c3768b625fb00fb83191de7ce9c5a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding丘</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/网络/HTTP状态码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTTP状态码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T00:00:00+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <table>
+<thead>
+<tr>
+<th>类别</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1XX</td>
+<td>Informational(信息性状态码)     接受的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>Success(成功状态码)     请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>Redirection(重定向状态码)     需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Client Error(客户端错误状态码)     服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Server Error(服务器错误状态码)     服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+<h2 id="200-请求被正确处理"><a href="#200-请求被正确处理" class="headerlink" title="200 请求被正确处理"></a>200 请求被正确处理</h2><p>响应报文中，随状态码一起返回的信息会因方法的不同而发生改变。</p>
+<pre><code>使用GET时，对应请求资源的实体会作为响应返回。
+
+使用HEAD时，响应中只返回首部，不返回实体的主体部分。
+</code></pre><h2 id="204-返回消息为空"><a href="#204-返回消息为空" class="headerlink" title="204 返回消息为空"></a>204 返回消息为空</h2><p>服务器接收请求已成功处理，但返回的响应报文中不含实体的主体部分。<br>例如浏览器发送请求处理后，返回204响应，浏览器显示页面就不发生更新。</p>
+<h2 id="206-返回部分内容"><a href="#206-返回部分内容" class="headerlink" title="206 返回部分内容"></a>206 返回部分内容</h2><p>该状态码表示客户端进行请求头中包含Range字段指定范围的请求，服务器端成功执行GET请求，响应报文中包含Content-Range指定范围的实体内容。</p>
+<h2 id="301-永久重定向"><a href="#301-永久重定向" class="headerlink" title="301 永久重定向"></a>301 永久重定向</h2><p>该状态码表示请求的资源被分配了新的URI，以后应使用资源现在所指向的URI。</p>
+<h2 id="302-临时重定向"><a href="#302-临时重定向" class="headerlink" title="302 临时重定向"></a>302 临时重定向</h2><p>该状态码表示请求的资源被分配了新的URI，本次应使用响应报文头部中Location所指的URI。 </p>
+<h5 id="303-建议客户访问其他URL或访问方式"><a href="#303-建议客户访问其他URL或访问方式" class="headerlink" title="303 建议客户访问其他URL或访问方式"></a>303 建议客户访问其他URL或访问方式</h5><p>该状态码表示请求对应的资源存放在另一个URI，应使用GET方法定向获取请求的资源。<br>303状态码与302状态码有着相同的功能，但303状态码明确表示客户端应当GET方法获取资源，这与302状态码有着区别。</p>
+<h5 id="304-客户端已经执行了GET，但文件未变化"><a href="#304-客户端已经执行了GET，但文件未变化" class="headerlink" title="304 客户端已经执行了GET，但文件未变化"></a>304 客户端已经执行了GET，但文件未变化</h5><p>该状态码表示客户端发送附带条件的请求时，服务器允许请求访问资源，但因发生请求未满足条件的情况，直接返回304 Not Modified，服务器端的资源未变，可直接使用客户端未过期的缓存。</p>
+<h5 id="307-声明请求的资源临时性删除"><a href="#307-声明请求的资源临时性删除" class="headerlink" title="307 声明请求的资源临时性删除"></a>307 声明请求的资源临时性删除</h5><p>临时重定向。该状态码与302 Found有着相同含义。但不会指定客户端的重定向的请求方法。</p>
+<h5 id="400-错误请求，如语法错误"><a href="#400-错误请求，如语法错误" class="headerlink" title="400 错误请求，如语法错误"></a>400 错误请求，如语法错误</h5><p>该状态码表示请求报文中存在语法错误。当错误发生时，需要修改请求的内容后再次发送请求。</p>
+<h5 id="401-请求授权失败"><a href="#401-请求授权失败" class="headerlink" title="401 请求授权失败"></a>401 请求授权失败</h5><p>该状态码表示发送的请求需要有通过HTTP认证(BASIC认证、DIGEST认证)的认证信息。</p>
+<h5 id="403-请求不被允许"><a href="#403-请求不被允许" class="headerlink" title="403 请求不被允许"></a>403 请求不被允许</h5><p>该状态码表明对请求资源的访问被服务器拒绝了</p>
+<h5 id="404-没有发现资源"><a href="#404-没有发现资源" class="headerlink" title="404 没有发现资源"></a>404 没有发现资源</h5><p>该状态码表示服务器上无法找到请求的资源。</p>
+<h5 id="500-该状态码表明服务器在执行请求时发生了错误"><a href="#500-该状态码表明服务器在执行请求时发生了错误" class="headerlink" title="500 该状态码表明服务器在执行请求时发生了错误"></a>500 该状态码表明服务器在执行请求时发生了错误</h5><h5 id="503-该状态码表明服务器暂时处于超负荷或正在进行停机维护，现在无法处理请求"><a href="#503-该状态码表明服务器暂时处于超负荷或正在进行停机维护，现在无法处理请求" class="headerlink" title="503 该状态码表明服务器暂时处于超负荷或正在进行停机维护，现在无法处理请求"></a>503 该状态码表明服务器暂时处于超负荷或正在进行停机维护，现在无法处理请求</h5>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络/" rel="tag"># 网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/17/javaScript/javascript深拷贝和浅拷贝+juqery/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/18/前端综合/预加载和懒加载/" rel="prev" title="预加载和懒加载">
+                预加载和懒加载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/self.png"
+               alt="韩露" />
+          <p class="site-author-name" itemprop="name">韩露</p>
+           
+              <p class="site-description motion-element" itemprop="description">生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pika1217/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#200-请求被正确处理"><span class="nav-number">1.</span> <span class="nav-text">200 请求被正确处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#204-返回消息为空"><span class="nav-number">2.</span> <span class="nav-text">204 返回消息为空</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#206-返回部分内容"><span class="nav-number">3.</span> <span class="nav-text">206 返回部分内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#301-永久重定向"><span class="nav-number">4.</span> <span class="nav-text">301 永久重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#302-临时重定向"><span class="nav-number">5.</span> <span class="nav-text">302 临时重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#303-建议客户访问其他URL或访问方式"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">303 建议客户访问其他URL或访问方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#304-客户端已经执行了GET，但文件未变化"><span class="nav-number">5.0.0.2.</span> <span class="nav-text">304 客户端已经执行了GET，但文件未变化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#307-声明请求的资源临时性删除"><span class="nav-number">5.0.0.3.</span> <span class="nav-text">307 声明请求的资源临时性删除</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#400-错误请求，如语法错误"><span class="nav-number">5.0.0.4.</span> <span class="nav-text">400 错误请求，如语法错误</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#401-请求授权失败"><span class="nav-number">5.0.0.5.</span> <span class="nav-text">401 请求授权失败</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-请求不被允许"><span class="nav-number">5.0.0.6.</span> <span class="nav-text">403 请求不被允许</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#404-没有发现资源"><span class="nav-number">5.0.0.7.</span> <span class="nav-text">404 没有发现资源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#500-该状态码表明服务器在执行请求时发生了错误"><span class="nav-number">5.0.0.8.</span> <span class="nav-text">500 该状态码表明服务器在执行请求时发生了错误</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#503-该状态码表明服务器暂时处于超负荷或正在进行停机维护，现在无法处理请求"><span class="nav-number">5.0.0.9.</span> <span class="nav-text">503 该状态码表明服务器暂时处于超负荷或正在进行停机维护，现在无法处理请求</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩露</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
