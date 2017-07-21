@@ -1,0 +1,1364 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网络结构," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="七层模型OSI（Open System Interconnection，开放系统互连）七层网络模型称为开放式系统互联参考模型 ，是一个逻辑上的定义，一个规范，它把网络从逻辑上分为了7层。每一层都有相关、相对应的物理设备，比如路由器(网络层)，交换机(数据链路层)。OSI 七层模型是一种框架性的设计方法 ，建立七层模型的主要目的是为解决异种网络互连时所遇到的兼容性问题，其最主要的功能就是帮助不同类型">
+<meta name="keywords" content="网络结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络分层结构">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/网络/网络分层结构/index.html">
+<meta property="og:site_name" content="Coding丘">
+<meta property="og:description" content="七层模型OSI（Open System Interconnection，开放系统互连）七层网络模型称为开放式系统互联参考模型 ，是一个逻辑上的定义，一个规范，它把网络从逻辑上分为了7层。每一层都有相关、相对应的物理设备，比如路由器(网络层)，交换机(数据链路层)。OSI 七层模型是一种框架性的设计方法 ，建立七层模型的主要目的是为解决异种网络互连时所遇到的兼容性问题，其最主要的功能就是帮助不同类型">
+<meta property="og:image" content="https://pika1217.github.io/images/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:updated_time" content="2017-07-21T14:21:41.282Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络分层结构">
+<meta name="twitter:description" content="七层模型OSI（Open System Interconnection，开放系统互连）七层网络模型称为开放式系统互联参考模型 ，是一个逻辑上的定义，一个规范，它把网络从逻辑上分为了7层。每一层都有相关、相对应的物理设备，比如路由器(网络层)，交换机(数据链路层)。OSI 七层模型是一种框架性的设计方法 ，建立七层模型的主要目的是为解决异种网络互连时所遇到的兼容性问题，其最主要的功能就是帮助不同类型">
+<meta name="twitter:image" content="https://pika1217.github.io/images/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/21/网络/网络分层结构/"/>
+
+
+
+
+
+  <title>网络分层结构 | Coding丘</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f4c3768b625fb00fb83191de7ce9c5a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding丘</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/网络/网络分层结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">网络分层结构</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T00:00:00+08:00">
+                2017-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="七层模型"><a href="#七层模型" class="headerlink" title="七层模型"></a>七层模型</h2><p>OSI（Open System Interconnection，开放系统互连）七层网络模型称为开放式系统互联参考模型 ，是一个逻辑上的定义，一个规范，它把网络从逻辑上分为了7层。每一层都有相关、相对应的物理设备，比如路由器(网络层)，交换机(数据链路层)。OSI 七层模型是一种框架性的设计方法 ，建立七层模型的主要目的是为解决异种网络互连时所遇到的兼容性问题，其最主要的功能就是帮助不同类型的主机实现数据传输。它的最大优点是将服务、接口和协议这三个概念明确地区分开来，通过七个层次化的结构模型使不同的系统不同的网络之间实现可靠的通讯。<br><img src="https://pika1217.github.io/images/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.jpg" alt="image"></p>
+<h3 id="应用层、表示层、会话层-应用层"><a href="#应用层、表示层、会话层-应用层" class="headerlink" title="应用层、表示层、会话层 (应用层)"></a>应用层、表示层、会话层 (应用层)</h3><p>各种服务和应用程序通过该层利用网络，常用的协议有：HTTP、FTP、SMTP（邮件传输协议）;将数据包中的数据以某种协议进行解析正确展示。</p>
+<h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>确认数据传输及进行纠错处理，常用的协议:TCP、UDP<br>明确数据包将发送给某个ip地址的某个端口的进程</p>
+<h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><p>负责数据的传输，路由及地址选择，负责将数据包传给某个ip地址。常用协议:IP、ARP（地址解析协议，根据IP地址解析出物理地址）</p>
+<h3 id="数据链路层-交换机、Hub-、物理层（网络接口）"><a href="#数据链路层-交换机、Hub-、物理层（网络接口）" class="headerlink" title="数据链路层(交换机、Hub)、物理层（网络接口）"></a>数据链路层(交换机、Hub)、物理层（网络接口）</h3><p>针对不同的物理网络的连接形式的协议，例如:Ethernet、FDDI、ATM</p>
+<h2 id="分层的益处"><a href="#分层的益处" class="headerlink" title="分层的益处"></a>分层的益处</h2><p>建立七层模型的主要目的是为解决异种网络互连时所遇到的兼容性问题。它的最大优点是将服务、接口和协议这三个概念明确地区分开来：服务说明某一层为上一层提供一些什么功能，接口说明上一层如何使用下层的服务，而协议涉及如何实现本层的服务；这样各层之间具有很强的独立性，互连网络中各实体采用什么样的协议是没有限制的，只要向上提供相同的服务并且不改变相邻层的接口就可以了。网络七层的划分也是为了使网络的不同功能模块（不同层次）分担起不同的职责，益处如下：</p>
+<ol>
+<li><p>减轻问题的复杂程度，一旦网络发生故障，可迅速定位故障所处层次，便于查找和纠错。</p>
+</li>
+<li><p>在各层分别定义标准接口，使具备相同对等层的不同网络设备能实现互操作，各层之间则相对独立，一种高层协议可放在多种低层协议上运行</p>
+</li>
+<li><p>能有效刺激网络技术革新，因为每次更新都可以在小范围内进行，不需对整个网络动大手术</p>
+</li>
+</ol>
+<h4 id="牛客总结"><a href="#牛客总结" class="headerlink" title="牛客总结"></a>牛客总结</h4><p>OSI，TCP/IP，五层协议的体系结构，以及各层协议</p>
+<p>OSI分层 （7层）：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。 </p>
+<p>TCP/IP分层（4层）：网络接口层、 网际层、运输层、 应用层。 </p>
+<p>五层协议     （5层）：物理层、数据链路层、网络层、运输层、 应用层。 </p>
+<p>每一层的协议如下：</p>
+<p>  物理层：RJ45、CLOCK、IEEE802.3    （中继器，集线器，网关）<br>  数据链路：PPP、FR、HDLC、VLAN、MAC  （网桥，交换机）<br>  网络层：IP、ICMP、ARP、RARP、OSPF、IPX、RIP、IGRP、 （路由器）<br>  传输层：TCP、UDP、SPX<br>  会话层：NFS、SQL、NETBIOS、RPC<br>  表示层：JPEG、MPEG、ASII<br>  应用层：FTP、DNS、Telnet、SMTP、HTTP、WWW、NFS </p>
+<pre><code>每一层的作用如下：
+
+
+
+物理层：通过媒介传输比特,确定机械及电气规范（比特Bit）  
+
+数据链路层：将比特组装成帧和点到点的传递（帧Frame）  
+
+网络层：负责数据包从源到宿的传递和网际互连（包PackeT）  
+
+传输层：提供端到端的可靠报文传递和错误恢复（段Segment）  
+
+会话层：建立、管理和终止会话（会话协议数据单元SPDU）  
+
+表示层：对数据进行翻译、加密和压缩（表示协议数据单元PPDU）  
+
+应用层：允许访问OSI环境的手段（应用协议数据单元APDU）  
+
+IP地址的分类
+
+ A类地址：以0开头， 第一个字节范围：0~127（1.0.0.0 - 126.255.255.255）；  
+ B类地址：以10开头，    第一个字节范围：128~191（128.0.0.0 - 191.255.255.255）；  
+ C类地址：以110开头，  第一个字节范围：192~223（192.0.0.0 - 223.255.255.255）；  
+
+
+  10.0.0.0—10.255.255.255， 172.16.0.0—172.31.255.255， 192.168.0.0—192.168.255.255。（Internet上保留地址用于内部）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IP地址与子网掩码相与得到主机号
+
+
+
+  ARP是地址解析协议，简单语言解释一下工作原理。
+
+
+
+1：首先，每个主机都会在自己的ARP缓冲区中建立一个ARP列表，以表示IP地址和MAC地址之间的对应关系。
+
+
+
+
+
+
+2：当源主机要发送数据时，首先检查ARP列表中是否有对应IP地址的目的主机的MAC地址，如果有，则直接发送数据，如果没有，就向本网段的所有主机发送ARP数据包，该数据包包括的内容有：源主机
+
+            IP地址，源主机MAC地址，目的主机的IP
+
+
+
+          地址。
+
+
+
+
+
+
+3：当本网络的所有主机收到该ARP数据包时，首先检查数据包中的IP地址是否是自己的IP地址，如果不是，则忽略该数据包，如果是，则首先从数据包中取出源主机的IP和MAC地址写入到ARP列表中，如果已经存在，则覆盖，然后将自己的MAC地址写入ARP响应包中，告诉源主机自己是它想要找的MAC地址。
+
+
+
+
+
+
+
+
+
+
+
+4：源主机收到ARP响应包后。将目的主机的IP和MAC地址写入ARP列表，并利用此信息发送数据。如果源主机一直没有收到ARP响应数据包，表示ARP查询失败。
+
+
+
+
+
+
+
+ 广播发送ARP请求，单播发送ARP响应。
+
+
+
+各种协议
+
+
+
+  ICMP协议：
+因特网控制报文协议。它是TCP/IP协议族的一个子协议，用于在IP主机、路由器之间传递控制消息。
+
+
+
+
+  TFTP协议：
+是TCP/IP协议族中的一个用来在客户机与服务器之间进行简单文件传输的协议，提供不复杂、开销不大的文件传输服务。
+
+
+
+  HTTP协议：
+超文本传输协议，是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。  
+
+
+  DHCP协议：
+动态主机配置协议，是一种让系统得以连接到网络上，并获取所需要的配置参数手段。  
+
+
+NAT协议：网络地址转换属接入广域网(WAN)技术，是一种将私有（保留）地址转化为合法IP地址的转换技术，  
+
+
+DHCP协议：一个局域网的网络协议，使用UDP协议工作，用途：给内部网络或网络服务供应商自动分配IP地址，给用户或者内部网络管理员作为对所有计算机作中央管理的手段。  
+
+
+
+
+
+  描述：RARP
+
+
+ RARP是逆地址解析协议，作用是完成硬件地址到IP地址的映射，主要用于无盘工作站，因为给无盘工作站配置的IP地址不能保存。工作流程：在网络中配置一台RARP服务器，里面保存着IP地址和MAC地址的映射关系，当无盘工作站启动后，就封装一个RARP数据包，里面有其MAC地址，然后广播到网络上去，当服务器收到请求包后，就查找对应的MAC地址的IP地址装入响应报文中发回给请求者。因为需要广播请求报文，因此RARP只能用于具有广播能力的网络。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TCP三次握手和四次挥手的全过程
+</code></pre><p>  三次握手：</p>
+<p>  第一次握手：客户端发送syn包(syn=x)到服务器，并进入SYN_SEND状态，等待服务器确认； </p>
+<p>  第二次握手：服务器收到syn包，必须确认客户的SYN（ack=x+1），同时自己也发送一个SYN包（syn=y），即SYN+ACK包，此时服务器进入SYN_RECV状态； </p>
+<p>  第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=y+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。 </p>
+<p>  握手过程中传送的包里不包含数据，三次握手完毕后，客户端与服务器才正式开始传送数据。理想状态下，TCP连接一旦建立，在通信双方中的任何一方主动关闭连接之前，TCP 连接都将被一直保持下去。 </p>
+<p>  四次握手</p>
+<p>  与建立连接的“三次握手”类似，断开一个TCP连接则需要“四次握手”。<br>  第一次挥手：主动关闭方发送一个FIN，用来关闭主动方到被动关闭方的数据传送，也就是主动关闭方告诉被动关闭方：我已经不<br>  会再给你发数据了(当然，在fin包之前发送出去的数据，如果没有收到对应的ack确认报文，主动关闭方依然会重发这些数据)，但是，此时主动关闭方还可<br>  以接受数据。<br>  第二次挥手：被动关闭方收到FIN包后，发送一个ACK给对方，确认序号为收到序号+1（与SYN相同，一个FIN占用一个序号）。<br>  第三次挥手：被动关闭方发送一个FIN，用来关闭被动关闭方到主动关闭方的数据传送，也就是告诉主动关闭方，我的数据也发送完了，不会再给你发数据了。<br>  第四次挥手：主动关闭方收到FIN后，发送一个ACK给被动关闭方，确认序号为收到序号+1，至此，完成四次挥手。 </p>
+<p>  在浏览器中输入www.baidu.com后执行的全部过程</p>
+<p>  1、客户端浏览器通过DNS解析到www.baidu.com的IP地址220.181.27.48，通过这个IP地址找到客户端到服务器的路径。客户端浏览器发起一个HTTP会话到220.161.27.48，然后通过TCP进行封装数据包，输入到网络层。 </p>
+<p>  2、在客户端的传输层，把HTTP会话请求分成报文段，添加源和目的端口，如服务器使用80端口监听客户端的请求，客户端由系统随机选择一个端口如5000，与服务器进行交换，服务器把相应的请求返回给客户端的5000端口。然后使用IP层的IP地址查找目的端。 </p>
+<p>  3、客户端的网络层不用关系应用层或者传输层的东西，主要做的是通过查找路由表确定如何到达服务器，期间可能经过多个路由器，这些都是由路由器来完成的工作，我不作过多的描述，无非就是通过查找路由表决定通过那个路径到达服务器。 </p>
+<p>  4、客户端的链路层，包通过链路层发送到路由器，通过邻居协议查找给定IP地址的MAC地址，然后发送ARP请求查找目的地址，如果得到回应后就可以使用ARP的请求应答交换的IP数据包现在就可以传输了，然后发送IP数据包到达服务器的地址。 </p>
+<pre><code>TCP和UDP的区别？
+</code></pre><p>  TCP提供面向连接的、可靠的数据流传输，而UDP提供的是非面向连接的、不可靠的数据流传输。</p>
+<p>  TCP传输单位称为TCP报文段，UDP传输单位称为用户数据报。</p>
+<p>  TCP注重数据安全性，UDP数据传输快，因为不需要连接等待，少了许多操作，但是其安全性却一般。</p>
+<p>  TCP对应的协议和UDP对应的协议</p>
+<p>  TCP对应的协议：</p>
+<p>  （1） FTP：定义了文件传输协议，使用21端口。 </p>
+<p>  （2） Telnet：一种用于远程登陆的端口，使用23端口，用户可以以自己的身份远程连接到计算机上，可提供基于DOS模式下的通信服务。 </p>
+<p>  （3） SMTP：邮件传送协议，用于发送邮件。服务器开放的是25号端口。 </p>
+<p>  （4） POP3：它是和SMTP对应，POP3用于接收邮件。POP3协议所用的是110端口。<br>  （5）HTTP：是从Web服务器传输超文本到本地浏览器的传送协议。 </p>
+<p>  UDP对应的协议：</p>
+<p>  （1） DNS：用于域名解析服务，将域名地址转换为IP地址。DNS用的是53号端口。 </p>
+<p>  （2） SNMP：简单网络管理协议，使用161号端口，是用来管理网络设备的。由于网络设备很多，无连接的服务就体现出其优势。<br>  （3） TFTP(Trival File Tran敏感词er<br>  Protocal)，简单文件传输协议，该协议在熟知端口69上使用UDP服务。 </p>
+<pre><code>DNS域名系统，简单描述其工作原理。
+</code></pre><p>  当DNS客户机需要在程序中使用名称时，它会查询DNS服务器来解析该名称。客户机发送的每条查询信息包括三条信息：包括：指定的DNS域名，指定的查询类型，DNS域名的指定类别。基于UDP服务，端口53. 该应用一般不直接为用户使用，而是为其他应用服务，如HTTP，SMTP等在其中需要完成主机名到IP地址的转换。</p>
+<p>  面向连接和非面向连接的服务的特点是什么？</p>
+<p>  面向连接的服务，通信双方在进行通信之前，要先在双方建立起一个完整的可以彼此沟通的通道，在通信过程中，整个连接的情况一直可以被实时地监控和管理。 </p>
+<p>  非面向连接的服务，不需要预先建立一个联络两个通信节点的连接，需要通信的时候，发送节点就可以往网络上发送信息，让信息自主地在网络上去传，一般在传输的过程中不再加以监控。</p>
+<pre><code>TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？
+</code></pre><p>  答：建立连接的过程是利用客户服务器模式，假设主机A为客户端，主机B为服务器端。</p>
+<p>  （1）TCP的三次握手过程：主机A向B发送连接请求；主机B对收到的主机A的报文段进行确认；主机A再次对主机B的确认进行确认。</p>
+<p>  （2）采用三次握手是为了防止失效的连接请求报文段突然又传送到主机B，因而产生错误。失效的连接请求报文段是指：主机A发出的连接请求没有收到主机B的确认，于是经过一段时间后，主机A又重新向主机B发送连接请求，且建立成功，顺序完成数据传输。考虑这样一种特殊情况，主机A第一次发送的连接请求并没有丢失，而是因为网络节点导致延迟达到主机B，主机B以为是主机A又发起的新连接，于是主机B同意连接，并向主机A发回确认，但是此时主机A根本不会理会，主机B就一直在等待主机A发送数据，导致主机B的资源浪费。</p>
+<p>  （3）采用两次握手不行，原因就是上面说的实效的连接请求的特殊情况。</p>
+<p>  端口及对应的服务？</p>
+<pre><code>        服务     
+        端口号     
+        服务     
+        端口号     
+
+
+
+      FTP
+
+
+      21
+
+
+      SSH
+
+
+      22
+
+
+
+
+      telnet
+
+
+      23
+
+
+      SMTP
+
+
+      25
+
+
+
+
+      Domain(域名服务器)
+
+
+
+      53
+
+
+      HTTP
+
+
+      80
+
+
+
+
+      POP3
+
+
+      110
+
+
+      NTP（网络时间协议）
+
+
+      123
+
+
+
+
+      MySQL数据库服务
+
+
+      3306
+
+
+      Shell或 cmd
+
+
+
+      514
+
+
+
+
+      POP-2
+
+
+      109
+
+
+      SQL Server
+
+
+      1433
+
+
+
+
+
+
+IP数据包的格式
+</code></pre><p>  IP数据报由首部 和数据<br>     两部分组成。首部由固定部分和可选部分<br>       组成。首部的固定部分有</p>
+<pre><code>      20
+
+    字节。可选部分的长度变化范围为1——40字节。固定部分的字段：
+
+
+
+
+
+
+
+
+        字段名     
+        位数（bit）
+
+        字段名     
+        位数     
+
+
+        版本     
+
+      4  Ipv4
+
+        首部长度     
+
+      4（表示的最大数为15个单位，一个单位表示4字节）
+
+
+
+
+
+        服务类型     
+
+      8  以前很少用
+
+        总长度     
+
+      16 （首部和数据部分的总长度，因此数据报的最大长度为65535字节，即64KB，但是由于链路层的MAC都有一定的最大传输单元，因此IP数据报的长度一般都不会有理论上的那么大，如果超出了MAC的最大单元就会进行分片）
+
+
+
+
+
+
+
+
+        标识     
+
+      16 （相同的标识使得分片后的数据报片能正确的重装成原来的数据报）
+
+        标志     
+
+      3 （最低位MF=1表示后面还有分片，MF=0表示这是若干个数据报片的最后一个中间位DF=0才允许分片）
+
+
+
+
+
+
+        片偏移     
+        片偏移指出较长的分组在分片后，某片在原分组中的相对位置，都是8字节的偏移位置
+
+        生存时间     
+        数据报在网络中的生存时间，指最多经过路由器的跳数     
+
+
+        协议     
+
+
+      8 （指出该数据报携带的数据是何种协议，以使得目的主机的IP层知道应将数据部分上交给哪个处理程序）如ICMP=1
+            IGMP=2 TCP=6 EGP=8 IGP=9 UDP=17 Ipv6=41 OSPF=89
+
+
+
+        首部校验和     
+        这个部分只校验首部，不包括数据部分，计算方法：将首部划分为多个16位的部分，然后每个16位部分取反，然后计算和，再将和取反放到首部校验和。接收方收到后按同样的方法划分，取反，求和，在取反，如果结果为零，则接收，否则就丢弃
+
+
+
+
+        源地址     
+
+      32
+
+        目的地址     
+
+      32
+
+
+
+
+
+
+TCP数据报的格式？
+</code></pre><p>  一个TCP报文段分为首部和数据两部分。首部由固定部分和选项部分组成，固定部分是20字节。TCP首部的最大长度为60。首部固定部分字段：</p>
+<pre><code>        字段名     
+        字节（Byte）
+
+        字段名     
+        字节（Byte）
+
+
+
+        源端口     
+
+      2
+
+        目的端口     
+
+      2
+
+
+
+        序号     
+
+      4
+
+        确认号     
+
+      4，是期望收到对方的下一个报文段的数据的第一个字节的序号
+
+
+
+        数据偏移     
+
+      4bit 指出TCP报文段的数据起始处距离TCP报文段的起始有多远
+
+
+
+        保留     
+
+      6bit
+
+
+
+        紧急比特URG     
+
+        确认比特ACK
+
+        只有当ACK=1时，确认号字段才有效
+
+
+
+        推送比特PSH     
+
+        复位比特RST     
+
+
+
+        同步比特SYN     
+
+        终止比特FIN     
+
+
+
+        窗口     
+
+      2
+
+        检验和     
+
+      2 （包括首部和数据两部分，同时还要加12字节的伪首部进行校验和计算）
+
+
+
+
+        选项     
+        长度可变（范围1——40）
+
+
+
+
+
+
+
+
+
+
+
+
+TCP的12字节伪首部：
+
+
+
+
+
+
+        源IP地址（4）
+
+
+        目的IP地址（4）
+
+
+
+      0 (1)
+
+
+      6(1) 代表这是TCP，IP协议中提到过
+
+
+
+
+      TCP长度（2）
+
+
+
+
+
+
+
+TCP数据报的格式？
+</code></pre><p>  用户数据报UDP由首部和数据部分组成。首部只有8个字节，由4个字段组成，每个字段都是两个字节。</p>
+<pre><code>        字段名     
+        字节     
+        字段名     
+        字节     
+
+
+        源端口     
+
+      2
+
+        目的端口     
+
+      2
+
+
+
+        长度     
+
+      2
+
+        检验和     
+
+      2 （检验首部和数据，加12字节的伪首部）
+
+
+
+
+
+
+
+
+
+
+
+
+
+UDP的12字节伪首部：
+
+
+
+
+
+
+        源IP地址（4）
+
+
+        目的IP地址（4）
+
+
+
+      0 (1)
+
+
+      17(1) 代表这是UDP
+
+
+
+      UDP长度（2）
+</code></pre><p>  以太网MAC帧格式？</p>
+<pre><code>       前导码         前定界符         目的地址
+         源目的地址         长度字段         数据字段
+         校验字段    
+
+       7B         1B         6B    
+    6B         2B         46-1500    
+    4B    
+
+
+
+
+
+
+ 了解交换机、路由器、网关的概念，并知道各自的用途  
+ 1）交换机  
+
+在计算机网络系统中，交换机是针对共享工作模式的弱点而推出的。交换机拥有一条高带宽的背部总线和内部交换矩阵。交换机的所有的端口都挂接在这条背
+部总线上，当控制电路收到数据包以后，处理端口会查找内存中的地址对照表以确定目的MAC（网卡的硬件地址）的NIC（网卡）挂接在哪个端口上，通过内部
+交换矩阵迅速将数据包传送到目的端口。目的MAC若不存在，交换机才广播到所有的端口，接收端口回应后交换机会“学习”新的地址，并把它添加入内部地址表
+中。  
+
+交换机工作于OSI参考模型的第二层，即数据链路层。交换机内部的CPU会在每个端口成功连接时，通过ARP协议学习它的MAC地址，保存成一张
+ARP表。在今后的通讯中，发往该MAC地址的数据包将仅送往其对应的端口，而不是所有的端口。因此，交换机可用于划分数据链路层广播，即冲突域；但它不
+能划分网络层广播，即广播域。  
+ 交换机被广泛应用于二层网络交换，俗称“二层交换机”。  
+
+交换机的种类有：二层交换机、三层交换机、四层交换机、七层交换机分别工作在OSI七层模型中的第二层、第三层、第四层盒第七层，并因此而得名。  
+ 2）路由器  
+
+
+路由器（Router）是一种计算机网络设备，提供了路由与转送两种重要机制，可以决定数据包从来源端到目的端所经过
+的路由路径（host到host之间的传输路径），这个过程称为路由；将路由器输入端的数据包移送至适当的路由器输出端(在路由器内部进行)，这称为转
+送。路由工作在OSI模型的第三层——即网络层，例如网际协议。  
+
+
+路由器的一个作用是连通不同的网络，另一个作用是选择信息传送的线路。 路由器与交换器的差别，路由器是属于OSI第三层的产品，交换器是OSI第二层的产品(这里特指二层交换机)。  
+ 3）网关  
+
+
+网关（Gateway），网关顾名思义就是连接两个网络的设备，区别于路由器（由于历史的原因，许多有关TCP/IP
+的文献曾经把网络层使用的路由器（Router）称为网关，在今天很多局域网采用都是路由来接入网络，因此现在通常指的网关就是路由器的IP），经常在家
+庭中或者小型企业网络中使用，用于连接局域网和Internet。 网关也经常指把一种协议转成另一种协议的设备，比如语音网关。  
+
+在传统TCP/IP术语中，网络设备只分成两种，一种为网关（gateway），另一种为主机（host）。网关能在网络间转递数据包，但主机不能
+转送数据包。在主机（又称终端系统，end system）中，数据包需经过TCP/IP四层协议处理，但是在网关（又称中介系
+统，intermediate system）只需要到达网际层（Internet layer），决定路径之后就可以转送。在当时，网关
+（gateway）与路由器（router）还没有区别。  
+
+在现代网络术语中，网关（gateway）与路由器（router）的定义不同。网关（gateway）能在不同协议间移动数据，而路由器（router）是在不同网络间移动数据，相当于传统所说的IP网关（IP gateway）。  
+
+
+网关是连接两个网络的设备，对于语音网关来说，他可以连接PSTN网络和以太网，这就相当于VOIP，把不同电话中的模拟信号通过网关而转换成数字信号，而且加入协议再去传输。在到了接收端的时候再通过网关还原成模拟的电话信号，最后才能在电话机上听到。  
+
+对于以太网中的网关只能转发三层以上数据包，这一点和路由是一样的。而不同的是网关中并没有路由表，他只能按照预先设定的不同网段来进行转发。网关最重要的一点就是端口映射，子网内用户在外网看来只是外网的IP地址对应着不同的端口，这样看来就会保护子网内的用户。  
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络结构/" rel="tag"># 网络结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/20/网络/http2.0和http1.0的差别/" rel="next" title="HTTP2.0和HTTP1.0的差别">
+                <i class="fa fa-chevron-left"></i> HTTP2.0和HTTP1.0的差别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/self.png"
+               alt="韩露" />
+          <p class="site-author-name" itemprop="name">韩露</p>
+           
+              <p class="site-description motion-element" itemprop="description">生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pika1217/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#七层模型"><span class="nav-number">1.</span> <span class="nav-text">七层模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用层、表示层、会话层-应用层"><span class="nav-number">1.1.</span> <span class="nav-text">应用层、表示层、会话层 (应用层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输层"><span class="nav-number">1.2.</span> <span class="nav-text">传输层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络层"><span class="nav-number">1.3.</span> <span class="nav-text">网络层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据链路层-交换机、Hub-、物理层（网络接口）"><span class="nav-number">1.4.</span> <span class="nav-text">数据链路层(交换机、Hub)、物理层（网络接口）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分层的益处"><span class="nav-number">2.</span> <span class="nav-text">分层的益处</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#牛客总结"><span class="nav-number">2.0.1.</span> <span class="nav-text">牛客总结</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩露</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
