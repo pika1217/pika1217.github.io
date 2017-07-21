@@ -286,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/CSS/三栏布局（双飞翼布局）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/CSS/水平居中布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -305,7 +305,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/09/CSS/三栏布局（双飞翼布局）/" itemprop="url">三栏布局(双飞翼布局)</a></h1>
+                <a class="post-title-link" href="/2017/07/09/CSS/水平居中布局/" itemprop="url">水平居中布局</a></h1>
         
 
         <div class="post-meta">
@@ -376,11 +376,11 @@
       
         
           
-          在三栏布局的所有方法中，margin负值法三栏相互关联，可谓真正意义上的自适应，布局不易受内部影响。缺点在于：代码相对复杂。原理:首先设置main的width为100%,然后三者float:left,则按html顺序是main、left、right，此时由于main独占一行从而使得left和righ
+          margin:0 auto;（最常用的居中布局方式,元素宽度已知（块级元素有宽度，内联元素有内容）,未浮动，一定是用在元素本身不是父元素。父元素如果是块级元素则不用设置width默认占据一行。父元素如果是内联元素则需要display:inline-block,再设置宽度。如果是多个内联元素或者多个块
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/09/CSS/三栏布局（双飞翼布局）/#more" rel="contents">
+            <a class="btn" href="/2017/07/09/CSS/水平居中布局/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -567,7 +567,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/CSS/水平居中布局/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/CSS/其它布局方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -586,7 +586,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/09/CSS/水平居中布局/" itemprop="url">水平居中布局</a></h1>
+                <a class="post-title-link" href="/2017/07/09/CSS/其它布局方式/" itemprop="url">其它布局方式</a></h1>
         
 
         <div class="post-meta">
@@ -657,11 +657,12 @@
       
         
           
-          margin:0 auto;（最常用的居中布局方式,元素宽度已知（块级元素有宽度，内联元素有内容）,未浮动，一定是用在元素本身不是父元素。父元素如果是块级元素则不用设置width默认占据一行。父元素如果是内联元素则需要display:inline-block,再设置宽度。如果是多个内联元素或者多个块
+          网格布局基本网格布局-平分布局空间HTML代码如下。
+12345&lt;div class=&quot;Grid&quot;&gt;      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;      &lt;div class=&quo
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/09/CSS/水平居中布局/#more" rel="contents">
+            <a class="btn" href="/2017/07/09/CSS/其它布局方式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
