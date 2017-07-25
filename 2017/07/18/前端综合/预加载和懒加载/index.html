@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/18/前端综合/预加载和懒加载/index.html">
 <meta property="og:site_name" content="Coding丘">
 <meta property="og:description" content="懒加载什么是懒加载在页面中先把img或其他元素的背景图片用1*1px的图片占位，只有当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。 为什么使用懒加载页面内容较多，一次性加载需要较长时间，优化用户体验 原理 页面中的img元素，如果没有src属性，浏览器就不会发出请求去下载图片，只有通过JavaScript设置了图片路径，浏览器才会发送请求。 懒加载的原理">
-<meta property="og:updated_time" content="2017-07-18T15:07:56.600Z">
+<meta property="og:updated_time" content="2017-07-23T15:16:57.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="预加载和懒加载">
 <meta name="twitter:description" content="懒加载什么是懒加载在页面中先把img或其他元素的背景图片用1*1px的图片占位，只有当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。 为什么使用懒加载页面内容较多，一次性加载需要较长时间，优化用户体验 原理 页面中的img元素，如果没有src属性，浏览器就不会发出请求去下载图片，只有通过JavaScript设置了图片路径，浏览器才会发送请求。 懒加载的原理">
@@ -394,7 +394,7 @@
 <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><pre><code>页面加载速度快、可以减轻服务器的压力、节约了流量,用户体验好
 </code></pre><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><pre><code>1.来回滚动下拉条，不要立即向服务器发送请求，监听滚动事件，延迟执行，如果在执行之前又触发则清除之前的定时器，重新设置定时器
 2.加载过的图像就不需要重复加载，可以给加载过得图像一个属性，标志其已经加载过，下次就不用加载。
-</code></pre><h2 id="懒加载-1"><a href="#懒加载-1" class="headerlink" title="懒加载"></a>懒加载</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>提前加载图片，当用户需要查看时可直接从本地缓存中渲染</p>
+</code></pre><h2 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>提前加载图片，当用户需要查看时可直接从本地缓存中渲染</p>
 <h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3><p>保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。</p>
 <h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ol>
 <li>使用CSS和javascript实现预加载</li>
@@ -579,7 +579,7 @@ $(o).position().left = o.style.left;&lt;/code&gt;&lt;br&gt;&lt;code&gt;$(o).posi
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -590,7 +590,7 @@ $(o).position().left = o.style.left;&lt;/code&gt;&lt;br&gt;&lt;code&gt;$(o).posi
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -601,7 +601,7 @@ $(o).position().left = o.style.left;&lt;/code&gt;&lt;br&gt;&lt;code&gt;$(o).posi
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -647,7 +647,7 @@ $(o).position().left = o.style.left;&lt;/code&gt;&lt;br&gt;&lt;code&gt;$(o).posi
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载"><span class="nav-number">1.</span> <span class="nav-text">懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是懒加载"><span class="nav-number">1.1.</span> <span class="nav-text">什么是懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用懒加载"><span class="nav-number">1.2.</span> <span class="nav-text">为什么使用懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.3.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">1.4.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.5.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.6.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载-1"><span class="nav-number">2.</span> <span class="nav-text">懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#意义"><span class="nav-number">2.2.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载和预加载的对比"><span class="nav-number">2.4.</span> <span class="nav-text">懒加载和预加载的对比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充知识"><span class="nav-number">3.</span> <span class="nav-text">补充知识</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载"><span class="nav-number">1.</span> <span class="nav-text">懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是懒加载"><span class="nav-number">1.1.</span> <span class="nav-text">什么是懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用懒加载"><span class="nav-number">1.2.</span> <span class="nav-text">为什么使用懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.3.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">1.4.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.5.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.6.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预加载"><span class="nav-number">2.</span> <span class="nav-text">预加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#意义"><span class="nav-number">2.2.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载和预加载的对比"><span class="nav-number">2.4.</span> <span class="nav-text">懒加载和预加载的对比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充知识"><span class="nav-number">3.</span> <span class="nav-text">补充知识</span></a></li></ol></div>
             
 
           </div>
