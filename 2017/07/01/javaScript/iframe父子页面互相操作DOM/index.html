@@ -1,0 +1,787 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iframe," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="javaScript版本 主要通过contentWindow对象以及window.parent  父页面获取子页面的方式 iframe的contentWindow属性，代表iframe所在的window对象。   123456789101112131415//1. 获取iframe节点        var iframe = document.getElementById(&amp;apos;iframe">
+<meta name="keywords" content="iframe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iframe父子页面互相操作DOM">
+<meta property="og:url" content="http://yoursite.com/2017/07/01/javaScript/iframe父子页面互相操作DOM/index.html">
+<meta property="og:site_name" content="Coding丘">
+<meta property="og:description" content="javaScript版本 主要通过contentWindow对象以及window.parent  父页面获取子页面的方式 iframe的contentWindow属性，代表iframe所在的window对象。   123456789101112131415//1. 获取iframe节点        var iframe = document.getElementById(&amp;apos;iframe">
+<meta property="og:updated_time" content="2017-07-11T14:30:49.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iframe父子页面互相操作DOM">
+<meta name="twitter:description" content="javaScript版本 主要通过contentWindow对象以及window.parent  父页面获取子页面的方式 iframe的contentWindow属性，代表iframe所在的window对象。   123456789101112131415//1. 获取iframe节点        var iframe = document.getElementById(&amp;apos;iframe">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/01/javaScript/iframe父子页面互相操作DOM/"/>
+
+
+
+
+
+  <title>iframe父子页面互相操作DOM | Coding丘</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f4c3768b625fb00fb83191de7ce9c5a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding丘</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/javaScript/iframe父子页面互相操作DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iframe父子页面互相操作DOM</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T00:00:00+08:00">
+                2017-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="javaScript版本"><a href="#javaScript版本" class="headerlink" title="javaScript版本"></a>javaScript版本</h2><blockquote>
+<p>主要通过contentWindow对象以及window.parent</p>
+</blockquote>
+<h3 id="父页面获取子页面的方式"><a href="#父页面获取子页面的方式" class="headerlink" title="父页面获取子页面的方式"></a>父页面获取子页面的方式</h3><blockquote>
+<p>iframe的contentWindow属性，代表iframe所在的window对象。 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//1. 获取iframe节点</div><div class="line">        var iframe = document.getElementById(&apos;iframeId&apos;);</div><div class="line">        或</div><div class="line">        var iframe = frames[&apos;iframeId&apos;];</div><div class="line">        或</div><div class="line">        var iframe = window.frames[&apos;iframeId&apos;];</div><div class="line">        或</div><div class="line">        var iframe = iframeId;</div><div class="line">        //2. 然后获取iframe包含的document对象:</div><div class="line">        IE浏览器：</div><div class="line">        var cWindow = iframe.document;</div><div class="line">        其它浏览器：</div><div class="line">        var cWindow = iframe.contentWindow.document;</div><div class="line">        或</div><div class="line">        var cWindow = iframe.contentDocument;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </div><div class="line">     </div><div class="line">       //some other operation</div><div class="line">    frames[&apos;iframeId&apos;].onload = function () &#123;</div><div class="line">    var childDocument = this.contentDocument || this.document; </div><div class="line">    var div=childDocument.getElementById(&apos;divId&apos;); </div><div class="line">    &#125;  </div><div class="line">    &lt;/script&gt; </div><div class="line"></div><div class="line">&lt;iframe id=&quot;iframeId&quot; src=&quot;iframe.html&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;&lt;/iframe&gt;</div><div class="line"></div><div class="line">//子页面</div><div class="line">&lt;div id=&quot;divId&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="子页面获取父页面的方式"><a href="#子页面获取父页面的方式" class="headerlink" title="子页面获取父页面的方式"></a>子页面获取父页面的方式</h3><blockquote>
+<p>通过window.parent获取</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">父页面</div><div class="line">&lt;div id-&quot;pDivId&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;iframe src=&quot;iframe.html&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;&lt;/iframe&gt;</div><div class="line"></div><div class="line">//子页面</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </div><div class="line">    window.onload = function()&#123; </div><div class="line">        if (window.parent !== window.self) &#123;</div><div class="line">        //当前窗口是子窗口</div><div class="line">        var parentDocument =window.parent.document;</div><div class="line">        &#125;</div><div class="line">    var pDiv=parentDocument.getElementById(&apos;pDivId&apos;);  </div><div class="line">       //some other operation</div><div class="line">    &#125;  </div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
+<h2 id="Jquery版本"><a href="#Jquery版本" class="headerlink" title="Jquery版本"></a>Jquery版本</h2><blockquote>
+<p>主要是通过</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(window.frames[&quot;iframeChild&quot;].document).find() //父页面操作子页面</div><div class="line">$(window.parent.document).find()</div><div class="line">//子页面操作父页面</div></pre></td></tr></table></figure>
+<p>实质就是获取要操作的页面的document转换为Jquery对象</p>
+<h3 id="父页面操作子页面DOM"><a href="#父页面操作子页面DOM" class="headerlink" title="父页面操作子页面DOM"></a>父页面操作子页面DOM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(window.frames[&quot;iframeId&quot;].document).find(&apos;#divId&apos;)</div></pre></td></tr></table></figure>
+<h3 id="子页面操作父页面DOM"><a href="#子页面操作父页面DOM" class="headerlink" title="子页面操作父页面DOM"></a>子页面操作父页面DOM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(window.parent.document).find(&apos;#pDivId&apos;)</div></pre></td></tr></table></figure>
+<h2 id="iframe优缺点"><a href="#iframe优缺点" class="headerlink" title="iframe优缺点"></a>iframe优缺点</h2><h3 id="iframe的优点："><a href="#iframe的优点：" class="headerlink" title="iframe的优点："></a>iframe的优点：</h3><ol>
+<li>iframe能够原封不动的把嵌入的网页展现出来。</li>
+<li>如果有多个网页引用iframe，那么你只需要修改iframe的内容，就可以实现调用的每一个页面内容的更改，方便快捷。</li>
+<li>网页如果为了统一风格，头部和版本都是一样的，就可以写成一个页面，用iframe来嵌套，可以增加代码的可重用。</li>
+<li>如果遇到加载缓慢的第三方内容如图标和广告，这些问题可以由iframe来解决。</li>
+</ol>
+<h3 id="iframe的缺点："><a href="#iframe的缺点：" class="headerlink" title="iframe的缺点："></a>iframe的缺点：</h3><ol>
+<li>会产生很多页面，不容易管理。</li>
+<li>会出现多个上下、左右滚动条，用户体验度差。</li>
+<li>现在的搜索引擎爬虫还不能很好的处理iframe中的内容，所以使用iframe会不利于搜索引擎优化。</li>
+<li>很多的移动设备（PDA 手机）无法完全显示框架，设备兼容性差。</li>
+<li>iframe框架页面会增加服务器的http请求，对于大型网站是不可取的。</li>
+<li>window 的 onload 事件需要在所有 iframe 加载完毕后(包含里面的元素)才会触发，延迟加载速度。</li>
+<li>iframe在加载资源时可能用光了所有的可用连接，从而阻塞了主页面资源的加载。<br>分析了这么多，现在基本上都是用Ajax来代替iframe，所以iframe已经渐渐的退出了前端开发。</li>
+</ol>
+<h3 id="iframe与frame的区别"><a href="#iframe与frame的区别" class="headerlink" title="iframe与frame的区别"></a>iframe与frame的区别</h3><ol>
+<li>frame不能脱离frameSet单独使用，iframe可以；</li>
+<li>frame不能放在body中，嵌套在frameSet中的iframe必需放在body中；</li>
+<li>不嵌套在frameSet中的iframe可以随意使用；</li>
+<li>frame的高度只能通过frameSet控制；iframe可以自己控制，不能通过frameSet控制。</li>
+<li>如果在同一个页面使用了两个以上的iframe，在IE中可以正常显示，在firefox中只能显示出第一个；使用两个以上的frame在IE和firefox中均可正常</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iframe/" rel="tag"># iframe</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/01/javaScript/js中typeof与instanceof用法小记/" rel="next" title="js中typeof与instanceof用法小记">
+                <i class="fa fa-chevron-left"></i> js中typeof与instanceof用法小记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/02/前端综合/csrf、xxs安全问题/" rel="prev" title="CSRF、XSS安全问题">
+                CSRF、XSS安全问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/self.png"
+               alt="韩露" />
+          <p class="site-author-name" itemprop="name">韩露</p>
+           
+              <p class="site-description motion-element" itemprop="description">生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pika1217/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javaScript版本"><span class="nav-number">1.</span> <span class="nav-text">javaScript版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父页面获取子页面的方式"><span class="nav-number">1.1.</span> <span class="nav-text">父页面获取子页面的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子页面获取父页面的方式"><span class="nav-number">1.2.</span> <span class="nav-text">子页面获取父页面的方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jquery版本"><span class="nav-number">2.</span> <span class="nav-text">Jquery版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父页面操作子页面DOM"><span class="nav-number">2.1.</span> <span class="nav-text">父页面操作子页面DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子页面操作父页面DOM"><span class="nav-number">2.2.</span> <span class="nav-text">子页面操作父页面DOM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iframe优缺点"><span class="nav-number">3.</span> <span class="nav-text">iframe优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe的优点："><span class="nav-number">3.1.</span> <span class="nav-text">iframe的优点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe的缺点："><span class="nav-number">3.2.</span> <span class="nav-text">iframe的缺点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe与frame的区别"><span class="nav-number">3.3.</span> <span class="nav-text">iframe与frame的区别</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩露</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
