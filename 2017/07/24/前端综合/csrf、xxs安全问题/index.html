@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="垃圾回收," />
+  <meta name="keywords" content="前端安全," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="基本类型的值保存在栈内存中，引用类型保存字堆内存中。找出不再继续使用的变量，然后释放其所占内存。 标记清除当变量进入环境时（被声明）标记其“进入环境”，永远不能释放一个标记“进入环境”的变量所占的内存，因为只要执行流进入相应的环境皆有可能用到它。当变量离开环境时就将其标记为“离开环境”，（可以用变量列表标记）。垃圾回收器会在一定时间间隔内对所有变量进行标记，被标记为“离开环境“的变量即将被删除，销">
-<meta name="keywords" content="垃圾回收">
+<meta name="description" content="XSS：跨站脚本攻击 原因：应用程序在接受数据之后没有进行适当的验证和转义，直接发送给网页浏览器，可能会长生XSS攻击。 危害：恶意的HTML/JavaScript代码会注入到用户浏览的网页上，从而达到Cookie资料窃取、会话劫持、钓鱼欺骗等攻击。 防御方法： HttpOnly 。  浏览器禁止页面的JS访问带有HttpOnly属性的Cookie，从而保证安全。 输入检查 XSS Filter">
+<meta name="keywords" content="前端安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javaScript 垃圾回收机制">
-<meta property="og:url" content="http://yoursite.com/2017/07/13/javaScript/javascript 垃圾回收机制/index.html">
+<meta property="og:title" content="CSRF、XSS安全问题">
+<meta property="og:url" content="http://yoursite.com/2017/07/24/前端综合/csrf、xxs安全问题/index.html">
 <meta property="og:site_name" content="Coding丘">
-<meta property="og:description" content="基本类型的值保存在栈内存中，引用类型保存字堆内存中。找出不再继续使用的变量，然后释放其所占内存。 标记清除当变量进入环境时（被声明）标记其“进入环境”，永远不能释放一个标记“进入环境”的变量所占的内存，因为只要执行流进入相应的环境皆有可能用到它。当变量离开环境时就将其标记为“离开环境”，（可以用变量列表标记）。垃圾回收器会在一定时间间隔内对所有变量进行标记，被标记为“离开环境“的变量即将被删除，销">
-<meta property="og:updated_time" content="2017-07-13T12:27:29.149Z">
+<meta property="og:description" content="XSS：跨站脚本攻击 原因：应用程序在接受数据之后没有进行适当的验证和转义，直接发送给网页浏览器，可能会长生XSS攻击。 危害：恶意的HTML/JavaScript代码会注入到用户浏览的网页上，从而达到Cookie资料窃取、会话劫持、钓鱼欺骗等攻击。 防御方法： HttpOnly 。  浏览器禁止页面的JS访问带有HttpOnly属性的Cookie，从而保证安全。 输入检查 XSS Filter">
+<meta property="og:updated_time" content="2017-07-30T08:14:51.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javaScript 垃圾回收机制">
-<meta name="twitter:description" content="基本类型的值保存在栈内存中，引用类型保存字堆内存中。找出不再继续使用的变量，然后释放其所占内存。 标记清除当变量进入环境时（被声明）标记其“进入环境”，永远不能释放一个标记“进入环境”的变量所占的内存，因为只要执行流进入相应的环境皆有可能用到它。当变量离开环境时就将其标记为“离开环境”，（可以用变量列表标记）。垃圾回收器会在一定时间间隔内对所有变量进行标记，被标记为“离开环境“的变量即将被删除，销">
+<meta name="twitter:title" content="CSRF、XSS安全问题">
+<meta name="twitter:description" content="XSS：跨站脚本攻击 原因：应用程序在接受数据之后没有进行适当的验证和转义，直接发送给网页浏览器，可能会长生XSS攻击。 危害：恶意的HTML/JavaScript代码会注入到用户浏览的网页上，从而达到Cookie资料窃取、会话劫持、钓鱼欺骗等攻击。 防御方法： HttpOnly 。  浏览器禁止页面的JS访问带有HttpOnly属性的Cookie，从而保证安全。 输入检查 XSS Filter">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/13/javaScript/javascript 垃圾回收机制/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/24/前端综合/csrf、xxs安全问题/"/>
 
 
 
 
 
-  <title>javaScript 垃圾回收机制 | Coding丘</title>
+  <title>CSRF、XSS安全问题 | Coding丘</title>
   
 
 
@@ -286,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/javaScript/javascript 垃圾回收机制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/前端综合/csrf、xxs安全问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">javaScript 垃圾回收机制</h1>
+          <h1 class="post-title" itemprop="name headline">CSRF、XSS安全问题</h1>
         
 
         <div class="post-meta">
@@ -315,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-13T00:00:00+08:00">
-                2017-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T00:00:00+08:00">
+                2017-07-24
               </time>
             
 
@@ -338,8 +338,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
                   </a>
                 </span>
 
@@ -372,10 +372,28 @@
       
 
       
-        <p>基本类型的值保存在栈内存中，引用类型保存字堆内存中。找出不再继续使用的变量，然后释放其所占内存。</p>
-<h2 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h2><p>当变量进入环境时（被声明）标记其“进入环境”，永远不能释放一个标记“进入环境”的变量所占的内存，因为只要执行流进入相应的环境皆有可能用到它。当变量离开环境时就将其标记为“离开环境”，（可以用变量列表标记）。垃圾回收器会在一定时间间隔内对所有变量进行标记，被标记为“离开环境“的变量即将被删除，销毁那些带标记的值并回收内存空间。</p>
-<h2 id="引用计数（严重问题：循环引用）"><a href="#引用计数（严重问题：循环引用）" class="headerlink" title="引用计数（严重问题：循环引用）"></a>引用计数（严重问题：循环引用）</h2><p>追踪记录每个值被引用的次数，若被引用了则加一，若变量引用了另外一个值，则这个值得引用次数减一。当一个值得引用次数为0时，说明不再访问这个值，从而将其占用的内存回收，垃圾收集器在下次运行时就会释放引用次数为0的值所占的空间。</p>
-<h2 id="内存管理：解除引用-null"><a href="#内存管理：解除引用-null" class="headerlink" title="内存管理：解除引用 =null"></a>内存管理：解除引用 =null</h2>
+        <h2 id="XSS：跨站脚本攻击"><a href="#XSS：跨站脚本攻击" class="headerlink" title="XSS：跨站脚本攻击"></a>XSS：跨站脚本攻击</h2><ol>
+<li>原因：应用程序在接受数据之后没有进行适当的验证和转义，直接发送给网页浏览器，可能会长生XSS攻击。</li>
+<li>危害：恶意的HTML/JavaScript代码会注入到用户浏览的网页上，从而达到Cookie资料窃取、会话劫持、钓鱼欺骗等攻击。</li>
+<li>防御方法：<ul>
+<li>HttpOnly 。  浏览器禁止页面的JS访问带有HttpOnly属性的Cookie，从而保证安全。</li>
+<li>输入检查 XSS Filter 。    对输入内容做格式检查，类似“白名单”，可以让一些基于特殊字符的攻击失效。</li>
+<li>输出检查 。    在变量输出到html页面时，可以使用编码或转义的方式来防御XSS攻击。</li>
+<li>对富文本进行处理</li>
+<li>防御DOM Based XSS    如果是输出到事件或脚本，要做一次javascriptEncode；如果是输出到HTML内容或者属性，要做一次HtmlEncode。</li>
+</ul>
+</li>
+</ol>
+<h2 id="CSRF：跨站请求伪造，XXS是实现CSRF的其中一种方法。"><a href="#CSRF：跨站请求伪造，XXS是实现CSRF的其中一种方法。" class="headerlink" title="CSRF：跨站请求伪造，XXS是实现CSRF的其中一种方法。"></a>CSRF：跨站请求伪造，XXS是实现CSRF的其中一种方法。</h2><ol>
+<li>原因：XSS是利用用户对当前网站的信任来发起攻击，而CSRF是利用网站对用户的信任来发起攻击。重要操作的所有参数都是可以被攻击者猜测到的。攻击者预测出URL的所有参数与参数值，才能成功地构造一个伪造的请求，将使用用户浏览器向存在漏洞的应用程序发起请求。</li>
+<li>防御方法：  <ol>
+<li>验证码、  Referer Check 检查请求是否来自合法的源（可被伪造）。</li>
+<li>对于任何重要的请求都需要重新验证用户的身份；</li>
+<li>通用方法：使用Anti-CSRF Token   在URL中保持原参数不变，新增一个参数Token。Token的值是随机的（必须使用足够安全的随机数生成算法，或者采用真随机数生成器），其为用户与服务器所共同持有，可以放在用户的Session中，或者浏览器的Cookie中。 每次session使用同一个Token，开发者就可以自动带上当前页面的token。如果token校验不通过，则证明此次提交并非从本站发送来，则终止提交过程   </li>
+</ol>
+</li>
+</ol>
+
       
     </div>
 
@@ -404,7 +422,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/垃圾回收/" rel="tag"># 垃圾回收</a>
+            <a href="/tags/前端安全/" rel="tag"># 前端安全</a>
           
         </div>
       
@@ -417,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/13/javaScript/继承/" rel="next" title="继承">
-                <i class="fa fa-chevron-left"></i> 继承
+              <a href="/2017/07/23/网络/cookie、localstorage、sessionstorage的区别/" rel="next" title="cookie、localStorage、sessionStorage的区别">
+                <i class="fa fa-chevron-left"></i> cookie、localStorage、sessionStorage的区别
               </a>
             
           </div>
@@ -427,8 +445,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/14/javaScript/call、apply、bind之间的区别/" rel="prev" title="call、apply、bind">
-                call、apply、bind <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/25/网络/HTTP与HTTPS/" rel="prev" title="HTTP与HTTPS">
+                HTTP与HTTPS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -569,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标记清除"><span class="nav-number">1.</span> <span class="nav-text">标记清除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用计数（严重问题：循环引用）"><span class="nav-number">2.</span> <span class="nav-text">引用计数（严重问题：循环引用）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存管理：解除引用-null"><span class="nav-number">3.</span> <span class="nav-text">内存管理：解除引用 =null</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS：跨站脚本攻击"><span class="nav-number">1.</span> <span class="nav-text">XSS：跨站脚本攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF：跨站请求伪造，XXS是实现CSRF的其中一种方法。"><span class="nav-number">2.</span> <span class="nav-text">CSRF：跨站请求伪造，XXS是实现CSRF的其中一种方法。</span></a></li></ol></div>
             
 
           </div>
