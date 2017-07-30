@@ -430,7 +430,7 @@ HTML5中元素都会有一个dataset的属性，这是
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/网络/post与get的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/CSS/边界塌陷/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -449,7 +449,7 @@ HTML5中元素都会有一个dataset的属性，这是
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/14/网络/post与get的区别/" itemprop="url">post与get的区别</a></h1>
+                <a class="post-title-link" href="/2017/07/15/CSS/边界塌陷/" itemprop="url">边界塌陷</a></h1>
         
 
         <div class="post-meta">
@@ -461,8 +461,8 @@ HTML5中元素都会有一个dataset的属性，这是
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T00:00:00+08:00">
-                2017-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T00:00:00+08:00">
+                2017-07-15
               </time>
             
 
@@ -484,8 +484,8 @@ HTML5中元素都会有一个dataset的属性，这是
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -520,20 +520,11 @@ HTML5中元素都会有一个dataset的属性，这是
       
         
           
-          区别
-GET在浏览器回退时是无害的，而POST会再次提交请求。
-
-GET产生的URL地址可以被存为书签，而POST不可以。
-
-GET请求会被浏览器主动cache，而POST不会。
-
-GET请求只能进行url编码，而POST支持多种编码方式。
-
-GET请求参数会被完整保留在浏览器历史记录里，而POST
+          边界塌陷主要是在并列div和父div包含子div两种情况并列div上面div的margin-bottom和下面div的margin-top会出现塌陷，也就是会取两者之间的最大值显示。上述代码中test1和test2的间距是10px,而不是15px,而且注意此处的边界塌陷并不是说div边界重合，当重合
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/14/网络/post与get的区别/#more" rel="contents">
+            <a class="btn" href="/2017/07/15/CSS/边界塌陷/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -733,7 +724,7 @@ call
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/javaScript/javascript 垃圾回收机制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/网络/post与get的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -752,7 +743,7 @@ call
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/13/javaScript/javascript 垃圾回收机制/" itemprop="url">javaScript 垃圾回收机制</a></h1>
+                <a class="post-title-link" href="/2017/07/14/网络/post与get的区别/" itemprop="url">post与get的区别</a></h1>
         
 
         <div class="post-meta">
@@ -764,8 +755,8 @@ call
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-13T00:00:00+08:00">
-                2017-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T00:00:00+08:00">
+                2017-07-14
               </time>
             
 
@@ -787,8 +778,8 @@ call
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -823,12 +814,20 @@ call
       
         
           
-          基本类型的值保存在栈内存中，引用类型保存字堆内存中。找出不再继续使用的变量，然后释放其所占内存。
-标记清除当变量进入环境时（被声明）标记其“进入环境”，永远不能释放一个标记“进入环境”的变量所占的内存，因为只要执行流进入相应的环境皆有可能用到它。当变量离开环境时就将其标记为“离开环境”，（可以用变量
+          区别
+GET在浏览器回退时是无害的，而POST会再次提交请求。
+
+GET产生的URL地址可以被存为书签，而POST不可以。
+
+GET请求会被浏览器主动cache，而POST不会。
+
+GET请求只能进行url编码，而POST支持多种编码方式。
+
+GET请求参数会被完整保留在浏览器历史记录里，而POST
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/13/javaScript/javascript 垃圾回收机制/#more" rel="contents">
+            <a class="btn" href="/2017/07/14/网络/post与get的区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1016,7 +1015,7 @@ call
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/javaScript/闭包实现循环绑定/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/javaScript/javascript 垃圾回收机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1035,7 +1034,7 @@ call
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/12/javaScript/闭包实现循环绑定/" itemprop="url">闭包实现循环绑定</a></h1>
+                <a class="post-title-link" href="/2017/07/13/javaScript/javascript 垃圾回收机制/" itemprop="url">javaScript 垃圾回收机制</a></h1>
         
 
         <div class="post-meta">
@@ -1047,8 +1046,8 @@ call
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T00:00:00+08:00">
-                2017-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-13T00:00:00+08:00">
+                2017-07-13
               </time>
             
 
@@ -1106,152 +1105,12 @@ call
       
         
           
-          闭包：有权访问另一个函数作用域中的变量常见形式：在一个函数内部创建一个函数函数执行完毕后，其活动对象也不会被销毁，因为内部函数的作用域链仍然在引用这个活动对象
-12345678910var name  = &quot;the window&quot;;    var object2 = &#123;
+          基本类型的值保存在栈内存中，引用类型保存字堆内存中。找出不再继续使用的变量，然后释放其所占内存。
+标记清除当变量进入环境时（被声明）标记其“进入环境”，永远不能释放一个标记“进入环境”的变量所占的内存，因为只要执行流进入相应的环境皆有可能用到它。当变量离开环境时就将其标记为“离开环境”，（可以用变量
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/12/javaScript/闭包实现循环绑定/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/javaScript/处理单击和双击冲突的办法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/12/javaScript/处理单击和双击冲突的办法/" itemprop="url">单双击冲突解决</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T00:00:00+08:00">
-                2017-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          当双击时会执行两次click，第一个距离dbclick时间较长，第二个click与dbclick几乎同时发生，所以只要对click设置一个延时，这个延时时长要大于第一个click与dbclick的时间间隔，当双击时前两个click都还在任务队列里，执行到dbclick时将计时器清除，则不会执行cli
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/12/javaScript/处理单击和双击冲突的办法/#more" rel="contents">
+            <a class="btn" href="/2017/07/13/javaScript/javascript 垃圾回收机制/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1438,6 +1297,287 @@ call
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/javaScript/处理单击和双击冲突的办法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/12/javaScript/处理单击和双击冲突的办法/" itemprop="url">单双击冲突解决</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T00:00:00+08:00">
+                2017-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          当双击时会执行两次click，第一个距离dbclick时间较长，第二个click与dbclick几乎同时发生，所以只要对click设置一个延时，这个延时时长要大于第一个click与dbclick的时间间隔，当双击时前两个click都还在任务队列里，执行到dbclick时将计时器清除，则不会执行cli
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/12/javaScript/处理单击和双击冲突的办法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/javaScript/闭包实现循环绑定/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/12/javaScript/闭包实现循环绑定/" itemprop="url">闭包实现循环绑定</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T00:00:00+08:00">
+                2017-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          闭包：有权访问另一个函数作用域中的变量常见形式：在一个函数内部创建一个函数函数执行完毕后，其活动对象也不会被销毁，因为内部函数的作用域链仍然在引用这个活动对象
+12345678910var name  = &quot;the window&quot;;    var object2 = &#123;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/12/javaScript/闭包实现循环绑定/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/网络/滑动窗口、流量控制、拥塞控制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1571,148 +1711,6 @@ call
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/CSS/清除浮动/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/10/CSS/清除浮动/" itemprop="url">清除浮动</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:00:00+08:00">
-                2017-07-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          原理float属性会使得普通元素脱离稳定流变成浮动元素。
-存在的问题浮动的子元素显示在父容器的外部
-原因在CSS规范中，浮动定位不属于正常的页面流（page flow），是独立定位的。所以，只含有浮动元素的父容器，在显示时不考虑子元素的位置，就当它们不存在一样。这就造成了显示出来，父容器好像空容器一
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/10/CSS/清除浮动/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1762,7 +1760,7 @@ call
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
