@@ -427,7 +427,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/操作系统/堆栈的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/17/javaScript/深拷贝和浅拷贝/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -446,7 +446,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/16/操作系统/堆栈的区别/" itemprop="url">堆栈的区别</a></h1>
+                <a class="post-title-link" href="/2017/07/17/javaScript/深拷贝和浅拷贝/" itemprop="url">深拷贝和浅拷贝</a></h1>
         
 
         <div class="post-meta">
@@ -458,8 +458,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T00:00:00+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-17T00:00:00+08:00">
+                2017-07-17
               </time>
             
 
@@ -481,8 +481,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
                   </a>
                 </span>
 
@@ -517,13 +517,12 @@
       
         
           
-          堆栈空间分配栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
-堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收，分配方式倒是类似于链表
-堆栈缓存方式栈使用的是一级缓存， 他们通常都是被调用时处于存储空间中，
+          基本理解对于基本类型的值来说，深、浅复制就是对值得复制，变量之间不会相互影响。
+对于对象类型的值来说，浅复制就是复制了对象的地址，并没有开辟新的堆，复制的结果是两个对象指向同一个地址，修改其中一个对象的属性，另一个对象的该属性也会随之改变；而深复制则是开辟新的堆区(真正的内容存放在堆上)，两个对象对
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/16/操作系统/堆栈的区别/#more" rel="contents">
+            <a class="btn" href="/2017/07/17/javaScript/深拷贝和浅拷贝/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -850,7 +849,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/CSS/边界塌陷/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/操作系统/堆栈的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -869,7 +868,149 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/15/CSS/边界塌陷/" itemprop="url">边界塌陷</a></h1>
+                <a class="post-title-link" href="/2017/07/16/操作系统/堆栈的区别/" itemprop="url">堆栈的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T00:00:00+08:00">
+                2017-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          堆栈空间分配栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
+堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收，分配方式倒是类似于链表
+堆栈缓存方式栈使用的是一级缓存， 他们通常都是被调用时处于存储空间中，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/16/操作系统/堆栈的区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/CSS/标准模式和怪异模式的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/15/CSS/标准模式和怪异模式的区别/" itemprop="url">标准模式和怪异模式的区别</a></h1>
         
 
         <div class="post-meta">
@@ -940,11 +1081,12 @@
       
         
           
-          边界塌陷主要是在并列div和父div包含子div两种情况并列div上面div的margin-bottom和下面div的margin-top会出现塌陷，也就是会取两者之间的最大值显示。上述代码中test1和test2的间距是10px,而不是15px,而且注意此处的边界塌陷并不是说div边界重合，当重合
+          怪异模式和标准模式W3c标准出台之前，各浏览器对页面的渲染方式不统一，即有怪异模式。当W3c标准推出之后，不同浏览器对页面的渲染有统一的标准，即标准模式。
+何时触发怪异模式和标准模式在标准模式中，浏览器根据规范呈现页面；在混杂模式中，页面以一种比较宽松的向后兼容的方式显示。如果XHTML文档包含形式
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/15/CSS/边界塌陷/#more" rel="contents">
+            <a class="btn" href="/2017/07/15/CSS/标准模式和怪异模式的区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1134,7 +1276,7 @@ HTML5中元素都会有一个dataset的属性，这是
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/CSS/标准模式和怪异模式的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/CSS/边界塌陷/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1153,7 +1295,7 @@ HTML5中元素都会有一个dataset的属性，这是
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/15/CSS/标准模式和怪异模式的区别/" itemprop="url">标准模式和怪异模式的区别</a></h1>
+                <a class="post-title-link" href="/2017/07/15/CSS/边界塌陷/" itemprop="url">边界塌陷</a></h1>
         
 
         <div class="post-meta">
@@ -1224,166 +1366,11 @@ HTML5中元素都会有一个dataset的属性，这是
       
         
           
-          怪异模式和标准模式W3c标准出台之前，各浏览器对页面的渲染方式不统一，即有怪异模式。当W3c标准推出之后，不同浏览器对页面的渲染有统一的标准，即标准模式。
-何时触发怪异模式和标准模式在标准模式中，浏览器根据规范呈现页面；在混杂模式中，页面以一种比较宽松的向后兼容的方式显示。如果XHTML文档包含形式
+          边界塌陷主要是在并列div和父div包含子div两种情况并列div上面div的margin-bottom和下面div的margin-top会出现塌陷，也就是会取两者之间的最大值显示。上述代码中test1和test2的间距是10px,而不是15px,而且注意此处的边界塌陷并不是说div边界重合，当重合
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/15/CSS/标准模式和怪异模式的区别/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/javaScript/call、apply、bind之间的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/14/javaScript/call、apply、bind之间的区别/" itemprop="url">call、apply、bind</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T00:00:00+08:00">
-                2017-07-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          call，apply，bind这三个方法其实都是继承自Function.prototype中的，属于实例方法。如果call,apply方法没有参数，或者参数为null或undefined或者this，则等同于指向全局对象
-区别
-
-
-方法
-是否直接执行函数
-传入的参数
-调用方式
-
-
-
-
-call
-是
-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/14/javaScript/call、apply、bind之间的区别/#more" rel="contents">
+            <a class="btn" href="/2017/07/15/CSS/边界塌陷/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1578,7 +1565,7 @@ GET请求参数会被完整保留在浏览器历史记录里，而POST
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/javaScript/继承/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/javaScript/call、apply、bind之间的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1597,7 +1584,7 @@ GET请求参数会被完整保留在浏览器历史记录里，而POST
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/13/javaScript/继承/" itemprop="url">继承</a></h1>
+                <a class="post-title-link" href="/2017/07/14/javaScript/call、apply、bind之间的区别/" itemprop="url">call、apply、bind</a></h1>
         
 
         <div class="post-meta">
@@ -1609,8 +1596,8 @@ GET请求参数会被完整保留在浏览器历史记录里，而POST
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-13T00:00:00+08:00">
-                2017-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T00:00:00+08:00">
+                2017-07-14
               </time>
             
 
@@ -1668,13 +1655,25 @@ GET请求参数会被完整保留在浏览器历史记录里，而POST
       
         
           
-          原型链
-利用原型让一个引用类型继承另一个引用类型的属性和方法
-12345678910function SuperType()&#123; 	    this.property = true;    &#125;    SuperType.prototype.getSuperValue = funct
+          call，apply，bind这三个方法其实都是继承自Function.prototype中的，属于实例方法。如果call,apply方法没有参数，或者参数为null或undefined或者this，则等同于指向全局对象
+区别
+
+
+方法
+是否直接执行函数
+传入的参数
+调用方式
+
+
+
+
+call
+是
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/13/javaScript/继承/#more" rel="contents">
+            <a class="btn" href="/2017/07/14/javaScript/call、apply、bind之间的区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1760,7 +1759,7 @@ GET请求参数会被完整保留在浏览器历史记录里，而POST
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1782,7 +1781,7 @@ GET请求参数会被完整保留在浏览器历史记录里，而POST
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
