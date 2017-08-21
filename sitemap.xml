@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/08/21/thinking/%E4%B8%80%E7%82%B9%E6%84%9F%E6%82%9F/</loc>
+    
+    <lastmod>2017-08-21T13:20:26.237Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/08/15/jQuery/$.extend()%E5%92%8C$.fn%E3%80%81$.fn.extend()/</loc>
+    
+    <lastmod>2017-08-17T15:20:39.026Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/08/09/ES6/var%E3%80%81let%E3%80%81const%E5%8C%BA%E5%88%AB/</loc>
+    
+    <lastmod>2017-08-17T15:01:26.669Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/08/17/react/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
     
     <lastmod>2017-08-16T15:04:53.421Z</lastmod>
@@ -19,13 +40,6 @@
     <loc>http://yoursite.com/2017/08/17/%E5%89%8D%E7%AB%AF%E7%BB%BC%E5%90%88/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/</loc>
     
     <lastmod>2017-08-16T13:47:16.459Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/08/15/jQuery/$.extend()%E5%92%8C$.fn%E3%80%81$.fn.extend()/</loc>
-    
-    <lastmod>2017-08-16T13:47:16.411Z</lastmod>
     
   </url>
   

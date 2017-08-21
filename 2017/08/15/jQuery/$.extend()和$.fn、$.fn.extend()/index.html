@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/15/jQuery/$.extend()和$.fn、$.fn.extend()/index.html">
 <meta property="og:site_name" content="Coding丘">
 <meta property="og:description" content="jQuery开发插件主要有两个方法  jQuery.fn.extend(); jQuery.extend();  jQuery.fn123456jQuery.fn = jQuery.prototype = &amp;#123;    init:function(selector, context)&amp;#123;            &amp;#125;&amp;#125; jQuery便是一个封装得非常好的类，比如$(“">
-<meta property="og:updated_time" content="2017-08-16T13:47:16.411Z">
+<meta property="og:updated_time" content="2017-08-17T15:20:39.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="$.extend()和$.fn、$.fn.extend()">
 <meta name="twitter:description" content="jQuery开发插件主要有两个方法  jQuery.fn.extend(); jQuery.extend();  jQuery.fn123456jQuery.fn = jQuery.prototype = &amp;#123;    init:function(selector, context)&amp;#123;            &amp;#125;&amp;#125; jQuery便是一个封装得非常好的类，比如$(“">
@@ -388,6 +388,30 @@
 <p>jQuery.fn.extend = jQuery.prototype.extend</p>
 <p>你可以拓展一个对象到jQuery的 prototype里去，这样的话就是插件机制了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">(function( $ )&#123;</div><div class="line">$.fn.tooltip = function( options ) &#123;</div><div class="line">&#125;;</div><div class="line">//等价于</div><div class="line">var tooltip = &#123;</div><div class="line">function(options)&#123;</div><div class="line">&#125;</div><div class="line">&#125;;</div><div class="line">$.fn.extend(tooltip) = $.prototype.extend(tooltip) = $.fn.tooltip</div><div class="line">&#125;)( jQuery );</div></pre></td></tr></table></figure>
+<h2 id="jQuery中-符号的作用"><a href="#jQuery中-符号的作用" class="headerlink" title="jQuery中$符号的作用"></a>jQuery中$符号的作用</h2><ol>
+<li>作为jQuery包装器，利用选择器来选择DOM元素（这个也是最强大的功能）</li>
+</ol>
+<p>例如：$(“table tr:nth-child(even)”)</p>
+<ol>
+<li>实用工具函数，作为几个通用的实用工具函数的命名空间的前缀</li>
+</ol>
+<p>例如：$.trim(someString)</p>
+<ol>
+<li>文档就绪处理程序，相当于$(document).ready(…)</li>
+</ol>
+<p>例如：$(function(){…}); 里面的函数会在DOM树加载完之后执行</p>
+<ol>
+<li>创建DOM元素</li>
+</ol>
+<p>例如：$(“</p><p>how are you?</p>“)<p></p>
+<ol>
+<li>扩展jQuery</li>
+</ol>
+<p>例如：$.fn.disable = function(){…}</p>
+<ol>
+<li>使用jQuery和其他库</li>
+</ol>
+<p>例如：Prototype库也是使用$符号，jQuery提供noConflict函数避免冲突，jQuery.noConflict();把$符号还原到非jQuery库定义的含义。</p>
 
       
     </div>
@@ -430,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/08/CSS/行内元素居中方式/" rel="next" title="行内元素居中方式">
-                <i class="fa fa-chevron-left"></i> 行内元素居中方式
+              <a href="/2017/08/09/ES6/var、let、const区别/" rel="next" title="var、let、const区别">
+                <i class="fa fa-chevron-left"></i> var、let、const区别
               </a>
             
           </div>
@@ -514,7 +538,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">64</span>
+                <span class="site-state-item-count">66</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -525,7 +549,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -536,7 +560,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -582,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-fn"><span class="nav-number">1.</span> <span class="nav-text">jQuery.fn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-extend-object"><span class="nav-number">2.</span> <span class="nav-text">jQuery.extend(object)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-extend-target-object1-objectN"><span class="nav-number">3.</span> <span class="nav-text">jQuery.extend(target, object1,[objectN])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-fn-extend-object"><span class="nav-number">4.</span> <span class="nav-text">jQuery.fn.extend(object)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-fn"><span class="nav-number">1.</span> <span class="nav-text">jQuery.fn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-extend-object"><span class="nav-number">2.</span> <span class="nav-text">jQuery.extend(object)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-extend-target-object1-objectN"><span class="nav-number">3.</span> <span class="nav-text">jQuery.extend(target, object1,[objectN])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-fn-extend-object"><span class="nav-number">4.</span> <span class="nav-text">jQuery.fn.extend(object)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery中-符号的作用"><span class="nav-number">5.</span> <span class="nav-text">jQuery中$符号的作用</span></a></li></ol></div>
             
 
           </div>
