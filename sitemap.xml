@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/08/22/React/react%20%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</loc>
+    
+    <lastmod>2017-08-30T14:17:20.296Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/08/23/React/Diff%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2017-08-30T14:07:26.275Z</lastmod>
@@ -9,16 +16,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/08/23/React/react%20%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</loc>
+    <loc>http://yoursite.com/2017/08/22/html/Doctype/</loc>
     
-    <lastmod>2017-08-30T14:05:23.298Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/08/21/thinking/%E4%B8%80%E7%82%B9%E6%84%9F%E6%82%9F/</loc>
-    
-    <lastmod>2017-08-21T13:20:26.237Z</lastmod>
+    <lastmod>2017-08-30T14:01:36.071Z</lastmod>
     
   </url>
   
