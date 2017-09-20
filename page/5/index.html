@@ -286,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/javaScript/javascript 垃圾回收机制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/前端综合/csrf、xxs安全问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -305,7 +305,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/13/javaScript/javascript 垃圾回收机制/" itemprop="url">javaScript 垃圾回收机制</a></h1>
+                <a class="post-title-link" href="/2017/07/24/前端综合/csrf、xxs安全问题/" itemprop="url">CSRF、XSS安全问题</a></h1>
         
 
         <div class="post-meta">
@@ -317,8 +317,292 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-13T00:00:00+08:00">
-                2017-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T00:00:00+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          XSS：跨站脚本攻击
+原因：应用程序在接受数据之后没有进行适当的验证和转义，直接发送给网页浏览器，可能会产生XSS攻击。
+危害：恶意的HTML/JavaScript代码会注入到用户浏览的网页上，从而达到Cookie资料窃取、会话劫持、钓鱼欺骗等攻击。
+防御方法：
+HttpOnly 。  浏览器禁止页
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/24/前端综合/csrf、xxs安全问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/23/前端综合/cookie、localstorage、sessionstorage的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/23/前端综合/cookie、localstorage、sessionstorage的区别/" itemprop="url">cookie、localStorage、sessionStorage的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-23T00:00:00+08:00">
+                2017-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          cookie、localStorage、sessionStorage的区别LocalStorage（本地存储）和sessionStorage（会话存储） 是HTML5 Web Storage API 提供的，这两种方式都允许开发者使用js设置的键值对进行操作，在在重新加载不同的页面的时候读出它们。这
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/23/前端综合/cookie、localstorage、sessionstorage的区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/23/javaScript/juqery链式调用原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/23/javaScript/juqery链式调用原理/" itemprop="url">juqery链式调用原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-23T00:00:00+08:00">
+                2017-07-23
               </time>
             
 
@@ -376,12 +660,15 @@
       
         
           
-          基本类型的值保存在栈内存中，引用类型保存字堆内存中。找出不再继续使用的变量，然后释放其所占内存。
-标记清除当变量进入环境时（被声明）标记其“进入环境”，永远不能释放一个标记“进入环境”的变量所占的内存，因为只要执行流进入相应的环境皆有可能用到它。当变量离开环境时就将其标记为“离开环境”，（可以用变量
+          aQuery().init().name()
+分解：
+a = aQuery();a.init()a.name()
+把代码分解一下，很明显实现链式的基本条件就是要实例对象先创建好，调用自己的方法。
+123456789aQuery.prototype = &#123;    init: function
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/13/javaScript/javascript 垃圾回收机制/#more" rel="contents">
+            <a class="btn" href="/2017/07/23/javaScript/juqery链式调用原理/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -427,7 +714,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/javaScript/对象以及创建对象的模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/网络/网络分层结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -446,7 +733,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/12/javaScript/对象以及创建对象的模式/" itemprop="url">对象以及创建对象的模式</a></h1>
+                <a class="post-title-link" href="/2017/07/21/网络/网络分层结构/" itemprop="url">网络分层结构</a></h1>
         
 
         <div class="post-meta">
@@ -458,430 +745,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T00:00:00+08:00">
-                2017-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          理解对象属性类型数据属性1234[[configurable]]  能否修改、删除、改为访问器属性 /false[[Enumerable]] 能否通过for-in返回属性 /flase[[Writable]] 能否修改 /false[[Value]] 数据值 /undefined
-访问器属性1234
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/12/javaScript/对象以及创建对象的模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/javaScript/处理单击和双击冲突的办法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/12/javaScript/处理单击和双击冲突的办法/" itemprop="url">单双击冲突解决</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T00:00:00+08:00">
-                2017-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          当双击时会执行两次click，第一个距离dbclick时间较长，第二个click与dbclick几乎同时发生，所以只要对click设置一个延时，这个延时时长要大于第一个click与dbclick的时间间隔，当双击时前两个click都还在任务队列里，执行到dbclick时将计时器清除，则不会执行cli
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/12/javaScript/处理单击和双击冲突的办法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/javaScript/闭包实现循环绑定/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/12/javaScript/闭包实现循环绑定/" itemprop="url">闭包实现循环绑定</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T00:00:00+08:00">
-                2017-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          闭包：有权访问另一个函数作用域中的变量常见形式：在一个函数内部创建一个函数函数执行完毕后，其活动对象也不会被销毁，因为内部函数的作用域链仍然在引用这个活动对象
-12345678910var name  = &quot;the window&quot;;    var object2 = &#123;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/12/javaScript/闭包实现循环绑定/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/网络/滑动窗口、流量控制、拥塞控制/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/11/网络/滑动窗口、流量控制、拥塞控制/" itemprop="url">滑动窗口、流量控制、拥塞控制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T00:00:00+08:00">
-                2017-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T00:00:00+08:00">
+                2017-07-21
               </time>
             
 
@@ -939,13 +804,11 @@
       
         
           
-          滑动窗口 能够发送的字节序列长度，一般利用滑动窗口实现流量控制的机制，主要用于接收方告诉发送方数据不要发太快，而能传递多少数据什么时候传递则需要参照接收方传递的信息，当发送方发送了数据并收到确认消息后窗口按顺序进行滑动，此时接收方一般也是按顺序进行滑动。所谓滑动窗口协议，自己理解有两点：
-
-“窗口”
+          七层模型OSI（Open System Interconnection，开放系统互连）七层网络模型称为开放式系统互联参考模型 ，是一个逻辑上的定义，一个规范，它把网络从逻辑上分为了7层。每一层都有相关、相对应的物理设备，比如路由器(网络层)，交换机(数据链路层)。OSI 七层模型是一种框架性的设计方
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/11/网络/滑动窗口、流量控制、拥塞控制/#more" rel="contents">
+            <a class="btn" href="/2017/07/21/网络/网络分层结构/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -991,7 +854,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/CSS/浏览器兼容-CSS/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/网络/http2.0和http1.0的差别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1010,7 +873,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/10/CSS/浏览器兼容-CSS/" itemprop="url">浏览器兼容-CSS</a></h1>
+                <a class="post-title-link" href="/2017/07/20/网络/http2.0和http1.0的差别/" itemprop="url">HTTP2.0和HTTP1.0的差别</a></h1>
         
 
         <div class="post-meta">
@@ -1022,8 +885,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:00:00+08:00">
-                2017-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-20T00:00:00+08:00">
+                2017-07-20
               </time>
             
 
@@ -1045,8 +908,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -1081,13 +944,15 @@
       
         
           
-          CSS常见兼容性问题总结
-原文 http://www.cnblogs.com/imwtr/p/4340010.html
-浏览器的兼容性问题，通常是因为不同的浏览器对同一段代码有不同的解析，造成页面显示不统一的情况。这里谈到的浏览器，主要指IE6/IE7/IE… FireFox Chrome Oper
+          相比 HTTP/1.x，HTTP/2 在底层传输做了很大的改动和优化：
+
+HTTP/2 采用二进制格式传输数据，而非 HTTP/1.x 的文本格式。二进制格式在协议的解析和优化扩展上带来更多的优势和可能。//Frame
+
+HTTP/1.x 每次请求，都会携带大量冗余头信息，浪费了很多带宽资源。HTT
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/10/CSS/浏览器兼容-CSS/#more" rel="contents">
+            <a class="btn" href="/2017/07/20/网络/http2.0和http1.0的差别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1133,7 +998,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/CSS/清除浮动/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/操作系统/进程和线程的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1152,7 +1017,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/10/CSS/清除浮动/" itemprop="url">清除浮动</a></h1>
+                <a class="post-title-link" href="/2017/07/20/操作系统/进程和线程的区别/" itemprop="url">进程和线程的区别与联系</a></h1>
         
 
         <div class="post-meta">
@@ -1164,8 +1029,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:00:00+08:00">
-                2017-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-20T00:00:00+08:00">
+                2017-07-20
               </time>
             
 
@@ -1187,8 +1052,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
                   </a>
                 </span>
 
@@ -1223,13 +1088,12 @@
       
         
           
-          原理float属性会使得普通元素脱离稳定流变成浮动元素。
-存在的问题浮动的子元素显示在父容器的外部
-原因在CSS规范中，浮动定位不属于正常的页面流（page flow），是独立定位的。所以，只含有浮动元素的父容器，在显示时不考虑子元素的位置，就当它们不存在一样。这就造成了显示出来，父容器好像空容器一
+          定义进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，是系统进行资源分配和调度的一个独立单位.
+线程是进程的一个实体，是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/10/CSS/清除浮动/#more" rel="contents">
+            <a class="btn" href="/2017/07/20/操作系统/进程和线程的区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1275,7 +1139,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/CSS/浏览器内核以及css适配/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/前端综合/防止抖动javascript函数的throttle(节流)和debounce(去抖)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1294,7 +1158,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/10/CSS/浏览器内核以及css适配/" itemprop="url">浏览器内核及CSS适配</a></h1>
+                <a class="post-title-link" href="/2017/07/19/前端综合/防止抖动javascript函数的throttle(节流)和debounce(去抖)/" itemprop="url">throttle(节流)和debounce(去抖)</a></h1>
         
 
         <div class="post-meta">
@@ -1306,8 +1170,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:00:00+08:00">
-                2017-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T00:00:00+08:00">
+                2017-07-19
               </time>
             
 
@@ -1329,8 +1193,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
                   </a>
                 </span>
 
@@ -1365,16 +1229,12 @@
       
         
           
-          各浏览器内核
-Webkit内核：使用此引擎内核的浏览器有：Safari(包括移动版和桌面版)、Chrome。其私有属性的前缀是-webkit-。
-
-Gecko内核：使用此引擎内核的浏览器有Mozilla，常指的是Firefox浏览器。其私有属性的前缀是-moz-。
-
-Presto内核：使用此引擎内核
+          throttle预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期。
+123456789101112var last = 0 ;    function throttle(fn,threshhold)&#123;        return function()
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/10/CSS/浏览器内核以及css适配/#more" rel="contents">
+            <a class="btn" href="/2017/07/19/前端综合/防止抖动javascript函数的throttle(节流)和debounce(去抖)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1420,7 +1280,7 @@ Presto内核：使用此引擎内核
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/CSS/CSS+CSS3 伪类/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/前端综合/预加载和懒加载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1439,7 +1299,7 @@ Presto内核：使用此引擎内核
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/10/CSS/CSS+CSS3 伪类/" itemprop="url">伪类</a></h1>
+                <a class="post-title-link" href="/2017/07/18/前端综合/预加载和懒加载/" itemprop="url">预加载和懒加载</a></h1>
         
 
         <div class="post-meta">
@@ -1451,8 +1311,8 @@ Presto内核：使用此引擎内核
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:00:00+08:00">
-                2017-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T00:00:00+08:00">
+                2017-07-18
               </time>
             
 
@@ -1474,8 +1334,8 @@ Presto内核：使用此引擎内核
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
                   </a>
                 </span>
 
@@ -1510,13 +1370,14 @@ Presto内核：使用此引擎内核
       
         
           
-          伪类语法1selector : pseudo-class &#123;property: value&#125;
-CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property: value&#125;
-锚伪类1234a:link &#123;
+          懒加载什么是懒加载在页面中先把img或其他元素的背景图片用1*1px的图片占位，只有当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。
+为什么使用懒加载页面内容较多，一次性加载需要较长时间，优化用户体验
+原理
+页面中的img元素，如果没有src属性，浏览器就不
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/10/CSS/CSS+CSS3 伪类/#more" rel="contents">
+            <a class="btn" href="/2017/07/18/前端综合/预加载和懒加载/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1562,7 +1423,7 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/CSS/CSS 伪元素/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/网络/HTTP状态码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1581,7 +1442,7 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/10/CSS/CSS 伪元素/" itemprop="url">伪元素</a></h1>
+                <a class="post-title-link" href="/2017/07/18/网络/HTTP状态码/" itemprop="url">HTTP状态码</a></h1>
         
 
         <div class="post-meta">
@@ -1593,8 +1454,8 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:00:00+08:00">
-                2017-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T00:00:00+08:00">
+                2017-07-18
               </time>
             
 
@@ -1616,8 +1477,8 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -1652,13 +1513,174 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
       
         
           
-          伪元素12selector:pseudo-element &#123;property:value;&#125;selector.class:pseudo-element &#123;property:value;&#125;
-::first-line伪元素
-用于向文本的首行设置特殊样式12345p
+          
+
+
+类别
+原因短语
+
+
+
+
+1XX
+Informational(信息性状态码)     接受的请求正在处理
+
+
+2XX
+Success(成功状态码)     请求正常处理完毕
+
+
+3XX
+Redirection(重定向状态码)     需要进行附加操作以完成请求
+
+
+4XX
+Client Erro
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/10/CSS/CSS 伪元素/#more" rel="contents">
+            <a class="btn" href="/2017/07/18/网络/HTTP状态码/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/17/前端综合/优雅降级 渐进增加/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/17/前端综合/优雅降级 渐进增加/" itemprop="url">优雅降级 渐进增加</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-17T00:00:00+08:00">
+                2017-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          优雅降级和渐进增强之前在看一些css3效果demo的时候，发现有些写css3属性时，兼容性的写法顺序不太一样，比如transition属性，有些把transition放在前面有些是放在后面，当然这也有可能包含了coder个人的习惯或是强迫性，比如下面这两种：
+1234567891011121314/
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/17/前端综合/优雅降级 渐进增加/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1699,7 +1721,7 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1744,7 +1766,7 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">88</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1755,7 +1777,7 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1766,7 +1788,7 @@ CSS 类也可与伪类搭配使用1selector.class : pseudo-class &#123;property:
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

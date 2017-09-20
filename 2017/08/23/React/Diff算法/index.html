@@ -96,10 +96,10 @@
 <meta name="description" content="在React中，构建UI界面的思路是由当前状态决定界面。前后两个状态就对应两套界面，然后由React来比较两个界面的区别，这就需要对DOM树进行Diff算法分析。 即给定任意两棵树，找到最少的转换步骤。但是标准的的Diff算法复杂度需要O(n^3)，这显然无法满足性能要求。 两点假设：  两个相同的组件产生类似的DOM结构，不同的组件产生不同的DOM结构 对于同一层次的一组子节点，他们可以通过唯一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Diff算法过程">
-<meta property="og:url" content="http://yoursite.com/2017/08/23/React/Diff算法/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/08/23/React/diff算法/index.html">
 <meta property="og:site_name" content="Coding丘">
 <meta property="og:description" content="在React中，构建UI界面的思路是由当前状态决定界面。前后两个状态就对应两套界面，然后由React来比较两个界面的区别，这就需要对DOM树进行Diff算法分析。 即给定任意两棵树，找到最少的转换步骤。但是标准的的Diff算法复杂度需要O(n^3)，这显然无法满足性能要求。 两点假设：  两个相同的组件产生类似的DOM结构，不同的组件产生不同的DOM结构 对于同一层次的一组子节点，他们可以通过唯一">
-<meta property="og:updated_time" content="2017-08-30T14:07:26.275Z">
+<meta property="og:updated_time" content="2017-09-13T15:33:01.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Diff算法过程">
 <meta name="twitter:description" content="在React中，构建UI界面的思路是由当前状态决定界面。前后两个状态就对应两套界面，然后由React来比较两个界面的区别，这就需要对DOM树进行Diff算法分析。 即给定任意两棵树，找到最少的转换步骤。但是标准的的Diff算法复杂度需要O(n^3)，这显然无法满足性能要求。 两点假设：  两个相同的组件产生类似的DOM结构，不同的组件产生不同的DOM结构 对于同一层次的一组子节点，他们可以通过唯一">
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/23/React/Diff算法/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/23/React/diff算法/"/>
 
 
 
@@ -285,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/React/Diff算法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/React/diff算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -379,7 +379,7 @@
 <li>对于同一层次的一组子节点，他们可以通过唯一的id进行区分</li>
 </ol>
 <p>当React在同一个位置遇到不同的组件时，也是简单的销毁第一个组件，而把新创建的组件加上去。这正是应用了第一个假设，不同的组件一般会产生不一样的DOM结构，与其浪费时间去比较它们基本上不会等价的DOM结构，还不如完全创建一个新的组件加上去。<br>由这一React对不同类型的节点的处理逻辑我们很容易得到推论，那就是React的DOM Diff算法实际上只会对树进行逐层比较，如下所述。</p>
-<h2 id="不同节点类型的比较"><a href="#不同节点类型的比较" class="headerlink" title="不同节点类型的比较"></a>不同节点类型的比较</h2><p>在React中即比较两个虚拟DOM节点，当两个节点不同时，应该如何处理。这分为两种情况：</p>
+<h2 id="不同节点的比较"><a href="#不同节点的比较" class="headerlink" title="不同节点的比较"></a>不同节点的比较</h2><p>在React中即比较两个虚拟DOM节点，当两个节点不同时，应该如何处理。这分为两种情况：</p>
 <ol>
 <li>节点类型不同 ，</li>
 <li>节点类型相同，但是属性不同。</li>
@@ -387,6 +387,7 @@
 <h3 id="节点类型不同"><a href="#节点类型不同" class="headerlink" title="节点类型不同"></a>节点类型不同</h3><h4 id="逐层比较"><a href="#逐层比较" class="headerlink" title="逐层比较"></a>逐层比较</h4><p>React只会对相同层的的DOM节点进行比较，即同一个父节点下的所有子节点。当发现节点已经不存在，则该节点及其子节点会被完全删除掉，不会用于进一步的比较。这样只需要对树进行一次遍历，便能完成整个DOM树的比较。</p>
 <h3 id="相同类型节点"><a href="#相同类型节点" class="headerlink" title="相同类型节点"></a>相同类型节点</h3><p>第二种节点的比较是相同类型的节点，算法就相对简单而容易理解。React会对属性(例如style)进行重设从而实现节点的转换。</p>
 <h3 id="列表节点的比较"><a href="#列表节点的比较" class="headerlink" title="列表节点的比较"></a>列表节点的比较</h3><p>上面介绍了对于不在同一层的节点的比较，即使它们完全一样，也会销毁并重新创建。那么当它们在同一层时，又是如何处理的呢？这就涉及到列表节点的Diff算法。<br>如果给每个节点唯一的标识（key），那么React能够找到正确的位置去插入新的节点</p>
+<p><a href="http://www.infoq.com/cn/articles/react-dom-diff/" target="_blank" rel="external">http://www.infoq.com/cn/articles/react-dom-diff/</a></p>
 
       
     </div>
@@ -432,6 +433,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/23/React/react 组件通信/" rel="prev" title="React 组件通信">
+                React 组件通信 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -503,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">88</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -514,7 +519,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -525,7 +530,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -571,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不同节点类型的比较"><span class="nav-number">1.</span> <span class="nav-text">不同节点类型的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#节点类型不同"><span class="nav-number">1.1.</span> <span class="nav-text">节点类型不同</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逐层比较"><span class="nav-number">1.1.1.</span> <span class="nav-text">逐层比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相同类型节点"><span class="nav-number">1.2.</span> <span class="nav-text">相同类型节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表节点的比较"><span class="nav-number">1.3.</span> <span class="nav-text">列表节点的比较</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不同节点的比较"><span class="nav-number">1.</span> <span class="nav-text">不同节点的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#节点类型不同"><span class="nav-number">1.1.</span> <span class="nav-text">节点类型不同</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逐层比较"><span class="nav-number">1.1.1.</span> <span class="nav-text">逐层比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相同类型节点"><span class="nav-number">1.2.</span> <span class="nav-text">相同类型节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表节点的比较"><span class="nav-number">1.3.</span> <span class="nav-text">列表节点的比较</span></a></li></ol></li></ol></div>
             
 
           </div>

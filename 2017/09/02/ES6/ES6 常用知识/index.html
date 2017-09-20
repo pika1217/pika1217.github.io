@@ -1,0 +1,820 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ES6," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="let 、 const 不能重复定义相同变量名 暂存性死区 没有变量提升 不能在初始化之前使用变量 const基本类型变量不可改变值，引用类型不可改变地址模板字符串  第一个用途，基本的字符串格式化。将表达式嵌入字符串中进行拼接。用${}来界定。 123456//es5     var name = &amp;apos;lux&amp;apos;    console.log(&amp;apos;hello&amp;apos;">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6 常用知识">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/ES6/ES6 常用知识/index.html">
+<meta property="og:site_name" content="Coding丘">
+<meta property="og:description" content="let 、 const 不能重复定义相同变量名 暂存性死区 没有变量提升 不能在初始化之前使用变量 const基本类型变量不可改变值，引用类型不可改变地址模板字符串  第一个用途，基本的字符串格式化。将表达式嵌入字符串中进行拼接。用${}来界定。 123456//es5     var name = &amp;apos;lux&amp;apos;    console.log(&amp;apos;hello&amp;apos;">
+<meta property="og:updated_time" content="2017-09-20T12:22:37.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6 常用知识">
+<meta name="twitter:description" content="let 、 const 不能重复定义相同变量名 暂存性死区 没有变量提升 不能在初始化之前使用变量 const基本类型变量不可改变值，引用类型不可改变地址模板字符串  第一个用途，基本的字符串格式化。将表达式嵌入字符串中进行拼接。用${}来界定。 123456//es5     var name = &amp;apos;lux&amp;apos;    console.log(&amp;apos;hello&amp;apos;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/02/ES6/ES6 常用知识/"/>
+
+
+
+
+
+  <title>ES6 常用知识 | Coding丘</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f4c3768b625fb00fb83191de7ce9c5a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding丘</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/ES6/ES6 常用知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6 常用知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T00:00:00+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="let-、-const"><a href="#let-、-const" class="headerlink" title="let 、 const"></a>let 、 const</h3><ol>
+<li>不能重复定义相同变量名</li>
+<li>暂存性死区</li>
+<li>没有变量提升</li>
+<li>不能在初始化之前使用变量</li>
+<li>const基本类型变量不可改变值，引用类型不可改变地址<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3></li>
+</ol>
+<p>第一个用途，基本的字符串格式化。将表达式嵌入字符串中进行拼接。用${}来界定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//es5 </div><div class="line">    var name = &apos;lux&apos;</div><div class="line">    console.log(&apos;hello&apos; + name)</div><div class="line">    //es6</div><div class="line">    const name = &apos;lux&apos;</div><div class="line">    console.log(`hello $&#123;name&#125;`) //hello lux</div></pre></td></tr></table></figure>
+<p>第二个用途，在ES5时我们通过反斜杠()来做多行字符串或者字符串一行行拼接。ES6反引号(``)直接搞定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// es5</div><div class="line">    var msg = &quot;Hi \</div><div class="line">    man!</div><div class="line">    &quot;</div><div class="line">    // es6</div><div class="line">    const template = `&lt;div&gt;</div><div class="line">        &lt;span&gt;hello world&lt;/span&gt;</div><div class="line">    &lt;/div&gt;`</div></pre></td></tr></table></figure>
+<p>对于字符串es6当然也提供了很多厉害的方法。说几个常用的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 1.includes：判断是否包含然后直接返回布尔值</div><div class="line">    let str = &apos;hahay&apos;</div><div class="line">    console.log(str.includes(&apos;y&apos;)) // true</div><div class="line">    // 2.repeat: 获取字符串重复n次</div><div class="line">    let s = &apos;he&apos;</div><div class="line">    console.log(s.repeat(3)) // &apos;hehehe&apos;</div><div class="line">    //如果你带入小数, Math.floor(num) 来处理</div></pre></td></tr></table></figure>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><ol>
+<li>不需要function关键字来创建函数</li>
+<li>单行可以省略return</li>
+<li>函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。需要注意的是es6默认严格模式，所以函数中this不能等于window，如果没有指定函数中的this指向，则this等于undefined</li>
+<li>箭头函数可以替换函数表达式，但是不能替换函数声明</li>
+</ol>
+<h3 id="拓展的对象功能"><a href="#拓展的对象功能" class="headerlink" title="拓展的对象功能"></a>拓展的对象功能</h3><p>对象初始化简写</p>
+<p>ES5我们对于对象都是以键值对的形式书写，是有可能出现键值对重名的。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function people(name, age) &#123;</div><div class="line">        return &#123;</div><div class="line">            name: name,</div><div class="line">            age: age</div><div class="line">        &#125;;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>键值对重名，ES6可以简写如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function people(name, age) &#123;</div><div class="line">        return &#123;</div><div class="line">            name,</div><div class="line">            age</div><div class="line">        &#125;;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>ES6 同样改进了为对象字面量方法赋值的语法。ES5为对象添加方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const people = &#123;</div><div class="line">        name: &apos;lux&apos;,</div><div class="line">        getName: function() &#123;</div><div class="line">            console.log(this.name)</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>ES6通过省略冒号与 function 关键字，将这个语法变得更简洁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const people = &#123;</div><div class="line">        name: &apos;lux&apos;,</div><div class="line">        getName () &#123;</div><div class="line">            console.log(this.name)</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>ES6 对象提供了Object.assign()这个方法来实现浅复制。Object.assign()可以把任意多个源对象自身可枚举的属性拷贝给目标对象，然后返回目标对象。第一参数即为目标对象。在实际项目中，我们为了不改变源对象。一般会把目标对象传为{}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const obj = Object.assign(&#123;&#125;, objA, objB)</div></pre></td></tr></table></figure>
+<h3 id="赋值解构"><a href="#赋值解构" class="headerlink" title="赋值解构"></a>赋值解构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//对象 </div><div class="line">const people = &#123; name: &apos;lux&apos;, age: 20 &#125; </div><div class="line">const &#123; name, age &#125; = people </div><div class="line">console.log(`$&#123;name&#125; --- $&#123;age&#125;`) //数组 </div><div class="line">const color = [&apos;red&apos;, &apos;blue&apos;]</div><div class="line">const [first, second] = color console.log(first) //&apos;red&apos; console.log(second) //&apos;blue&apos;</div></pre></td></tr></table></figure>
+<h3 id="扩展运算符…"><a href="#扩展运算符…" class="headerlink" title="扩展运算符…"></a>扩展运算符…</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//数组</div><div class="line">const color = [&apos;red&apos;, &apos;yellow&apos;] </div><div class="line">const colorful = [...color, &apos;green&apos;, &apos;pink&apos;] </div><div class="line">console.log(colorful) //[red, yellow, green, pink] </div><div class="line"></div><div class="line">//对象 </div><div class="line">const alp = &#123; fist: &apos;a&apos;, second: &apos;b&apos;&#125; </div><div class="line">const alphabets = &#123; ...alp, third: &apos;c&apos; &#125; </div><div class="line">console.log(alphabets) //&#123; &quot;fist&quot;: &quot;a&quot;, &quot;second&quot;: &quot;b&quot;, &quot;third&quot;: &quot;c&quot; &#125;</div></pre></td></tr></table></figure>
+<p>有时候我们想获取数组或者对象除了前几项或者除了某几项的其他项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//数组</div><div class="line">const number = [1,2,3,4,5]</div><div class="line">const [first, ...rest] = number</div><div class="line">console.log(rest) //2,3,4,5</div><div class="line">//对象</div><div class="line">const user = &#123;</div><div class="line">    username: &apos;lux&apos;,</div><div class="line">    gender: &apos;female&apos;,</div><div class="line">    age: 19,</div><div class="line">    address: &apos;peking&apos;</div><div class="line">&#125;</div><div class="line">const &#123; username, ...rest &#125; = user</div><div class="line">console.log(rest) </div><div class="line">//&#123;&quot;address&quot;: &quot;peking&quot;, &quot;age&quot;: 19, &quot;gender&quot;: &quot;female&quot;&#125;</div></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
+<li>默认参数</li>
+<li>class</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">class Person &#123;</div><div class="line">  constructor(name, age) &#123;  // 构造函数</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  getName() &#123;   // 这种写法表示将方法添加到原型中</div><div class="line">    return this.name</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  static a = 20;  // 等同于 Person.a = 20</div><div class="line">  </div><div class="line">  c = 20;   // 表示在构造函数中添加属性 在构造函数中等同于 this.c = 20</div><div class="line">  </div><div class="line">// 箭头函数的写法表示在构造函数中添加方法，在构造函数中等同于this.getAge = function() &#123;&#125;</div><div class="line">  getAge = () =&gt; this.age   </div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>extends<br>相比ES5，ES6的继承就要简单很多，我们直接来看一个例子。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line">  constructor(name, age) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  getName() &#123;</div><div class="line">    return this.name</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Student类继承Person类</div><div class="line">class Student extends Person &#123;</div><div class="line">  constructor(name, age, gender, classes) &#123;</div><div class="line">    super(name, age);//调用父类构造函数返回this指向Student</div><div class="line">    this.gender = gender;</div><div class="line">    this.classes = classes;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  getGender() &#123;</div><div class="line">    return this.gender;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在继承的构造函数中，我们必须如上面的例子那么调用一次super方法，它表示构造函数的继承，与ES5中利用call/apply继承构造函数是一样的功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 构造函数中</div><div class="line">// es6 </div><div class="line">super(name, age);</div><div class="line"></div><div class="line">// es5</div><div class="line">Person.call(this);</div></pre></td></tr></table></figure>
+<h3 id="import-和-export"><a href="#import-和-export" class="headerlink" title="import 和 export"></a>import 和 export</h3><p>import导入模块、export导出模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import people from &apos;./example&apos; //全部导入</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//有一种特殊情况，即允许你将整个模块当作单一对象进行导入</div><div class="line">//该模块的所有导出都会作为对象的属性存在</div><div class="line">import * as example from &quot;./example.js&quot;</div><div class="line">console.log(example.name)</div><div class="line">console.log(example.age)</div><div class="line">console.log(example.getName())</div><div class="line"></div><div class="line">//导入部分</div><div class="line"></div><div class="line">import &#123;name, age&#125; from &apos;./example&apos;</div><div class="line"></div><div class="line">// 导出默认, 有且只有一个默认</div><div class="line"></div><div class="line">export default App</div><div class="line"></div><div class="line">// 部分导出</div><div class="line">export class App extend Component &#123;&#125;;</div></pre></td></tr></table></figure>
+<ol>
+<li>当用export default people导出时，就用 import people 导入（不带大括号） </li>
+<li>一个文件里，有且只能有一个export default。但可以有多个export。 </li>
+<li>当用export name 时，就用import { name }导入（记得带上大括号） </li>
+<li>当一个文件里，既有一个export default people, 又有多个export name 或者 export age时，导入就用 import people, { name, age } </li>
+<li>当一个文件里出现n多个 export 导出很多模块，导入时除了一个一个导入，也可以用import * as example</li>
+</ol>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><blockquote>
+<p>在promise之前代码过多的回调或者嵌套，可读性差、耦合度高、扩展性低。通过Promise机制，扁平化的代码结构，大大提高了代码可读性；用同步编程的方式来编写异步代码，保存线性的代码逻辑，极大的降低了代码耦合性而提高了程序的可扩展性。</p>
+</blockquote>
+<p>发起异步请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">fetch(&apos;/api/todos&apos;)</div><div class="line">  .then(res =&gt; res.json())</div><div class="line">  .then(data =&gt; (&#123; data &#125;))</div><div class="line">  .catch(err =&gt; (&#123; err &#125;));</div><div class="line"></div><div class="line">var fn = function(num) &#123;</div><div class="line">    return new Promise(function(resolve, reject) &#123;</div><div class="line">        if (typeof num == &apos;number&apos;) &#123;</div><div class="line">            resolve(num);</div><div class="line">        &#125; else &#123;</div><div class="line">            reject(&apos;TypeError&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn(2).then(function(num) &#123;</div><div class="line">    console.log(&apos;first: &apos; + num);</div><div class="line">    return num + 1;</div><div class="line">&#125;)</div><div class="line">.then(function(num) &#123;</div><div class="line">    console.log(&apos;second: &apos; + num);</div><div class="line">    return num + 1;</div><div class="line">&#125;)</div><div class="line">.then(function(num) &#123;</div><div class="line">    console.log(&apos;third: &apos; + num);</div><div class="line">    return num + 1;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 输出结果</div><div class="line">first: 2</div><div class="line">second: 3</div><div class="line">third: 4</div></pre></td></tr></table></figure>
+<h3 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a>Generators</h3><p>生成器（ generator）是能返回一个迭代器的函数。生成器函数也是一种函数，最直观的表现就是比普通的function多了个星号*，在其函数体内可以使用yield关键字,有意思的是函数会在每个yield后暂停。</p>
+<p>当你调用一个generator时，它将返回一个迭代器对象。这个迭代器对象拥有一个叫做next的方法来帮助你重启generator函数并得到下一个值。next方法不仅返回值，它返回的对象具有两个属性：done和value。value是你获得的值，done用来表明你的generator是否已经停止提供值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 生成器</div><div class="line">function *createIterator() &#123;</div><div class="line">    yield 1;</div><div class="line">    yield 2;</div><div class="line">    yield 3;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 生成器能像正规函数那样被调用，但会返回一个迭代器</div><div class="line">let iterator = createIterator();</div><div class="line"></div><div class="line">console.log(iterator.next().value); // 1</div><div class="line">console.log(iterator.next().value); // 2</div><div class="line">console.log(iterator.next().value); // 3</div></pre></td></tr></table></figure>
+<p>那生成器和迭代器又有什么用处呢？</p>
+<p>围绕着生成器的许多兴奋点都与异步编程直接相关。异步调用对于我们来说是很困难的事，我们的函数并不会等待异步调用完再执行，你可能会想到用回调函数，（当然还有其他方案比如Promise比如Async/await）。</p>
+<p>生成器可以让我们的代码进行等待。就不用嵌套的回调函数。使用generator可以确保当异步调用在我们的generator函数运行下行代码之前完成时暂停函数的执行。</p>
+<p>那么问题来了，咱们也不能手动一直调用next()方法，你需要一个能够调用生成器并启动迭代器的方法。就像这样子的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function run(taskDef) &#123; //taskDef即一个生成器函数</div><div class="line"></div><div class="line">    // 创建迭代器，让它在别处可用</div><div class="line">    let task = taskDef();</div><div class="line"></div><div class="line">    // 启动任务</div><div class="line">    let result = task.next();</div><div class="line"></div><div class="line">    // 递归使用函数来保持对 next() 的调用</div><div class="line">    function step() &#123;</div><div class="line"></div><div class="line">        // 如果还有更多要做的</div><div class="line">        if (!result.done) &#123;</div><div class="line">            result = task.next();</div><div class="line">            step();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 开始处理过程</div><div class="line">    step();</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>生成器与迭代器最有趣、最令人激动的方面，或许就是可创建外观清晰的异步操作代码。你不必到处使用回调函数，而是可以建立貌似同步的代码，但实际上却使用 yield 来等待异步操作结束。</p>
+<p>参考：</p>
+<ol>
+<li><a href="http://www.jianshu.com/p/287e0bb867ae" target="_blank" rel="external">http://www.jianshu.com/p/287e0bb867ae</a></li>
+<li><a href="http://www.jianshu.com/p/cfb0893c34f1" target="_blank" rel="external">http://www.jianshu.com/p/cfb0893c34f1</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/01/ES6/对象/" rel="next" title="对象">
+                <i class="fa fa-chevron-left"></i> 对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/03/React/react-router原理/" rel="prev" title="react-router原理">
+                react-router原理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/self.png"
+               alt="韩露" />
+          <p class="site-author-name" itemprop="name">韩露</p>
+           
+              <p class="site-description motion-element" itemprop="description">生活，就要心怀最大的善意在荆棘中穿行。即使被刺伤，亦不改初衷。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">88</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pika1217/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#let-、-const"><span class="nav-number">1.</span> <span class="nav-text">let 、 const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">2.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">3.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓展的对象功能"><span class="nav-number">4.</span> <span class="nav-text">拓展的对象功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值解构"><span class="nav-number">5.</span> <span class="nav-text">赋值解构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展运算符…"><span class="nav-number">6.</span> <span class="nav-text">扩展运算符…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">7.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import-和-export"><span class="nav-number">8.</span> <span class="nav-text">import 和 export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">9.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generators"><span class="nav-number">10.</span> <span class="nav-text">Generators</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩露</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
