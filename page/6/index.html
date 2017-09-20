@@ -286,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/17/javaScript/深拷贝和浅拷贝/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/17/前端综合/优雅降级 渐进增加/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -305,7 +305,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/17/javaScript/深拷贝和浅拷贝/" itemprop="url">深拷贝和浅拷贝</a></h1>
+                <a class="post-title-link" href="/2017/07/17/前端综合/优雅降级 渐进增加/" itemprop="url">优雅降级 渐进增加</a></h1>
         
 
         <div class="post-meta">
@@ -340,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/前端综合/" itemprop="url" rel="index">
+                    <span itemprop="name">前端综合</span>
                   </a>
                 </span>
 
@@ -376,154 +376,12 @@
       
         
           
-          基本理解对于基本类型的值来说，深、浅复制就是对值得复制，变量之间不会相互影响。
-对于对象类型的值来说，浅复制就是复制了对象的地址，并没有开辟新的堆，复制的结果是两个对象指向同一个地址，修改其中一个对象的属性，另一个对象的该属性也会随之改变；而深复制则是开辟新的堆区(真正的内容存放在堆上)，两个对象对
+          优雅降级和渐进增强之前在看一些css3效果demo的时候，发现有些写css3属性时，兼容性的写法顺序不太一样，比如transition属性，有些把transition放在前面有些是放在后面，当然这也有可能包含了coder个人的习惯或是强迫性，比如下面这两种：
+1234567891011121314/
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/17/javaScript/深拷贝和浅拷贝/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/操作系统/堆栈的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="韩露">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/self.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/16/操作系统/堆栈的区别/" itemprop="url">堆栈的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T00:00:00+08:00">
-                2017-07-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          堆栈空间分配栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
-堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收，分配方式倒是类似于链表
-堆栈缓存方式栈使用的是一级缓存， 他们通常都是被调用时处于存储空间中，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/16/操作系统/堆栈的区别/#more" rel="contents">
+            <a class="btn" href="/2017/07/17/前端综合/优雅降级 渐进增加/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -850,7 +708,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/html/data-属性用法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/操作系统/堆栈的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -869,7 +727,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/15/html/data-属性用法/" itemprop="url">data*属性用法</a></h1>
+                <a class="post-title-link" href="/2017/07/16/操作系统/堆栈的区别/" itemprop="url">堆栈的区别</a></h1>
         
 
         <div class="post-meta">
@@ -881,8 +739,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T00:00:00+08:00">
-                2017-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T00:00:00+08:00">
+                2017-07-16
               </time>
             
 
@@ -904,8 +762,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
                   </a>
                 </span>
 
@@ -940,15 +798,13 @@
       
         
           
-          原生Js中data属性使用方法读、写属性
-直接在HTML元素中写： Click Here
-通过Js来操作：var test = document.getElementById(‘test’);test.dataset.my = ‘Byron’;
-
-HTML5中元素都会有一个dataset的属性，这是
+          堆栈空间分配栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
+堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收，分配方式倒是类似于链表
+堆栈缓存方式栈使用的是一级缓存， 他们通常都是被调用时处于存储空间中，
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/15/html/data-属性用法/#more" rel="contents">
+            <a class="btn" href="/2017/07/16/操作系统/堆栈的区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1275,7 +1131,7 @@ HTML5中元素都会有一个dataset的属性，这是
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/网络/post与get的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/html/data-属性用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩露">
@@ -1294,7 +1150,7 @@ HTML5中元素都会有一个dataset的属性，这是
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/14/网络/post与get的区别/" itemprop="url">post与get的区别</a></h1>
+                <a class="post-title-link" href="/2017/07/15/html/data-属性用法/" itemprop="url">data*属性用法</a></h1>
         
 
         <div class="post-meta">
@@ -1306,8 +1162,8 @@ HTML5中元素都会有一个dataset的属性，这是
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T00:00:00+08:00">
-                2017-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T00:00:00+08:00">
+                2017-07-15
               </time>
             
 
@@ -1329,8 +1185,8 @@ HTML5中元素都会有一个dataset的属性，这是
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
                   </a>
                 </span>
 
@@ -1365,20 +1221,15 @@ HTML5中元素都会有一个dataset的属性，这是
       
         
           
-          区别
-GET在浏览器回退时是无害的，而POST会再次提交请求。
+          原生Js中data属性使用方法读、写属性
+直接在HTML元素中写： Click Here
+通过Js来操作：var test = document.getElementById(‘test’);test.dataset.my = ‘Byron’;
 
-GET产生的URL地址可以被存为书签，而POST不可以。
-
-GET请求会被浏览器主动cache，而POST不会。
-
-GET请求只能进行url编码，而POST支持多种编码方式。
-
-GET请求参数会被完整保留在浏览器历史记录里，而POST
+HTML5中元素都会有一个dataset的属性，这是
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/14/网络/post与get的区别/#more" rel="contents">
+            <a class="btn" href="/2017/07/15/html/data-属性用法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1533,6 +1384,155 @@ call
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/14/javaScript/call、apply、bind之间的区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/网络/post与get的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩露">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/self.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/14/网络/post与get的区别/" itemprop="url">post与get的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T00:00:00+08:00">
+                2017-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          区别
+GET在浏览器回退时是无害的，而POST会再次提交请求。
+
+GET产生的URL地址可以被存为书签，而POST不可以。
+
+GET请求会被浏览器主动cache，而POST不会。
+
+GET请求只能进行url编码，而POST支持多种编码方式。
+
+GET请求参数会被完整保留在浏览器历史记录里，而POST
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/14/网络/post与get的区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

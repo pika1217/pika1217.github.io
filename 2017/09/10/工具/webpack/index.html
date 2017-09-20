@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/10/工具/webpack/index.html">
 <meta property="og:site_name" content="Coding丘">
 <meta property="og:description" content="什么是webpackwebpack是一款模块加载兼打包工具，它可以将js、jsx、coffee、样式sass、less，图片等作为模块来使用和处理,和glup等工具相比在glup功能的基础上主要是解决了js 模块化问题。原理有两点：  一切皆模块 按需加载优势 以commonJS的形式来书写脚本，对AMD、CMD的支持也很全面，方便旧项目的迁移。能被模块化的不止是JS了。 能替代部分grunt/g">
-<meta property="og:updated_time" content="2017-09-20T12:32:42.596Z">
+<meta property="og:updated_time" content="2017-09-20T12:44:04.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack">
 <meta name="twitter:description" content="什么是webpackwebpack是一款模块加载兼打包工具，它可以将js、jsx、coffee、样式sass、less，图片等作为模块来使用和处理,和glup等工具相比在glup功能的基础上主要是解决了js 模块化问题。原理有两点：  一切皆模块 按需加载优势 以commonJS的形式来书写脚本，对AMD、CMD的支持也很全面，方便旧项目的迁移。能被模块化的不止是JS了。 能替代部分grunt/g">
@@ -385,9 +385,10 @@
 <ol>
 <li>自动添加前缀的插件：var autoprefixer = require(‘autoprefixer’); </li>
 <li>版权插件new webpack.BannerPlugin(“Copyright Flying Unicorns inc.”) banner</li>
-<li>根据模板文件生成html文件：new HtmlWebpackPlugin({<pre><code>    template: __dirname + &quot;/app/index.temp.html&quot;
-}),
-</code></pre></li>
+<li>根据模板文件生成html文件：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">new HtmlWebpackPlugin(&#123;</div><div class="line">			template: __dirname + &quot;/app/index.temp.html&quot;</div><div class="line">		&#125;),</div></pre></td></tr></table></figure>
+<ol>
 <li>webpack.optimize.UglifyJsPlugin() 压缩</li>
 </ol>
 
